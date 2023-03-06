@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guesthouse.index');
 });
 Route::get('admin/login', [LoginController::class, 'index'])->name('login');
 
