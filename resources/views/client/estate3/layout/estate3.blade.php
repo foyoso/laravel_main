@@ -21,7 +21,7 @@
   <!-- Favicons -->
   <link rel="shortcut icon" href="content/guesthouse/images/favicon.ico">
 
-  @include('guesthouse.common.css')
+  @include('client.guesthouse.common.css')
   @yield('addCss')
 
 </head>
@@ -29,13 +29,13 @@
 <body
   class="home layout-full-width button-flat if-zoom no-content-padding header-plain minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll">
   <div id="Wrapper">
-    @include('guesthouse.common.header')
+    @include('client.guesthouse.common.header')
     <div id="Content">
       <div class="content_wrapper clearfix">
         @yield('content')
       </div>
     </div>
-    @include('guesthouse.common.footer')
+    @include('client.guesthouse.common.footer')
   </div>
 
   <!-- Side Menu -->
@@ -52,7 +52,7 @@
   </div>
   <div id="body_overlay"></div>
 
-  @include('guesthouse.common.js')
+  @include('client.guesthouse.common.js')
   @yield('addJs')
 
 </body>

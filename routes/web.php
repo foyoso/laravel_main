@@ -15,11 +15,15 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('guesthouse.index');
+    return view('client.guesthouse.index');
 });
-Route::get('admin/login', [LoginController::class, 'index'])->name('login');
+// theme estate 3
+Route::get('/estate3', function () {
+    return view('client.estate3.index');
+});
+
+Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('/admin/login/store', [LoginController::class, 'store']);
-
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
