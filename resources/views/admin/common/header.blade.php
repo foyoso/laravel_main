@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="/admin/images/logo-sm.png" alt="logo-sm" height="22">
+                        <img src="/theme-admin/images/logo-sm.png" alt="logo-sm" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="/admin/images/logo-dark.png" alt="logo-dark" height="20">
+                        <img src="/theme-admin/images/logo-dark.png" alt="logo-dark" height="20">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="/admin/images/logo-sm.png" alt="logo-sm-light" height="22">
+                        <img src="/theme-admin/images/logo-sm.png" alt="logo-sm-light" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="/admin/images/logo-light.png" alt="logo-light" height="20">
+                        <img src="/theme-admin/images/logo-light.png" alt="logo-light" height="20">
                     </span>
                 </a>
             </div>
@@ -155,7 +155,7 @@
 
                                 <div class="col-sm-5">
                                     <div>
-                                        <img src="/admin/images/megamenu-img.png" alt="megamenu-img" class="img-fluid mx-auto d-block">
+                                        <img src="/theme-admin/images/megamenu-img.png" alt="megamenu-img" class="img-fluid mx-auto d-block">
                                     </div>
                                 </div>
                             </div>
@@ -192,28 +192,28 @@
             <div class="dropdown d-none d-sm-inline-block">
                 <button type="button" class="btn header-item waves-effect"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="" src="/admin/images/flags/us.jpg" alt="Header Language" height="16">
+                    <img class="" src="/theme-admin/images/flags/us.jpg" alt="Header Language" height="16">
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="/admin/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                        <img src="/theme-admin/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="/admin/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
+                        <img src="/theme-admin/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="/admin/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
+                        <img src="/theme-admin/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="/admin/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                        <img src="/theme-admin/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                     </a>
                 </div>
             </div>
@@ -228,19 +228,19 @@
                         <div class="row g-0">
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/github.png" alt="Github">
+                                    <img src="/theme-admin/images/brands/github.png" alt="Github">
                                     <span>GitHub</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/bitbucket.png" alt="bitbucket">
+                                    <img src="/theme-admin/images/brands/bitbucket.png" alt="bitbucket">
                                     <span>Bitbucket</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/dribbble.png" alt="dribbble">
+                                    <img src="/theme-admin/images/brands/dribbble.png" alt="dribbble">
                                     <span>Dribbble</span>
                                 </a>
                             </div>
@@ -249,19 +249,19 @@
                         <div class="row g-0">
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/dropbox.png" alt="dropbox">
+                                    <img src="/theme-admin/images/brands/dropbox.png" alt="dropbox">
                                     <span>Dropbox</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/mail_chimp.png" alt="mail_chimp">
+                                    <img src="/theme-admin/images/brands/mail_chimp.png" alt="mail_chimp">
                                     <span>Mail Chimp</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="/admin/images/brands/slack.png" alt="slack">
+                                    <img src="/theme-admin/images/brands/slack.png" alt="slack">
                                     <span>Slack</span>
                                 </a>
                             </div>
@@ -313,7 +313,7 @@
                         </a>
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex">
-                                <img src="/admin/images/users/avatar-3.jpg"
+                                <img src="/theme-admin/images/users/avatar-3.jpg"
                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-1">
                                     <h6 class="mb-1">James Lemire</h6>
@@ -343,7 +343,7 @@
 
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex">
-                                <img src="/admin/images/users/avatar-4.jpg"
+                                <img src="/theme-admin/images/users/avatar-4.jpg"
                                     class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-1">
                                     <h6 class="mb-1">Salena Layfield</h6>
@@ -368,7 +368,7 @@
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="/admin/images/users/avatar-1.jpg"
+                    <img class="rounded-circle header-profile-user" src="/theme-admin/images/users/avatar-1.jpg"
                         alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1">Julia</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

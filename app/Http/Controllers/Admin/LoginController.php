@@ -26,7 +26,6 @@ class LoginController extends Controller
     {
 
         try {
-
             $messages = [
                 'email.required' => 'Email required',
                 'email.filter' => 'invalid email',

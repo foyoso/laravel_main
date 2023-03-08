@@ -8,14 +8,14 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="/admin/images/favicon.ico">
+        <link rel="shortcut icon" href="/theme-admin/images/favicon.ico">
 
         <!-- Bootstrap Css -->
-        <link href="/admin/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="/theme-admin/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="/admin/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/theme-admin/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="/admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="/theme-admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -29,8 +29,8 @@
                         <div class="text-center mt-4">
                             <div class="mb-3">
                                 <a href="index.html" class="auth-logo">
-                                    <img src="/admin/images/logo-dark.png" height="30" class="logo-dark mx-auto" alt="">
-                                    <img src="/admin/images/logo-light.png" height="30" class="logo-light mx-auto" alt="">
+                                    <img src="/theme-admin/images/logo-dark.png" height="30" class="logo-dark mx-auto" alt="">
+                                    <img src="/theme-admin/images/logo-light.png" height="30" class="logo-light mx-auto" alt="">
                                 </a>
                             </div>
                         </div>
@@ -90,13 +90,13 @@
         <!-- end -->
 
         <!-- JAVASCRIPT -->
-        <script src="/admin/libs/jquery/jquery.min.js"></script>
-        <script src="/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/admin/libs/metismenu/metisMenu.min.js"></script>
-        <script src="/admin/libs/simplebar/simplebar.min.js"></script>
-        <script src="/admin/libs/node-waves/waves.min.js"></script>
+        <script src="/theme-admin/libs/jquery/jquery.min.js"></script>
+        <script src="/theme-admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/theme-admin/libs/metismenu/metisMenu.min.js"></script>
+        <script src="/theme-admin/libs/simplebar/simplebar.min.js"></script>
+        <script src="/theme-admin/libs/node-waves/waves.min.js"></script>
 
-        <script src="/admin/js/app.js"></script>
+        <script src="/theme-admin/js/app.js"></script>
 
     </body>
 </html>
