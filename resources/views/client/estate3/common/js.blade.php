@@ -1,4 +1,3 @@
-<!-- JS -->
 <script src="/client/js/jquery-3.6.0.min.js"></script>
 <script src="/client/js/jquery-migrate-3.4.0.min.js"></script>
 
@@ -9,30 +8,56 @@
 <script src="/client/js/translate3d.js"></script>
 <script src="/client/js/scripts.js"></script>
 
-<script>
-jQuery(window).on('load', function() {
-  var retina = window.devicePixelRatio > 1 ? true : false;
-  if (retina) {
-    var retinaEl = jQuery("#logo img.logo-main");
-    var retinaLogoW = retinaEl.width();
-    var retinaLogoH = retinaEl.height();
-    retinaEl.attr("src", "/content/guesthouse/images/retina-guesthouse.png").width(retinaLogoW).height(
-      retinaLogoH);
-    var stickyEl = jQuery("#logo img.logo-sticky");
-    var stickyLogoW = stickyEl.width();
-    var stickyLogoH = stickyEl.height();
-    stickyEl.attr("src", "/content/guesthouse/images/retina-guesthouse.png").width(stickyLogoW).height(
-      stickyLogoH);
-    var mobileEl = jQuery("#logo img.logo-mobile");
-    var mobileLogoW = mobileEl.width();
-    var mobileLogoH = mobileEl.height();
-    mobileEl.attr("src", "/content/guesthouse/images/retina-guesthouse.png").width(mobileLogoW).height(
-      mobileLogoH);
-    var mobileStickyEl = jQuery("#logo img.logo-mobile-sticky");
-    var mobileStickyLogoW = mobileStickyEl.width();
-    var mobileStickyLogoH = mobileStickyEl.height();
-    mobileStickyEl.attr("src", "/content/guesthouse/images/retina-guesthouse.png").width(mobileStickyLogoW).height(
-      mobileStickyLogoH);
-  }
-});
+<script src="/content/plugins/rs-plugin-6.custom/js/revolution.tools.min.js"></script>
+<script src="/content/plugins/rs-plugin-6.custom/js/rs6.min.js"></script>
+
+<script type="text/javascript">
+var revapi1, tpj;
+
+function revinit_revslider11() {
+  jQuery(function() {
+    tpj = jQuery;
+    revapi1 = tpj("#rev_slider_1_1");
+    if (revapi1 == undefined || revapi1.revolution == undefined) {
+      revslider_showDoubleJqueryError("rev_slider_1_1");
+    } else {
+      revapi1.revolution({
+        sliderLayout: "fullwidth",
+        duration: "2000ms",
+        visibilityLevels: "1240,1240,778,778",
+        gridwidth: "1140,1140,778,778",
+        gridheight: "900,900,610,610",
+        spinner: "spinner8",
+        perspective: 600,
+        perspectiveType: "local",
+        spinnerclr: "#8bafd1",
+        editorheight: "900,768,610,720",
+        responsiveLevels: "1240,1240,778,778",
+        progressBar: {
+          disableProgressBar: true
+        },
+        navigation: {
+          onHoverStop: false
+        },
+        fallbacks: {
+          allowHTML5AutoPlayOnAndroid: true
+        },
+      });
+    }
+
+  });
+} // End of RevInitScript
+
+var once_revslider11 = false;
+if (document.readyState === "loading") {
+  document.addEventListener('readystatechange', function() {
+    if ((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider11) {
+      once_revslider11 = true;
+      revinit_revslider11();
+    }
+  });
+} else {
+  once_revslider11 = true;
+  revinit_revslider11();
+}
 </script>

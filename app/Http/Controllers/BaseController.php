@@ -16,7 +16,7 @@ class BaseController extends Controller
         $this ->domain = parse_url(request()->root())['host'];
         //$websiteService  = new WebsiteService();
         //$this -> website = $websiteService -> findByDomain($this ->domain);
-        $this -> layoutDir = 'client.estate3';
+        $this -> layoutDir = 'client.guesthouse';
         view()->share('viewDir', $this -> layoutDir );
         //view()->share('website', $this -> website );
     }

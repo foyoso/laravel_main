@@ -16,6 +16,7 @@ use App\Http\Controllers\IndexController;
 */
 // -----------client---------------//
 Route::get('/',[IndexController::class, 'index']);
+Route::get('/estate3',[IndexController::class, 'estate3']);
 
 
 // -----------admin--- ----- --- ----//

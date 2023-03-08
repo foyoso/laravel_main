@@ -1,4 +1,4 @@
-@extends('client.guesthouse.layout.guesthouse')
+@extends('client.guesthouse.layout.index')
 @section('content')
 <div class="sections_group">
   <div class="entry-content">

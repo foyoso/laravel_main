@@ -1,515 +1,541 @@
-@extends('client.estate3.layout.estate3')
+@extends('client.estate3.layout.index')
 @section('content')
-<div class="sections_group">
-  <div class="entry-content">
-    <div class="section mcb-section"
-      style="padding-top:180px; padding-bottom:50px; background-color:#51402a; background-image:url(content/guesthouse/images/home_guesthouse_sectionbg1.jpg); background-repeat:no-repeat; background-position:center top">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  valign-top clearfix" style="padding:0 0 120px 0">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix align_center">
-                <div style="width: 60%; margin: 0 auto;">
-                  <div class="mfn_heading heading_lines align_center">
-                    <h6 class="title" style="color:#fff"><span class="line line_l" style="background:#fff"></span>Mauris
-                      pretium wisi<span class="line line_r" style="background:#fff"></span></h6>
-                  </div>
-                </div>
-                <hr class="no_line" style="margin: 0 auto 15px">
-                <div class="google_font"
-                  style="font-family:'Roboto Slab';font-size:105px;line-height:105px;font-weight:400;color:#fff">
-                  Small Guest House
-                </div>
-                <hr class="no_line" style="margin: 0 auto 40px">
-                <div>
-                  <a class="button scroll button_size_2 button_theme button_js" href="#details"><span
-                      class="button_label">Click to see more</span></a><a class="button  button_size_2 button_js"
-                    href="content/guesthouse/gallery.html" style="color:#fff"><span class="button_label">View virtual
-                      tour</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
+<div class="section" id="about" style="padding-top:50px;padding-bottom:50px">
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <h1>STUNNING HIGH QUALITY HOUSE WITH A POOL</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr class="no_line" style="margin:0 auto 40px">
+      </div>
+      <div class="col-md-3">
+        <h3>TWO LEVELS
+          <br>
+          FULLY EQUIPED
+          <br>
+          POOL
+          <br>
+          GARAGE
+          <br>
+          FURNITURE
+        </h3>
+      </div>
+      <div class="col-md-6" style="padding:0 4% 0 0">
+        <p> Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas
+          malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna.
+          Vestibulum commodo volutpat a, convallis ac, laoreet enim. </p>
+        <p> Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus,
+          mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. </p>
+        <p> Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend
+          justo vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer. </p>
+        <p> Integer ultrices posuere cubilia curae nulla ipsum dolor. </p>
+        <hr class="no_line" style="margin: 0 auto 20px auto" />
+        <div class="google_font"
+          style="font-family:'',Arial,Tahoma,sans-serif;font-size:69px;line-height:69px;font-weight:700;letter-spacing:0px;color:#222;">
+          $<span class="counter-inline animate-math"><span class="number" data-to="1750000">1750000</span></span>
         </div>
-        <div class="wrap mcb-wrap two-fifth valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_slider box-shadow">
-              <div class="content_slider flat hide-arrows">
-                <ul class="content_slider_ul">
-                  <li>
-                    <img width="780" height="730"
-                      src="content/guesthouse/images/home_guesthouse_header_contentslider1.jpg"
-                      class="scale-with-grid wp-post-image">
-                  </li>
-                  <li>
-                    <img width="780" height="730"
-                      src="content/guesthouse/images/home_guesthouse_header_contentslider2.jpg"
-                      class="scale-with-grid wp-post-image">
-                  </li>
-                  <li>
-                    <img width="780" height="730"
-                      src="content/guesthouse/images/home_guesthouse_header_contentslider3.jpg"
-                      class="scale-with-grid wp-post-image">
-                  </li>
-                </ul>
-                <div class="slider_pager slider_pagination"></div>
-              </div>
-            </div>
+      </div>
+      <div class="col-md-3" style="padding:0 1%">
+        <div class="text-right mobile_align_left">
+          <hr class="no_line" style="margin: 0 auto 30px auto" />
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-slider-pic1.png" alt="estate3-slider-pic1" title="" width="249"
+                height="191" /> </div>
           </div>
-        </div>
-        <div class="wrap mcb-wrap two-fifth valign-top clearfix" style="padding:20px 5% 0">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix">
-                <h3 style="color:#fff">Lorem ipsum dolor sit amet felis ac risus</h3>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <h4 class="themecolor">Fusce quam tempus</h4>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <p style="color:#fff">
-                  Praesent ac massa. Proin sem dolor libero odio at laoreet nisl in lorem leo, suscipit
-                  ultricies, hendrerit sed, aliquet molestie. Quisque at quam nec elementum leo.
-                </p>
-                <hr class="no_line" style="margin: 0 auto 10px">
-                <div
-                  style="background: url(content/guesthouse/images/home_guesthouse_pic2.png) no-repeat 0 35px; border-top: 1px solid rgba(255,255,255, .3); padding: 32px 0 0 50px; color: rgba(255,255,255,.7);">
-                  <p>
-                    Suspendisse et ultrices mi. Fusce fringilla non, dictum orci. Nunc tristique senectus et
-                    nisl mollis consectetuer. Aenean.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrap mcb-wrap one-fifth column-margin-20px valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_image">
-              <div class="image_frame image_item scale-with-grid no_border">
-                <div class="image_wrapper">
-                  <a href="https://vimeo.com/97871257" rel="prettyphoto">
-                    <div class="mask"></div><img class="scale-with-grid"
-                      src="content/guesthouse/images/home_guesthouse_hoverbox1a.jpg" width="780" height="780" />
-                  </a>
-                  <div class="image_links">
-                    <a href="https://vimeo.com/97871257" class="zoom" rel="prettyphoto"><i class="icon-search"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix">
-                <h6 style="color: #fff; margin-bottom: 5px;">Watch the video presentation</h6>
-                <p style="color: rgba(255,255,255,.4);">
-                  Duration: 3:55
-                </p>
-              </div>
-            </div>
+          <hr class="no_line" style="margin: 0 auto 60px auto" />
+          <div class="google_font"
+            style="font-family:'Georgia',Arial,Tahoma,sans-serif;font-size:16px;line-height:16px;font-weight:200;letter-spacing:0px;color:#000;font-style:italic;">
+            <p style="line-height: 28px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+              luctus nec ullamcorper. </p>
+            <p style="line-height: 28px;"> Aliquam erat ac ipsum. Integer aliquam purus lorem. </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="section mcb-section full-width" style="padding-top:0px; padding-bottom:0px">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  column-margin-0px valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_hover_color">
-              <div class="hover_color" style="background:#659203;" ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#7aab10;border-width:2px;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:20px 30px;">
-                      <h5 style="color: #fff; margin: 0; display: inline-block;"><span
-                          style="padding: 5px; border-bottom: 1px solid #fff; margin-right: 10px;">Aliquam
-                          adipiscing justo nulla placerat</span> →</h5>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-12">
+        <hr class="no_line" style="margin:0 auto 60px">
+      </div>
+      <div class="col-md-3">
+        <div class="mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-about-icon1.png" alt="estate3-about-icon1" title="" width="48"
+                height="48" /> </div>
           </div>
+          <h3>348 <sup>M2</sup></h3>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-about-icon2.png" alt="estate3-about-icon2" title="" width="48"
+                height="48" /> </div>
+          </div>
+          <h3>GARAGE <sup>FOR 2 CARS
+              <br>
+            </sup></h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-about-icon3.png" alt="estate3-about-icon3" title="" width="48"
+                height="48" /> </div>
+          </div>
+          <h3>POOL <sup>36 M2</sup></h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class=" mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-about-icon4.png" alt="estate3-about-icon4" title="" width="48"
+                height="48" /> </div>
+          </div>
+          <h3>SECURITY <sup>24H</sup></h3>
+        </div>
+      </div>
+      <div class="col-12">
+        <hr class="no_line" style="margin:0 auto 60px">
+      </div>
     </div>
-    <div class="section mcb-section" id="details" style="padding-top:90px; padding-bottom:60px;">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  valign-top clearfix" style="padding:0 0 40px 0">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_column  column-margin-10px">
-              <div class="column_attr clearfix">
-                <div class="progress_icons" data-active="3" data-color="#d7c352">
-                  <span class="progress_icon"><i class="icon-star"></i></span><span class="progress_icon"><i
-                      class="icon-star"></i></span><span class="progress_icon"><i class="icon-star"></i></span>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-second column_column">
-              <div class="column_attr clearfix" style="padding:15px 5% 0 45px; border-left: 5px solid #94c52a;">
-                <h2>Aliquam et malesuada augue sapien quisque porta auctor.</h2>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_counter">
-              <div class="counter counter_horizontal animate-math">
-                <div class="icon_wrapper">
-                  <i class="icon-home"></i>
-                </div>
-                <div class="desc_wrapper">
-                  <div class="number-wrapper">
-                    <span class="number" data-to="32">32</span>
-                  </div>
-                  <p class="title">
-                    Duis neque auctor
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_counter">
-              <div class="counter counter_horizontal animate-math">
-                <div class="icon_wrapper">
-                  <i class="icon-users"></i>
-                </div>
-                <div class="desc_wrapper">
-                  <div class="number-wrapper">
-                    <span class="number" data-to="24">24</span>
-                  </div>
-                  <p class="title">
-                    Quisque tortor
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one column_divider">
-              <hr class="no_line">
-            </div>
-            <div class="column mcb-column one-second column_column">
-              <div class="column_attr clearfix" style="padding:0 5% 0 50px;">
-                <p>
-                  Etiam nunc pede turpis vulputate vehicula. Nunc turpis. Donec consectetuer elit. Sed
-                  dignissim. <span class="tooltip tooltip-txt" data-tooltip="Etiam lobortis eget">Nunc
-                    elementum</span> . Mauris ullamcorper aliquam. Nunc volutpat quis, interdum vitae, consequat
-                  hendrerit. Donec commodo tincidunt.
-                </p>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_column">
-              <div class="column_attr clearfix" style="padding:0 10% 0 0; border-right: 1px solid rgba(0,0,0, .1);">
-                <p>
-                  Nam nec cursus et, dictum vel, ante. Nam enim. Quisque ornare varius, felis risus sit amet
-                  ante.
-                </p>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_button">
-              <div class="button_align align_center">
-                <a class="button  button_left button_size_2 button_theme button_js" href="#"><span
-                    class="button_icon"><i class="icon-address"></i></span><span class="button_label">Read more
-                    about us</span></a>
-              </div>
+  </div>
+</div>
+<div class="section mcb-sectionbg-cover bg-cover" id="gfloor"
+  style="padding-top:100px;padding-bottom:100px;background-image:url(content/estate3/images/estate3-sectionbg1.png);background-repeat:no-repeat;background-position:center;background-attachment:fixed;background-size:cover">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="placeholder"> &nbsp; </div>
+      </div>
+      <div class="col-md-9" style="padding:7% 6% 0% 7%;background-color:#fff">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="mobile_align_center" style="background-color:#fff;">
+              <h2>GROUND FLOOR</h2>
             </div>
           </div>
-        </div>
-        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_image">
-              <div class="image_frame image_item no_link scale-with-grid no_border">
-                <div class="image_wrapper">
-                  <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_num.png"
-                    width="150" height="58" />
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one column_zoom_box">
-              <div class="zoom_box">
-                <a href="#">
-                  <div class="photo">
-                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1.jpg"
-                      width="780" height="585" />
-                  </div>
-                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
-                    <div class="desc_wrap">
-                      <div class="desc_img">
-                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
-                          width="60" height="57" />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix" style="padding:30px;">
-                <h4>Fusce mollis eros</h4>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden;"></div>
-                <hr class="no_line" style="margin: 0 auto 20px">
-                <p>
-                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
-                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
-                  imperdiet, urna magna neque, vitae augue.
-                </p>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
-                  href="#">READ MORE</a>
-              </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center" style="background-color:#fff;">
+              <h2><span style="color: #8bafd1;">189M²</span></h2>
             </div>
           </div>
-        </div>
-        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_image">
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 50px">
+          </div>
+          <div class="col-12">
+            <div class="mobile_align_center" style="background-color:#fff;">
+              <p> Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies
+                porta urna. Vestibulum commodo volutpat a, convallis. </p>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 40px">
+          </div>
+          <div class="col-md-4">
+            <div class="column_attr clearfix mobile_align_center">
               <div class="image_frame image_item no_link scale-with-grid no_border">
                 <div class="image_wrapper"><img class="scale-with-grid"
-                    src="content/guesthouse/images/home_guesthouse_zoombox2_num.png" width="150" height="58" />
-                </div>
+                    src="/content/estate3/images/estate3-plan-icon1.png" alt="estate3-plan-icon1" title="" width="36"
+                    height="36" /> </div>
               </div>
-            </div>
-            <div class="column mcb-column one column_zoom_box">
-              <div class="zoom_box">
-                <a href="#">
-                  <div class="photo">
-                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox2.jpg"
-                      width="780" height="585" />
-                  </div>
-                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
-                    <div class="desc_wrap">
-                      <div class="desc_img">
-                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
-                          width="60" height="57" />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix" style="padding:30px">
-                <h4>Quisque quis felis</h4>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden"></div>
-                <hr class="no_line" style="margin: 0 auto 20px">
-                <p>
-                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
-                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
-                  imperdiet, urna magna neque, vitae augue.
-                </p>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
-                  href="#">READ MORE</a>
-              </div>
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+              <h3>LIVING ROOM <sup>125M²</sup></h3>
             </div>
           </div>
-        </div>
-        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_image">
+          <div class="col-md-4">
+            <div class="column_attr clearfix mobile_align_center">
               <div class="image_frame image_item no_link scale-with-grid no_border">
-                <div class="image_wrapper">
-                  <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox3_num.png"
-                    width="150" height="58" />
-                </div>
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon2.png" alt="estate3-plan-icon2" title="" width="36"
+                    height="36" /> </div>
               </div>
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+              <h3>KITCHEN <sup>24M²</sup></h3>
             </div>
-            <div class="column mcb-column one column_zoom_box">
-              <div class="zoom_box">
-                <a href="#">
-                  <div class="photo">
-                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox3.jpg"
-                      width="780" height="585" />
-                  </div>
-                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
-                    <div class="desc_wrap">
-                      <div class="desc_img">
-                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
-                          width="60" height="57" />
-                      </div>
-                    </div>
-                  </div>
-                </a>
+          </div>
+          <div class="col-md-4">
+            <div class="column_attr clearfix mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon3.png" alt="estate3-plan-icon3" title="" width="36"
+                    height="36" /> </div>
               </div>
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+              <h3>BEDROOM <sup>17M²</sup></h3>
             </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix" style="padding:30px;">
-                <h4>Cras consectetuer</h4>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden;"></div>
-                <hr class="no_line" style="margin: 0 auto 20px">
-                <p>
-                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
-                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
-                  imperdiet, urna magna neque, vitae augue.
-                </p>
-                <hr class="no_line" style="margin: 0 auto 5px">
-                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
-                  href="#">READ MORE</a>
+          </div>
+          <div class="col-md-4">
+            <div class="column_attr clearfix mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon4.png" alt="estate3-plan-icon4" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+              <h3>TOILET <sup>14M²</sup></h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="column_attr clearfix mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon5.png" alt="estate3-plan-icon5" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+              <h3>LAUNDRY <sup>9M²</sup></h3>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="placeholder"> &nbsp; </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin: 0 auto 30px auto" />
+          </div>
+          <div class="col-12">
+            <div class="mobile_align_center"> <a class="button has-icon button_right button_size_2" href="#"
+                style="background-color:#E6BE47!important;color:#FFF;" target="_blank"><span class="button_icon"><i
+                    class="icon-doc-text-inv" style="color:#FFF!important;"></i></span><span class="button_label">
+                  DOWNLOAD .PDF</span></a> </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin: 0 auto 50px auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section mcb-section bg-cover bg-cover" id="ffloor"
+  style="padding-top:100px;padding-bottom:100px;background-image:url(content/estate3/images/estate3-sectionbg2.png);background-repeat:no-repeat;background-position:center;background-attachment:fixed;background-size:cover">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9" style="padding:7% 6% 1% 7%;background-color:#fff">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center" style="background-color:#fff;">
+              <h2><span style="color: #8bafd1;">159m²</span></span></h2>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="text-right mobile_align_center" style="background-color:#fff;">
+              <h2>FIRST FLOOR</h2>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 50px">
+          </div>
+          <div class="col-12">
+            <div class="text-right mobile_align_center" style="background-color:#fff;">
+              <p> Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies
+                porta urna. Vestibulum commodo volutpat a, convallis. </p>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 40px">
+          </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon3.png" alt="estate3-plan-icon3" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 1px auto" />
+              <h3><sup>59m²</sup> 3 BEDROOMS</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon4.png" alt="estate3-plan-icon4" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 1px auto" />
+              <h3><sup>39m²</sup> 2 TOILETS</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon6.png" alt="estate3-plan-icon6" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 1px auto" />
+              <h3><sup>15m²</sup> 2 BATHROOMS</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="placeholder"> &nbsp; </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon5.png" alt="estate3-plan-icon5" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 1px auto" />
+              <h3><sup>17m²</sup> LAUNDRY</h3>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-right mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-plan-icon7.png" alt="estate3-plan-icon7" title="" width="36"
+                    height="36" /> </div>
+              </div>
+              <hr class="no_line" style="margin: 0 auto 1px auto" />
+              <h3><sup>29m²</sup> WARDROBE</h3>
+            </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin: 0 auto 40px auto" />
+          </div>
+          <div class="col-12">
+            <div class="text-right mobile_align_center"> <a class="button has-icon button_right button_size_2" href="#"
+                style="background-color:#E6BE47!important;color:#FFF;" target="_blank"><span class="button_icon"><i
+                    class="icon-doc-text-inv" style="color:#FFF!important;"></i></span><span class="button_label">
+                  DOWNLOAD .PDF</span></a> </div>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 50px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section mcb-section no-margin-h" id="gallery" style="padding-top:90px;padding-bottom:60px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="padding:0 1%">
+        <div class="row">
+          <div class="col-12">
+            <h1>LOREM IPSUM DOLOR SIT AMET ENIM ULTRICIES</h1>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 20px">
+          </div>
+          <div class="col-md-8">
+            <h4>SUSPENDISSE A PELLENTESQUE DUI, NON FELIS. MAECENAS MALESUADA ELIT LECTUS FELIS, MALESUADA ULTRICIES
+              <br>
+            </h4>
+          </div>
+          <div class="col-12">
+            <hr class="no_line" style="margin:0 auto 20px">
+          </div>
+          <div class="col-12">
+            <p> Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede
+              cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget. </p>
+            <p> Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem
+              ipsum primis in nibh vel risus. Sed vel lectus. Ut sagittis, ipsum dolor quam. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-12">
+            <div class="image_frame image_item no_link scale-with-grid no_border">
+              <div class="image_wrapper"><img class="scale-with-grid"
+                  src="/content/estate3/images/estate3-desc-pic1.jpg" alt="estate3-desc-pic1" title="" width="780"
+                  height="780" /> </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="placeholder"> &nbsp; </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-right" style="background-color:#8bafd1;padding:40px 40px 25px 40px;">
+              <div class="google_font"
+                style="font-family:'Georgia',Arial,Tahoma,sans-serif;font-size:16px;line-height:16px;font-weight:400;letter-spacing:0px;color:#626262;font-style:italic;">
+                <p> <span style="line-height: 28px;color: #fff;">Vestibulum dapibus, mauris nec malesuada fames ac
+                    turpis velit, rhoncus eu, luctus et interdum wisi.</span> </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="section mcb-section" style="padding-top:90px; padding-bottom:50px; background-color:#433529"
-      data-parallax="3d">
-      <img class="mfn-parallax" src="content/guesthouse/images/home_guesthouse_sectionbg2.jpg" style="opacity:0">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one-second  valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_column  column-margin-30px">
-              <div class="column_attr clearfix">
-                <h4 class="themecolor">Proin nunc faucibus et</h4>
-              </div>
-            </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix"
-                style="background-image:url('content/guesthouse/images/home_guesthouse_blockquote.png'); background-repeat:no-repeat; background-position:left top; padding:0 0 0 100px;">
-                <h3 style="color:#fff">Nullam fermentum in, adipiscing tortor, a metus. Donec ornare eu, rhoncus
-                  eu, luctus et nisl mollis ac, eleifend nibh, imperdiet velit risus.</h3>
-                <hr class="no_line" style="margin: 0 auto 15px">
-                <p class="themecolor"
-                  style="border-bottom: 2px solid #7aab10; padding-bottom: 7px; display: inline-block;">
-                  KEVIN PERRY
-                </p>
-              </div>
-            </div>
-          </div>
+  </div>
+</div>
+<div class="section" style="padding-top:60px;padding-bottom:30px">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div id='sc_gallery-1662' class='gallery galleryid-2 gallery-columns-4 gallery-size-thumbnail file flat'>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic1.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic1-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic2.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic2-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic3.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic3-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic4.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic4-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic5.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic5-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic8.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic8-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic7.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic7-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
+          <dl class='gallery-item'>
+            <dt class='gallery-icon landscape'>
+              <a href='content/estate3/images/estate3-gallery-pic6.jpg'><img width="500" height="500"
+                  src="/content/estate3/images/estate3-gallery-pic6-500x500.jpg"
+                  class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" /></a>
+            </dt>
+          </dl>
         </div>
       </div>
     </div>
-    <div class="section mcb-section full-width no-margin-h no-margin-v" style="padding-top:0px; padding-bottom:0px">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one-fourth column_hover_color">
-              <div class="hover_color" style="background:#7aab10;border-color:#6c5f59;"
-                ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#47382f;border-color:#6c5f59;border-width:1px 1px 0 0;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:30px 30px 15px;">
-                      <h5><a href="#"><i class="icon-location"></i> Praesent gravida</a></h5>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_hover_color">
-              <div class="hover_color" style="background:#7aab10;border-color:#6c5f59;"
-                ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#47382f;border-color:#6c5f59;border-width:1px 1px 0 0;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:30px 30px 15px;">
-                      <h5><a href="#"><i class="icon-book"></i> Quisque ultricies ut</a></h5>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_hover_color">
-              <div class="hover_color" style="background:#7aab10;border-color:#6c5f59;"
-                ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#47382f;border-color:#6c5f59;border-width:1px 1px 0 0;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:30px 30px 15px;">
-                      <h5><a href="#"><i class="icon-calendar-line"></i> Cras tincidunt</a></h5>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_hover_color">
-              <div class="hover_color" style="background:#7aab10;border-color:#6c5f59;"
-                ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#47382f;border-color:#6c5f59;border-width:1px 1px 0 0;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:30px 30px 15px;">
-                      <h5><a href="#"><i class="icon-map"></i> Vestibulum</a></h5>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+  </div>
+</div>
+<div class="section" id="contact" style="padding-top:40px;padding-bottom:75px">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-9">
+            <h1>THE HOUSE IS FOR SALE FOR <span style="color: #f6563c;">$1,750,000</span></[h1>
+              <hr class="no_line" style="margin: 0 auto 60px auto" />
           </div>
         </div>
       </div>
-    </div>
-    <div class="section mcb-section" style="padding-top:90px; padding-bottom:50px;">
-      <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  valign-top clearfix">
-          <div class="mcb-wrap-inner">
-            <div class="column mcb-column one-third column_placeholder">
-              <div class="placeholder">
-                &nbsp;
-              </div>
-            </div>
-            <div class="column mcb-column one-third column_image">
-              <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
-                <div class="image_wrapper">
-                  <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_pic1.png" width="276"
-                    height="82">
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one column_divider">
-              <hr class="no_line" style="margin: 0 auto 20px">
-            </div>
-            <div class="column mcb-column one column_column">
-              <div class="column_attr clearfix align_center">
-                <h3>Donec pharetra lobortis augue</h3>
-              </div>
-            </div>
-            <div class="column mcb-column one column_slider">
-              <div class="content_slider carousel hide-arrows">
-                <ul class="content_slider_ul">
-                  <li>
-                    <a href="content/guesthouse/rooms.html">
-                      <img width="780" height="477" src="content/guesthouse/images/home_guesthouse_room1.jpg"
-                        class="scale-with-grid wp-post-image">
-                      <p class="title">
-                        Praesent tortor
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="content/guesthouse/rooms.html">
-                      <img width="780" height="477" src="content/guesthouse/images/home_guesthouse_room2.jpg"
-                        class="scale-with-grid wp-post-image">
-                      <p class="title">
-                        Fusce vitae arcu
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="content/guesthouse/rooms.html">
-                      <img width="780" height="477" src="content/guesthouse/images/home_guesthouse_room3.jpg"
-                        class="scale-with-grid wp-post-image">
-                      <p class="title">
-                        Vivamus arcu sed
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="content/guesthouse/rooms.html">
-                      <img width="780" height="477" src="content/guesthouse/images/home_guesthouse_room4.jpg"
-                        class="scale-with-grid wp-post-image">
-                      <p class="title">
-                        Curabitur volutpat
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img width="780" height="477" src="content/guesthouse/images/home_guesthouse_room1.jpg"
-                        class="scale-with-grid wp-post-image">
-                      <p class="title">
-                        Aenean pede sit amet
-                      </p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider_pager slider_pagination"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="col-md-3" style="padding:0 0">
 
+        <div class="mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-contact-icon1.png" alt="estate3-contact-icon1" title="" width="72"
+                height="72" />
+            </div>
+          </div>
+
+          <hr class="no_line" style="margin: 0 auto 10px auto" />
+
+          <h6>ADDRESS</h6>
+          <h3>LEVEL 13,
+            <br>
+            ELIZABETH ST,
+            <br>
+            MELBOURNE
+          </h3>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mcb-wrap-inner">
+          <div class="column mcb-column one column_column">
+            <div class="column_attr clearfix mobile_align_center">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="/content/estate3/images/estate3-contact-icon2.png" alt="estate3-contact-icon2" title=""
+                    width="72" height="72" />
+                </div>
+              </div>
+
+              <hr class="no_line" style="margin: 0 auto 10px auto" />
+
+              <h6>AGENT</h6>
+              <h3>JESSICA
+                <br>
+                BERMINGTON
+              </h3>
+              <a href="#">noreply@envato.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-left mobile_align_center">
+          <div class="image_frame image_item no_link scale-with-grid no_border">
+            <div class="image_wrapper"><img class="scale-with-grid"
+                src="/content/estate3/images/estate3-contact-icon3.png" alt="estate3-contact-icon3" title="" width="72"
+                height="72" />
+            </div>
+          </div>
+
+          <hr class="no_line" style="margin: 0 auto 10px auto" />
+
+          <h6>PHONE</h6>
+          <h2><sup>+61 (0)</sup> 383 766 284</h2>
+          <p>
+            Monday — Friday 09:00 AM — 06:00 PM
+          </p>
+        </div>
+      </div>
+      <div class="col-12" style="padding:30px 0 0 0">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="placeholder">
+              &nbsp;
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="google_font"
+              style="font-family:'Georgia',Arial,Tahoma,sans-serif;font-size:16px;line-height:16px;font-weight:400;letter-spacing:0px;color:#000;font-style:italic;">
+              <span style="line-height: 28px;">Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet
+                sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et
+                interdum</span>
+            </div>
+
+            <div class="google_font"
+              style="font-family:'Georgia',Arial,Tahoma,sans-serif;font-size:15px;line-height:15px;font-weight:400;letter-spacing:0px;color:#000;font-style:italic;">
+              <span style="line-height: 28px;">Adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque
+                lorem tortor fringilla sed.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 @endsection
