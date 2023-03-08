@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,17 +14,17 @@ use App\Http\Controllers\Admin\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// -----------client---------------//
+Route::get('/',[IndexController::class, 'index']);
 
-Route::get('/', function () {
-    return view('client.guesthouse.index');
-});
-// theme estate 3
-Route::get('/estate3', function () {
-    return view('client.estate3.index');
-});
 
+// -----------admin---------------//
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
-
 Route::post('/admin/login/store', [LoginController::class, 'store']);
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['auth:admin'])->group(function () {
+
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin/logout', [LoginController::class, 'logout'])->name('logout');
+
+});
