@@ -59,22 +59,7 @@
         <script src="/theme-admin/libs/node-waves/waves.min.js"></script>
 
 
-        <!-- apexcharts -->
-        <script src="/theme-admin/libs/apexcharts/apexcharts.min.js"></script>
-
-        <!-- jquery.vectormap map -->
-        <script src="/theme-admin/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="/theme-admin/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>
-
-        <!-- Required datatable js -->
-        <script src="/theme-admin/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="/theme-admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-        <!-- Responsive examples -->
-        <script src="/theme-admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="/theme-admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
-        <script src="/theme-admin/js/pages/dashboard.init.js"></script>
 
         <!-- App js -->
         <script src="/theme-admin/js/app.js"></script>
+        <script src="/theme-admin/js/custom.js"></script>
