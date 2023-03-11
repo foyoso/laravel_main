@@ -7,14 +7,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 class WebsiteService
 {
-
-
-
-
-
     public function findByDomain($domain)
     {
-        $web = Website::where('domain', $domain)->firstOrFail();
-        return $web;
+        $website = new Website();
+        $result = $website -> findByDomain($domain);
+        return $result;
     }
 }

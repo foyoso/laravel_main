@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-
+use App\Models\ModelBase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Layout extends Model
+class Layout extends ModelBase
 {
     use HasFactory, SoftDeletes;
 
@@ -23,5 +22,3 @@ class Layout extends Model
         'directory'
     ];
 }
-
-

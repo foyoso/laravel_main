@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\ModelBase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Admin extends Model
+class Website extends ModelBase
 {
     use  HasFactory, SoftDeletes;
 
@@ -34,8 +34,15 @@ class Admin extends Model
         'custom_css',
         'custom_js',
     ];
+
     public function layout()
     {
         return $this->belongsTo(Layout::class,'layout_id');
+    }
+
+    public function findByDomain($domain)
+    {
+        $web = Website::where('domain', $domain)->first();
+        return $web;
     }
 }
