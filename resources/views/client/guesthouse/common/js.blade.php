@@ -1,6 +1,4 @@
 <!-- JS -->
-<script src="/client/js/jquery-3.6.0.min.js"></script>
-<script src="/client/js/jquery-migrate-3.4.0.min.js"></script>
 
 <script src="/client/js/mfn.menu.js"></script>
 <script src="/client/js/jquery.plugins.js"></script>

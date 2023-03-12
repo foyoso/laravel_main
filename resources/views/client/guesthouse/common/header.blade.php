@@ -6,24 +6,24 @@
         <div class="column one">
           <div class="top_bar_left clearfix">
             <div class="logo">
-              <a id="logo" href="index-guesthouse.html" title="BeGuestHouse - BeTheme"><img
-                  class="logo-main scale-with-grid" src="content/guesthouse/images/guesthouse.png"><img
-                  class="logo-sticky scale-with-grid" src="content/guesthouse/images/guesthouse.png"><img
-                  class="logo-mobile scale-with-grid" src="content/guesthouse/images/guesthouse.png"><img
-                  class="logo-mobile-sticky scale-with-grid" src="content/guesthouse/images/guesthouse.png">
+              <a id="logo" href="/" title="BeGuestHouse - BeTheme"><img class="logo-main scale-with-grid"
+                  src="content/guesthouse/images/guesthouse.png"><img class="logo-sticky scale-with-grid"
+                  src="content/guesthouse/images/guesthouse.png"><img class="logo-mobile scale-with-grid"
+                  src="content/guesthouse/images/guesthouse.png"><img class="logo-mobile-sticky scale-with-grid"
+                  src="content/guesthouse/images/guesthouse.png">
               </a>
             </div>
             <div class="menu_wrapper">
               <nav id="menu" class="menu-main-menu-container">
                 <ul id="menu-main-menu" class="menu">
                   <li class="current-menu-item">
-                    <a href="content/guesthouse/index-guesthouse.html"><span>Home</span></a>
+                    <a href="/"><span>Home</span></a>
                   </li>
                   <li>
-                    <a href="content/guesthouse/the-house.html"><span>The house</span></a>
+                    <a href="/houses"><span>The house</span></a>
                   </li>
                   <li>
-                    <a href="content/guesthouse/rooms.html"><span>Rooms</span></a>
+                    <a href="/rooms"><span>Rooms</span></a>
                   </li>
                   <li>
                     <a href="/detail"><span>Room details</span></a>
@@ -32,11 +32,7 @@
                     <a href="/galery"><span>Gallery</span></a>
                   </li>
                   <li>
-                    <a href="content/guesthouse/booking.html"><span>Booking</span></a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="http://bit.ly/1M6lijQ"><span><span style="padding: 0; color:#fff">Buy
-                          now</span></span></a>
+                    <a href="/booking"><span>Booking</span></a>
                   </li>
                 </ul>
               </nav>

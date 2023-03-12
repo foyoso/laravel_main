@@ -5,8 +5,11 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HousesConroller;
+use App\Http\Controllers\RoomsConroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,9 @@ use App\Http\Controllers\DetailController;
 Route::get('/',[IndexController::class, 'index']);
 Route::get('/galery',[GaleryController::class, 'index']);
 Route::get('/detail',[DetailController::class, 'index']);
+Route::get('/rooms',[RoomsConroller::class, 'index']);
+Route::get('/houses',[HousesConroller::class, 'index']);
+Route::get('/booking',[BookingController::class, 'index']);
 
 
 // -----------admin--- ----- --- ----//

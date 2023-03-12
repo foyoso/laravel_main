@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="section-decoration bottom"
-        style="background-image:url(/content/{{ $directory }}/images/home_guesthouse_roomdetails2.png);height:183px">
+        style="background-image:url(/content/<?= $directory ?>/images/home_guesthouse_roomdetails2.png);height:183px">
       </div>
     </div>
     <div class="section mcb-section no-margin-h no-margin-v"

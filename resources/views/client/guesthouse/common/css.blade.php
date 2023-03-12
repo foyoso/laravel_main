@@ -9,3 +9,6 @@
 <link rel='stylesheet' href='/content/guesthouse/css/structure.css'>
 <link rel='stylesheet' href='/content/guesthouse/css/guesthouse.css'>
 <link rel='stylesheet' href='/content/guesthouse/css/custom.css'>
+
+<script src="/client/js/jquery-3.6.0.min.js"></script>
+<script src="/client/js/jquery-migrate-3.4.0.min.js"></script>
