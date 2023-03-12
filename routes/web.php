@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\DetailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,8 @@ use App\Http\Controllers\Admin\LayoutController;
 */
 // -----------client---------------//
 Route::get('/',[IndexController::class, 'index']);
-Route::get('/estate3',[IndexController::class, 'estate3']);
+Route::get('/galery',[GaleryController::class, 'index']);
+Route::get('/detail',[DetailController::class, 'index']);
 
 
 // -----------admin--- ----- --- ----//

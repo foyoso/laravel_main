@@ -18,7 +18,10 @@ class BaseController extends Controller
         $websiteService  = new WebsiteService();
         $this -> website = $websiteService -> findByDomain($this ->domain);
         // get directory 
-        $this -> layoutDir = $this->website->layout['directory'];
+        $directory = $this->website->layout['directory'] ?? 'default ???';
+        $this -> layoutDir = 'client.'.$directory;
+
+        view()->share('directory', $directory );
         view()->share('viewDir', $this -> layoutDir );
         view()->share('website', $this -> website );
     }

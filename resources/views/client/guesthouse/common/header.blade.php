@@ -26,10 +26,10 @@
                     <a href="content/guesthouse/rooms.html"><span>Rooms</span></a>
                   </li>
                   <li>
-                    <a href="content/guesthouse/room-details.html"><span>Room details</span></a>
+                    <a href="/detail"><span>Room details</span></a>
                   </li>
                   <li>
-                    <a href="content/guesthouse/gallery.html"><span>Gallery</span></a>
+                    <a href="/galery"><span>Gallery</span></a>
                   </li>
                   <li>
                     <a href="content/guesthouse/booking.html"><span>Booking</span></a>
