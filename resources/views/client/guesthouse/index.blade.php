@@ -108,20 +108,78 @@
         </div>
       </div>
     </div>
-    <div class="section mcb-section full-width" style="padding-top:0px; padding-bottom:0px">
+    <div class="section mcb-section" style="padding-top:0px; padding-bottom:40px;">
       <div class="section_wrapper mcb-section-inner">
-        <div class="wrap mcb-wrap one  column-margin-0px valign-top clearfix">
+        <div class="wrap mcb-wrap one  valign-top clearfix">
           <div class="mcb-wrap-inner">
-            <div class="column mcb-column one column_hover_color">
-              <div class="hover_color" style="background:#659203;" ontouchstart="this.classList.toggle('hover');">
-                <div class="hover_color_bg" style="background:#7aab10;border-width:2px;">
-                  <a href="#">
-                    <div class="hover_color_wrapper" style="padding:20px 30px;">
-                      <h5 style="color: #fff; margin: 0; display: inline-block;"><span
-                          style="padding: 5px; border-bottom: 1px solid #fff; margin-right: 10px;">Aliquam
-                          adipiscing justo nulla placerat</span> →</h5>
-                    </div>
-                  </a>
+            <div class="column mcb-column one column_divider">
+              <hr class="hr_narrow" style="margin: 0 auto 70px">
+            </div>
+            <div class="column mcb-column one column_column">
+              <div class="column_attr clearfix align_center">
+                <h2>Vivamus in diam turpis</h2>
+              </div>
+            </div>
+            <div class="column mcb-column one column_divider">
+              <hr class="no_line">
+            </div>
+            <div class="column mcb-column one-fourth column_counter">
+              <div class="counter counter_horizontal animate-math">
+                <div class="icon_wrapper">
+                  <i class="icon-calendar"></i>
+                </div>
+                <div class="desc_wrapper">
+                  <div class="number-wrapper">
+                    <span class="number" data-to="25">25</span>
+                  </div>
+                  <p class="title">
+                    Quisque tortor
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one-fourth column_counter">
+              <div class="counter counter_horizontal animate-math">
+                <div class="icon_wrapper">
+                  <i class="icon-food-line"></i>
+                </div>
+                <div class="desc_wrapper">
+                  <div class="number-wrapper">
+                    <span class="number" data-to="87">87</span>
+                  </div>
+                  <p class="title">
+                    Duis neque auctor
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one-fourth column_counter">
+              <div class="counter counter_horizontal animate-math">
+                <div class="icon_wrapper">
+                  <i class="icon-tv-line"></i>
+                </div>
+                <div class="desc_wrapper">
+                  <div class="number-wrapper">
+                    <span class="number" data-to="3">3</span>
+                  </div>
+                  <p class="title">
+                    Nullam fermentum
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one-fourth column_counter">
+              <div class="counter counter_horizontal animate-math">
+                <div class="icon_wrapper">
+                  <i class="icon-instagram"></i>
+                </div>
+                <div class="desc_wrapper">
+                  <div class="number-wrapper">
+                    <span class="number" data-to="41">41</span>
+                  </div>
+                  <p class="title">
+                    Curabitur sit amet
+                  </p>
                 </div>
               </div>
             </div>
@@ -141,39 +199,9 @@
                 </div>
               </div>
             </div>
-            <div class="column mcb-column one-second column_column">
+            <div class="column mcb-column one column_column">
               <div class="column_attr clearfix" style="padding:15px 5% 0 45px; border-left: 5px solid #94c52a;">
                 <h2>Aliquam et malesuada augue sapien quisque porta auctor.</h2>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_counter">
-              <div class="counter counter_horizontal animate-math">
-                <div class="icon_wrapper">
-                  <i class="icon-home"></i>
-                </div>
-                <div class="desc_wrapper">
-                  <div class="number-wrapper">
-                    <span class="number" data-to="32">32</span>
-                  </div>
-                  <p class="title">
-                    Duis neque auctor
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="column mcb-column one-fourth column_counter">
-              <div class="counter counter_horizontal animate-math">
-                <div class="icon_wrapper">
-                  <i class="icon-users"></i>
-                </div>
-                <div class="desc_wrapper">
-                  <div class="number-wrapper">
-                    <span class="number" data-to="24">24</span>
-                  </div>
-                  <p class="title">
-                    Quisque tortor
-                  </p>
-                </div>
               </div>
             </div>
             <div class="column mcb-column one column_divider">
@@ -366,6 +394,157 @@
                   style="border-bottom: 2px solid #7aab10; padding-bottom: 7px; display: inline-block;">
                   KEVIN PERRY
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section mcb-section" id="details2" style="padding-top:90px; padding-bottom:60px;">
+      <div class="section_wrapper mcb-section-inner">
+        <div class="wrap mcb-wrap one  valign-top clearfix" style="padding:0 0 40px 0">
+          <div class="mcb-wrap-inner">
+            <div class="column mcb-column one column_column">
+              <div class="column_attr clearfix" style="padding:15px 5% 0 45px; border-left: 5px solid #94c52a;">
+                <h2>Aliquam et malesuada augue sapien quisque porta auctor.</h2>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
+          <div class="mcb-wrap-inner">
+            <div class="column mcb-column one column_image">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper">
+                  <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_num.png"
+                    width="150" height="58" />
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one column_zoom_box">
+              <div class="zoom_box">
+                <a href="#">
+                  <div class="photo">
+                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1.jpg"
+                      width="780" height="585" />
+                  </div>
+                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
+                    <div class="desc_wrap">
+                      <div class="desc_img">
+                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
+                          width="60" height="57" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column mcb-column one column_column">
+              <div class="column_attr clearfix" style="padding:30px;">
+                <h4>Fusce mollis eros</h4>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden;"></div>
+                <hr class="no_line" style="margin: 0 auto 20px">
+                <p>
+                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
+                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
+                  imperdiet, urna magna neque, vitae augue.
+                </p>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
+                  href="#">READ MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
+          <div class="mcb-wrap-inner">
+            <div class="column mcb-column one column_image">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper"><img class="scale-with-grid"
+                    src="content/guesthouse/images/home_guesthouse_zoombox2_num.png" width="150" height="58" />
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one column_zoom_box">
+              <div class="zoom_box">
+                <a href="#">
+                  <div class="photo">
+                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox2.jpg"
+                      width="780" height="585" />
+                  </div>
+                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
+                    <div class="desc_wrap">
+                      <div class="desc_img">
+                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
+                          width="60" height="57" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column mcb-column one column_column">
+              <div class="column_attr clearfix" style="padding:30px">
+                <h4>Quisque quis felis</h4>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden"></div>
+                <hr class="no_line" style="margin: 0 auto 20px">
+                <p>
+                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
+                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
+                  imperdiet, urna magna neque, vitae augue.
+                </p>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
+                  href="#">READ MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrap mcb-wrap one-third  column-margin-0px valign-top clearfix" style="padding:0 1%">
+          <div class="mcb-wrap-inner">
+            <div class="column mcb-column one column_image">
+              <div class="image_frame image_item no_link scale-with-grid no_border">
+                <div class="image_wrapper">
+                  <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox3_num.png"
+                    width="150" height="58" />
+                </div>
+              </div>
+            </div>
+            <div class="column mcb-column one column_zoom_box">
+              <div class="zoom_box">
+                <a href="#">
+                  <div class="photo">
+                    <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox3.jpg"
+                      width="780" height="585" />
+                  </div>
+                  <div class="desc" style="background-color:rgba(122, 171, 16, 0.8);">
+                    <div class="desc_wrap">
+                      <div class="desc_img">
+                        <img class="scale-with-grid" src="content/guesthouse/images/home_guesthouse_zoombox1_icon.png"
+                          width="60" height="57" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column mcb-column one column_column">
+              <div class="column_attr clearfix" style="padding:30px;">
+                <h4>Cras consectetuer</h4>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <div style="width: 40px; height: 2px; background: #271912; overflow: hidden;"></div>
+                <hr class="no_line" style="margin: 0 auto 20px">
+                <p>
+                  Morbi dignissim, tellus. Proin porttitor sem vitae felis vitae imperdiet id, neque. Praesent
+                  nec eros. Nullam pharetra sit amet neque. Nam consectetuer at, suscipit dolor. Mauris
+                  imperdiet, urna magna neque, vitae augue.
+                </p>
+                <hr class="no_line" style="margin: 0 auto 5px">
+                <a style="font-weight: 700; letter-spacing: 3px; border-bottom: 1px solid #7aab10; padding-bottom: 4px; text-decoration: none;"
+                  href="#">READ MORE</a>
               </div>
             </div>
           </div>
