@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\DetailController;
@@ -41,7 +42,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::prefix('admin')->group(function () {
-        #domain
+        #layout
         Route::prefix('layout')->group(function () {
             Route::get('add',          [LayoutController::class, 'add']);
             Route::post('add',         [LayoutController::class, 'store']);
@@ -50,6 +51,17 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::get('edit/{item}',  [LayoutController::class, 'show']);
             Route::post('edit/{item}', [LayoutController::class, 'edit']);
             Route::DELETE('delete',  [LayoutController::class, 'delete']);
+        });
+
+         #website
+         Route::prefix('layout')->group(function () {
+            Route::get('add',          [WebsiteController::class, 'add']);
+            Route::post('add',         [WebsiteController::class, 'store']);
+            Route::get('/',            [WebsiteController::class, 'index'])->name('websiteList');
+
+            Route::get('edit/{item}',  [WebsiteController::class, 'show']);
+            Route::post('edit/{item}', [WebsiteController::class, 'edit']);
+            Route::DELETE('delete',  [WebsiteController::class, 'delete']);
         });
     });
 

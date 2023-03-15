@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-lg-12 mb-4">
-            <a href="/admin/layout/add" class="btn btn-success waves-effect waves-light">
+            <a href="/admin/website/add" class="btn btn-success waves-effect waves-light">
                 <i class="fas fa-folder-plus mr-1"></i> Add
             </a>
         </div>
@@ -67,8 +67,6 @@
                             {!! $data->links('vendor.pagination.bootstrap-5') !!}
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
