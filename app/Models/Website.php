@@ -45,4 +45,11 @@ class Website extends ModelBase
         $web = Website::where('domain', $domain)->first();
         return $web;
     }
+    public function getDomain($withProtocol = 0){
+
+        if ($withProtocol > 0) {
+            return $this -> protocol . '://'.$this -> domain;
+        }
+        return $this -> domain;
+    }
 }

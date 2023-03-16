@@ -54,7 +54,7 @@ Route::middleware(['auth:admin'])->group(function () {
         });
 
          #website
-         Route::prefix('layout')->group(function () {
+         Route::prefix('website')->group(function () {
             Route::get('add',          [WebsiteController::class, 'add']);
             Route::post('add',         [WebsiteController::class, 'store']);
             Route::get('/',            [WebsiteController::class, 'index'])->name('websiteList');

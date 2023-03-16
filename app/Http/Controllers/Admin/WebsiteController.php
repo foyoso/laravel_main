@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Services\HttpService;
 use App\Http\Services\LayoutService;
+use App\Models\Website;
 
 class WebsiteController extends Controller
 {
@@ -41,15 +42,13 @@ class WebsiteController extends Controller
         $this->websiteService->create($request);
         return redirect()->route('websiteList');
     }
-    public function show(Layout $item)
+    public function show(Website $item)
     {
-
-
-        return view('admin.layout.edit', [
-           'title' => 'Edit Layout',
+        $layout = new LayoutService();
+        return view('admin.website.edit', [
+           'title' => 'Edit Website',
            'data' => $item,
-
-
+           'layout' => $layout ->getAllForSelectBox()
         ]);
     }
     public function edit(Layout $item, EditRequest $request)
