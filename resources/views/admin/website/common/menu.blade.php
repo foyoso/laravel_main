@@ -13,9 +13,9 @@
     <h6 class="mt-4">Website</h6>
 
     <div class="mail-list mt-1">
-        <a href="#"><span class="mdi mdi-circle-outline text-info float-end"></span>Setting</a>
-        <a href="#"><span class="mdi mdi-circle-outline text-warning float-end"></span>Menu</a>
-        <a href="#"><span class="mdi mdi-circle-outline text-primary float-end"></span>Banner</a>
+        <a href="/website/edit/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Setting</a>
+        <a href="#"><i class="mdi mdi-star-outline me-2"></i>Menu</a>
+        <a href="#"><i class="mdi mdi-star-outline me-2"></i>Banner</a>
     </div>
 
 </div>

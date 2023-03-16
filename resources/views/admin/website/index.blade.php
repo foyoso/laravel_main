@@ -52,8 +52,8 @@
                                         <td>{{$item ->directory}}</td>
                                         <td>{{$item ->link_demo}}</td>
                                         <td>
-                                            <a class="text-success mr-2" href="/admin/layout/edit/{{  $item->id }}"><i class="fas fa-pen"></i></a>
-                                            <a class="text-danger mr-2" href="#" onclick="removeRow(this,{{  $item->id  }},'{{ '/admin/layout/delete'}}')" ><i class="fas fa-trash-alt"></i></a>
+                                            <a class="text-success mr-2" href="/admin/website/edit/{{  $item->id }}"><i class="fas fa-pen"></i></a>
+                                            <a class="text-danger mr-2" href="#" onclick="removeRow(this,{{  $item->id  }},'{{ '/admin/website/delete'}}')" ><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

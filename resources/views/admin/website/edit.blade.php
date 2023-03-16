@@ -64,6 +64,11 @@
 <script>
     $(document).ready(function(){
         $('#vertical-menu-btn').click();
+        $(".datepicker").datepicker({
+            format: "yyyy-mm-dd"
+        });
     })
 </script>
+<script src="/theme-admin/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<link href="/theme-admin/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 @endsection

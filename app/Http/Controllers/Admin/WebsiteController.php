@@ -48,6 +48,7 @@ class WebsiteController extends Controller
         return view('admin.website.edit', [
            'title' => 'Edit Website',
            'data' => $item,
+           'website' => $item,
            'layout' => $layout ->getAllForSelectBox()
         ]);
     }

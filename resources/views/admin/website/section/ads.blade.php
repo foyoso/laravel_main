@@ -28,23 +28,7 @@
                         Facebook)</span><br>(code will be placed in head tag)</label>
                 <textarea class="form-control" rows="10" name="facebook_pixel_code">{{$data -> facebook_pixel_code}}</textarea>
             </div>
-            <div class="col-md-12 form-group">
-                <label class="checkbox checkbox-outline-primary">
-                    <input type="checkbox"  name="enable_custom_robots" id="enable_custom_robots-cb" {{$data ->enable_custom_robots ==1?'checked':''}}>
-                    <span>Enable Custom Robots.txt</span><span class="checkmark"></span>
-                </label>
 
-            </div>
-        </div>
-        <div class="row form-group" id="robots" style="display: none;">
-            <div class="col-md-12 form-group">
-                <textarea class="form-control" rows="6" name="robots"></textarea>
-            </div>
-        </div>
-        <div class="row form-group" id="robots" style="">
-            <div class="col-md-12 form-group">
-                <textarea class="form-control valid" rows="6" name="robots" aria-invalid="false">{{$data -> robots}}</textarea>
-            </div>
         </div>
     </div>
 </div>
