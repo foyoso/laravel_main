@@ -24,7 +24,7 @@ class WebsiteController extends Controller
     //list
     public function index(Request $request)
     {
-        return view('admin.layout.index', [
+        return view('admin.website.index', [
            'title' => 'List Website',
            'data' => $this->websiteService -> getAll(ITEM_PER_PAGE, $request)
         ]);
