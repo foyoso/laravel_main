@@ -9,7 +9,16 @@
                 <label class="control-label">Website Name <span class="text-danger"> (*)</span></label>
                 <input name="name" type="text" class="form-control" id="name" value="{{$data-> name}}" maxlength="100">
             </div>
+            <div class="col-sm-12">
+                <label class="col-form-label">User <span class="text-danger">(*)</span></label>
+                <select name="user_id" class="form-control">
+                    @foreach ($user as $item )
+                        <option {{$data-> user_id == $item -> id ?'selected':''}} value="{{$item -> id}}">{{$item -> name}}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
+
         <div class="row form-group">
             <div class="col-md-12">
                 <label class="col-form-label">Layout Template</label>

@@ -22,6 +22,7 @@ class Website extends ModelBase
         'google_site_verification',
         'google_analytic',
         'remarketing_tag',
+        'facebook_pixel_code',
         'favicon',
         'logo',
         'footer_text',
@@ -33,6 +34,11 @@ class Website extends ModelBase
         'end_date',
         'custom_css',
         'custom_js',
+        'facebook',
+        'youtube',
+        'instagram',
+        'linkedin',
+        'zalo',
     ];
 
     public function layout()

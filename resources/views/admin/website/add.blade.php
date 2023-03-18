@@ -37,6 +37,14 @@
                                 <input type="text" name="name" id="name" class="form-control" aria-required="true">
                             </div>
                             <div class="col-sm-12">
+                                <label class="col-form-label">User <span class="text-danger">(*)</span></label>
+                                <select name="user_id" class="form-control">
+                                    @foreach ($user as $item )
+                                        <option value="{{$item -> id}}">{{$item -> name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-sm-12">
                                 <label class="col-form-label">Layout <span class="text-danger">(*)</span></label>
                                 <select name="layout_id" class="form-control">
                                     @foreach ($layout as $item )
@@ -44,6 +52,7 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="col-sm-12">
                                 <label class="col-form-label">Domain</label>
                                 <input type="text" placeholder="domain" name="domain" id="domain" class="form-control" aria-required="true">

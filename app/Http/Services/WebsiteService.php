@@ -25,7 +25,8 @@ class WebsiteService
              Website::create([
                 'layout_id'     => (string)$request->input('layout_id'),
                 'name'    => (string)$request->input('name'),
-                'domain'    => (string)$request->input('domain')
+                'domain'    => (string)$request->input('domain'),
+                'user_id'    => (string)$request->input('user_id')
             ]);
 
             DB::commit();
@@ -42,22 +43,39 @@ class WebsiteService
     {
         DB::beginTransaction();
         try {
-            $website->name = (string)$request->input('name');
-            $website->layout_id = (string)$request->input('layout_id');
+
+            //ads
+            $website->google_analytic = $request->input('google_analytic');
+            $website->google_site_verification = $request->input('google_site_verification');
+            $website->remarketing_tag = $request->input('remarketing_tag');
+            $website->facebook_pixel_code = $request->input('facebook_pixel_code');
+
+            //contact
+            $website->phone = (string)$request->input('phone');
+            $website->email = (string)$request->input('email');
+
+            //domain
             $website->domain = (string)$request->input('domain');
+            $website->protocol = (string)$request->input('protocol');
+            //expiry
             $website->start_date = (string)$request->input('start_date');
             $website->end_date = (string)$request->input('end_date');
-            $website->custom_css = (string)$request->input('custom_css');
-            $website->custom_js = (string)$request->input('custom_js');
-            $website->protocol = (string)$request->input('protocol');
-            $website->google_site_verification = (string)$request->input('google_site_verification');
-            $website->google_analytic = (string)$request->input('google_analytic');
-            $website->remarketing_tag = (string)$request->input('remarketing_tag');
-            $website->favicon = (string)$request->input('favicon');
-            $website->logo = (string)$request->input('logo');
+            //footer
             $website->footer_text = (string)$request->input('footer_text');
-            $website->email = (string)$request->input('email');
-            $website->phone = (string)$request->input('phone');
+
+            //setting
+            $website->name = $request->input('name');
+            $website->layout_id = (string)$request->input('layout_id');
+            $website->logo = (string)$request->input('logo');
+            $website->favicon = (string)$request->input('favicon');
+
+            //social-media
+            $website->facebook = (string)$request->input('facebook');
+            $website->youtube = (string)$request->input('youtube');
+            $website->instagram = (string)$request->input('instagram');
+            $website->linkedin = (string)$request->input('linkedin');
+            $website->zalo = (string)$request->input('zalo');
+
             $website->user_id = (string)$request->input('user_id');
             $website->save();
             DB::commit();

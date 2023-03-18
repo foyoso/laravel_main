@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Services\HttpService;
 use App\Http\Services\LayoutService;
+use App\Http\Services\UserService;
 use App\Models\Website;
 
 class WebsiteController extends Controller
@@ -32,9 +33,11 @@ class WebsiteController extends Controller
     public function add()
     {
         $layout = new LayoutService();
+        $user = new UserService();
         return view('admin.website.add', [
            'title' => 'Add Website',
-           'layout' => $layout ->getAllForSelectBox()
+           'layout' => $layout ->getAllForSelectBox(),
+           'user' => $user ->getAllForSelectBox()
         ]);
     }
     public function store(CreateRequest $request)
@@ -45,17 +48,19 @@ class WebsiteController extends Controller
     public function show(Website $item)
     {
         $layout = new LayoutService();
+        $user = new UserService();
         return view('admin.website.edit', [
            'title' => 'Edit Website',
            'data' => $item,
            'website' => $item,
-           'layout' => $layout ->getAllForSelectBox()
+           'layout' => $layout ->getAllForSelectBox(),
+           'user' => $user ->getAllForSelectBox()
         ]);
     }
-    public function edit(Layout $item, EditRequest $request)
+    public function edit(Website $item, EditRequest $request)
     {
         $this->websiteService->edit($request, $item);
-        return redirect() -> route('layoutList');
+        return redirect() -> route('websiteList');
     }
 
     public function delete(Request $request): JsonResponse

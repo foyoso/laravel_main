@@ -21,7 +21,6 @@
         <div class="row">
             <div class="col-12">
                 @include('admin.website.common.menu')
-
                 <!-- Right Sidebar -->
                 <div class="email-rightbar mb-3">
                     <div class="card border border-danger">
@@ -30,7 +29,7 @@
                         </div>
                         <div class="card-body">
                             @include('admin.common.alert')
-                            <form action="/admin/website/add" method="POST">
+                            <form action="/admin/website/edit/{{$data -> id}}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="col-6">
@@ -41,10 +40,16 @@
                                     </div>
                                     <!-- col 2-->
                                     <div class="col-md-6">
-                                        @include('admin.website.section.ads')
+
                                         @include('admin.website.section.domain')
                                         @include('admin.website.section.expiry')
+                                        @include('admin.website.section.ads')
 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-danger">Save</button>
                                     </div>
                                 </div>
                             </form>

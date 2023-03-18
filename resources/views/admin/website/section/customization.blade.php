@@ -1,12 +1,4 @@
-<!-- setting -->
-<?php
-    if (!empty($setting -> st_customization_template)) {
-        $custom = json_decode($setting -> st_customization_template, true);
-    } else {
-        $custom = "";
-    }
-    //echo $custom['website_type']; exit;
-?>
+
 <div class="card mb-4 border border-primary">
     <div class="card-header">
         <h3 class="card-title mb-3">General Settings</h3>
