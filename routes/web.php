@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayoutController;
 use App\Http\Controllers\Admin\WebsiteController;
+use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\DetailController;
@@ -63,6 +64,14 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::post('edit/{item}', [WebsiteController::class, 'edit']);
             Route::DELETE('delete',  [WebsiteController::class, 'delete']);
         });
+        #File
+        Route::prefix('image')->group(function () {
+
+            Route::post('/list',            [FileController::class, 'getlist']);
+            Route::post('/save',            [FileController::class, 'save']);
+            Route::post('/getForAjax',            [FileController::class, 'getForAjax']);
+        });
     });
+
 
 });

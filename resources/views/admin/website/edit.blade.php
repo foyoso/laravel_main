@@ -76,4 +76,72 @@
 </script>
 <script src="/theme-admin/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <link href="/theme-admin/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-@endsection
+
+
+
+<link rel="stylesheet" href="/theme-admin/libs/summernote8/summernote.css">
+<script type="text/javascript" src="/theme-admin/libs/summernote8/summernote.js"></script>
+<script type="text/javascript" src="/theme-admin/libs/summernote8/summernote-gallery-extension.js"></script>
+<script type="text/javascript" src="/theme-admin/js/image/open-media-gallery-file.js"></script>
+<script>
+    var imageFolder ='website/website_{{$data -> id}}';
+    var linkImageSummerNote = "/admin/image/getForAjax?folder=" + imageFolder ;
+
+    $(document).ready(function() {
+        $('#btnSubmit').on('click', function(){
+            $('#description').each(function(){
+                $(this).val($(this).summernote('code'));
+            });
+        });
+        createSummernote("#footer_text", linkImageSummerNote, 750);
+    });
+</script>
+@include('admin.common.image.modal-media-gallery')
+
+<style>
+    .tag-content span {
+        font-weight: normal;
+        cursor: pointer;
+    }
+    span.active {
+        background-color: #1F7DBB;
+        color: white;
+    }
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+    #sortable li {
+        margin: 3px 3px 3px 0;
+        padding: 1px;
+        float: left;
+        width: 125px;
+        height: 116px;
+        font-size: 4em;
+        text-align: center;
+        background: transparent;
+        border: none;
+    }
+    li.ui-state-default:hover{
+        cursor: move;
+    }
+</style>
+<div class="modal fade modal-image-summernote" data-keyboard="false" data-backdrop="static" role="dialog">
+    <div class="modal-lg modal-dialog ">
+       <div class="modal-content">
+          <div class="modal-header">
+             <button type="button" class="btn-close close-md" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+             <h4 class="modal-title">Image gallery</h4>
+          </div>
+          <div class="modal-body modal-scroll">
+             <p class="text-danger" >no image was set. open the browser console to see if there is any errors messages. if not dig into source file to see what\s wrong.</p>
+
+             <small class="text-muted">Or open an issue on github</small>
+          </div>
+          <div class="modal-footer">
+             <a href="javascript:void(0);" class="pull-left open-upload1">
+             <i class="fa fa-upload mr-xs"></i><span>Upload Files</span></a>
+             <button type="button" id="close" class="btn btn-default close-md-gallery" data-bs-dismiss="modal">Close</button>
+             <button type="button" id="save" class="btn btn-primary save-md-gallery">Add</button>
+          </div>
+       </div>
+    </div>
+ </div>
+ @endsection
