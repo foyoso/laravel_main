@@ -1,6 +1,4 @@
 <!-- Wrapper End -->
-<script type="text/javascript" src="/client/findhouse/js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="/client/findhouse/js/jquery-migrate-3.0.0.min.js"></script>
 <script type="text/javascript" src="/client/findhouse/js/popper.min.js"></script>
 <script type="text/javascript" src="/client/findhouse/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/client/findhouse/js/jquery.mmenu.all.js"></script>
