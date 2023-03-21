@@ -7,6 +7,9 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Admin\LayoutController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\FileController;
+use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PostController;
+
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\DetailController;
@@ -70,6 +73,28 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::post('/list',            [FileController::class, 'getlist']);
             Route::post('/save',            [FileController::class, 'save']);
             Route::post('/getForAjax',            [FileController::class, 'getForAjax']);
+        });
+
+         #page
+         Route::prefix('page')->group(function () {
+        Route::get('add/{website}',          [PageController::class, 'add']);
+        Route::post('add/{website}',         [PageController::class, 'store']);
+        Route::get('/{website}',            [PageController::class, 'index'])->name('pageList');
+
+        Route::get('edit/{website}/{item}',  [PageController::class, 'show']);
+        Route::post('edit/{website}/{item}', [PageController::class, 'edit']);
+        Route::DELETE('delete',    [PageController::class, 'delete']);
+        });
+
+        #post
+        Route::prefix('post')->group(function () {
+        Route::get('add/{website}',          [PostController::class, 'add']);
+        Route::post('add/{website}',         [PostController::class, 'store']);
+        Route::get('/{website}',            [PostController::class, 'index'])->name('postList');
+
+        Route::get('edit/{website}/{item}',  [PostController::class, 'show']);
+        Route::post('edit/{website}/{item}', [PostController::class, 'edit']);
+        Route::DELETE('delete',    [PostController::class, 'delete']);
         });
     });
 
