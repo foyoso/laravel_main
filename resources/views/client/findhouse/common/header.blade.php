@@ -27,13 +27,10 @@
           <a href="/detail"><span class="title">Detail</span></a>
         </li>
         <li>
-          <a href="#"><span class="title">Pages</span></a>
-        </li>
-        <li>
-          <a href="#"><span class="title">Blog</span></a>
+          <a href="/blog"><span class="title">Blog</span></a>
         </li>
         <li class="last">
-          <a href="page-contact.html"><span class="title">Contact</span></a>
+          <a href="/contact"><span class="title">Contact</span></a>
         </li>
         <li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal"
             data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
