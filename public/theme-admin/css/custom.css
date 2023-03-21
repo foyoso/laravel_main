@@ -493,12 +493,12 @@
     border: 1px solid #cccccc;
   border-radius: 5px;
   border-left: 3px solid #6f6f6f;
-    background: #f6f6f6 url("/admin/images/common/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
+    background: #f6f6f6 url("/theme-admin/images/common/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
     color: #6f6f6f;
   }
 
   .ui-state-default .ui-icon.ui-icon-arrowthick-2-n-s {
-    background: url("/admin/images/common/six_dotted.png") no-repeat center center transparent;
+    background: url("/theme-admin/images/common/six_dotted.png") no-repeat center center transparent;
     background-size: 16px;
     margin-left: -18px !important;
     margin-top: 0px;
