@@ -11,7 +11,9 @@ class DashboardController extends Controller
     //
     public function index()
     {
+        // $permissions = Auth::user()->getAllPermissions();
 
+        // dd($permissions);
         return view('admin.dashboard.index', [
            'title' => 'Dashboard'
         ]);

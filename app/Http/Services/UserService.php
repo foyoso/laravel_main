@@ -3,6 +3,7 @@ namespace App\Http\Services;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Spatie\Permission\Models\Role;
 class UserService
 {
 
@@ -22,14 +23,17 @@ class UserService
     {
         DB::beginTransaction();
         try {
-             User::create([
-                'link_demo'     => (string)$request->input('link_demo'),
-                'name'    => (string)$request->input('name'),
-                'directory'    => (string)$request->input('directory')
+             $user = User::create([
+                'name'          =>  $request->input('name'),
+                'email'         =>  $request->input('email'),
+                'password'      =>  bcrypt($request->input('password')),
+                'role'          => $request->input('role'),
             ]);
 
             DB::commit();
-            Session::flash('success', 'Create Layout success');
+            $role = Role::findOrFail($user-> role);
+            $user->assignRole($role);
+            Session::flash('success', 'Create User success');
             return true;
         } catch (\Exception $err) {
             Session::flash('error', $err->getMessage());
@@ -38,16 +42,19 @@ class UserService
         }
     }
 
-    public function edit($request, $layout): bool
+    public function edit($request, $user): bool
     {
         DB::beginTransaction();
         try {
-            $layout->name = (string)$request->input('name');
-            $layout->link_demo = (string)$request->input('link_demo');
-            $layout->directory = (string)$request->input('directory');
-            $layout->save();
+            $user->name = (string)$request->input('name');
+            $user->email = (string)$request->input('email');
+
+            $user->role =  $request->input('role');
+            $user->save();
             DB::commit();
-            Session::flash('success', 'Edit Layout success');
+            $role = Role::findOrFail($user-> role);
+            $user->assignRole($role);
+            Session::flash('success', 'Edit User success');
         } catch (\Exception $err) {
             Session::flash('error', $err->getMessage());
             DB::rollBack();

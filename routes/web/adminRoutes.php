@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 
 // -----------admin--- ----- --- ----//
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
@@ -69,5 +72,40 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::post('edit/{website}/{item}', [PostController::class, 'edit']);
       Route::delete('delete', [PostController::class, 'delete']);
     });
+
+    Route::prefix('permission')->group(function () {
+      Route::get('/', [PermissionController::class, 'index']);
+      Route::get('add', [PermissionController::class, 'add']);
+      Route::post('add', [PermissionController::class, 'store']);
+
+      Route::get('edit/{item}', [PermissionController::class, 'show']);
+      Route::post('edit/{item}', [PermissionController::class, 'edit']);
+      Route::delete('delete', [PermissionController::class, 'delete']);
+    });
+
+    Route::prefix('role')->group(function () {
+        Route::get('/', [RoleController::class, 'index']);
+        Route::get('add', [RoleController::class, 'add']);
+        Route::post('add', [RoleController::class, 'store']);
+
+        Route::get('edit/{item}', [RoleController::class, 'show']);
+        Route::post('edit/{item}', [RoleController::class, 'edit']);
+        Route::delete('delete', [RoleController::class, 'delete']);
+        Route::get('addRolePermission', [RoleController::class, 'addRolePermission']);
+        Route::post('storeRolePermission', [RoleController::class, 'storeRolePermission']);
+        Route::get('test', [RoleController::class, 'test']);
+    });
+
+    #manage user
+    Route::prefix('user')->group(function () {
+        Route::get('add', [UserController::class, 'add']);
+        Route::post('add', [UserController::class, 'store']);
+        Route::get('/', [UserController::class, 'index'])->name('userList');
+
+        Route::get('edit/{item}', [UserController::class, 'show']);
+        Route::post('edit/{item}', [UserController::class, 'edit']);
+        Route::delete('delete', [UserController::class, 'delete']);
+      });
+
   });
 });
