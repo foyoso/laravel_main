@@ -35,9 +35,9 @@ class RenderController extends BaseController
     public function district()
     {
       $data = json_decode(file_get_contents(storage_path() . "/vietnam/db.json"), true);
-      // echo "<pre>";
-      // print_r($data['district']);
-      // return;
+      echo "<pre>";
+      print_r($data['district']);
+      return;
 
       foreach($data['district'] as $district) {
         $this->districtService->create($district);
@@ -48,10 +48,10 @@ class RenderController extends BaseController
 
     public function commune()
     {
-      $data = json_decode(file_get_contents(storage_path() . "/vietnam/dba.json"), true);
-      // echo "<pre>";
-      // print_r($data['commune']);
-      // return;
+      $data = json_decode(file_get_contents(storage_path() . "/vietnam/db.json"), true);
+      echo "<pre>";
+      print_r($data['commune']);
+      return;
 
       foreach($data['commune'] as $commune) {
         $this->communeService->create($commune);
