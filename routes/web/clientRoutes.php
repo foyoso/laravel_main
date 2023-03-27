@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\RenderController;
 
 // -----------client---------------//
 Route::get('/',[IndexController::class, 'index']);
@@ -13,3 +14,6 @@ Route::get('/contact',[ContactController::class, 'index']);
 Route::get('/detail',[DetailController::class, 'index']);
 Route::get('/listing',[ListingController::class, 'index']);
 Route::get('/blog',[BlogsController::class, 'index']);
+Route::get('/render/province', [RenderController::class, 'index']);
+Route::get('/render/district', [RenderController::class, 'district']);
+Route::get('/render/commune', [RenderController::class, 'commune']);
