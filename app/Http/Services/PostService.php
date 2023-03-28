@@ -137,4 +137,25 @@ class PostService
         //return Property::orderbyDesc('updated_at') -> get();
     }
 
+    public function createRender($index)
+    {
+        DB::beginTransaction();
+        try {
+            Post::create([
+                'name'       => 'post '.$index,
+                'user_id'       => 2,
+                'website_id'       => 5,
+                'slug' => 'post-'.$index,
+                'description' =>  'post '.$index
+            ]);
+            DB::commit();
+            Session::flash('success', 'Create Post success');
+            return true;
+        } catch (\Exception $err) {
+            DB::rollBack();
+            Session::flash('error', $err->getMessage());
+            return false;
+        }
+    }
+
 }

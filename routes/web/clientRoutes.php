@@ -17,3 +17,4 @@ Route::get('/blog',[BlogsController::class, 'index']);
 Route::get('/render/province', [RenderController::class, 'index']);
 Route::get('/render/district', [RenderController::class, 'district']);
 Route::get('/render/commune', [RenderController::class, 'commune']);
+Route::get('/render/post', [RenderController::class, 'post']);

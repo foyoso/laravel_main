@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\PostService;
 use App\Http\Services\VnCommuneService;
 use App\Http\Services\VnDistrictService;
 use App\Http\Services\VnProvinceService;
@@ -55,6 +56,19 @@ class RenderController extends BaseController
 
       foreach($data['commune'] as $commune) {
         $this->communeService->create($commune);
+      }
+
+      return;
+    }
+
+    public function post()
+    {
+      return;
+
+      $postService = new PostService();
+
+      for ($i=1; $i < 100; $i++) { 
+        $postService->createRender($i);
       }
 
       return;
