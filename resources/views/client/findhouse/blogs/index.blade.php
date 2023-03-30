@@ -16,63 +16,17 @@
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <div class="row">
-
-          @foreach ($blogs as $blog)
-          <div class="col-lg-6">
-            <div class="for_blog feat_property">
-              <a href="/blog/{{ $blog->slug }}" alt="link">
-                <div class="thumb">
-                  <img class="img-whp" src="/client/findhouse/images/blog/1.jpg" alt="1.jpg">
-                  <div class="blog_tag">Construction</div>
-                </div>
-              </a>
-              <a href="/blog/{{ $blog->slug }}" alt="link">
-                <div class="details">
-                  <div class="tc_content">
-                    <h4>{{ $blog->name }}</h4>
-                    <ul class="bpg_meta">
-                      <li class="list-inline-item"><i class="flaticon-calendar"></i>
-                      </li>
-                      <li class="list-inline-item">January 16, 2020</li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur text link libero tempus congue.</p>
-                  </div>
-                  <div class="fp_footer">
-                    <ul class="fp_meta float-left mb0">
-                      <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></li>
-                      <li class="list-inline-item">Ali Tufan</li>
-                    </ul>
-                    <span class="fp_pdate float-right text-thm">Read More <span class="flaticon-next"></span></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          @endforeach
+        <div id="data-wrapper" class="row">
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="mbp_pagination mt20">
-              <ul class="page_navigation">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span
-                      class="flaticon-left-arrow"></span> Prev</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active" aria-current="page">
-                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                <li class="page-item"><a class="page-link" href="#">29</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#"><span class="flaticon-right-arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="auto-load text-center">
+          <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <path fill="#000"
+              d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+              <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50"
+                to="360 50 50" repeatCount="indefinite" />
+            </path>
+          </svg>
         </div>
       </div>
       <div class="col-lg-4">
@@ -158,5 +112,39 @@
     </div>
   </div>
 </section>
+
+<script>
+var ENDPOINT = "{{ url('/') }}";
+var page = 1;
+infinteLoadMore(page);
+$(window).scroll(function() {
+  if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+    page++;
+    infinteLoadMore(page);
+  }
+});
+
+function infinteLoadMore(page) {
+  $.ajax({
+      url: ENDPOINT + "/blog?page=" + page,
+      datatype: "html",
+      type: "get",
+      beforeSend: function() {
+        $('.auto-load').show();
+      }
+    })
+    .done(function(response) {
+      if (response.length == 0) {
+        $('.auto-load').html("We don't have more data to display :(");
+        return;
+      }
+      $('.auto-load').hide();
+      $("#data-wrapper").append(response);
+    })
+    .fail(function(jqXHR, ajaxOptions, thrownError) {
+      console.log('Server error occured');
+    });
+}
+</script>
 
 @endsection
