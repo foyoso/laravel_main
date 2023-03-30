@@ -6,11 +6,13 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LayoutController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\FileController;
+use App\Http\Controllers\Admin\ListingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\LocationController;
 
 // -----------admin--- ----- --- ----//
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
@@ -73,6 +75,17 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::delete('delete', [PostController::class, 'delete']);
     });
 
+    Route::prefix('listing')->group(function () {
+      Route::get('add/{website}', [ListingController::class, 'add']);
+      Route::post('add/{website}', [ListingController::class, 'store']);
+      Route::get('/{website}', [ListingController::class, 'index'])->name('listingList');
+
+      Route::get('edit/{website}/{item}', [ListingController::class, 'show']);
+      Route::post('edit/{website}/{item}', [ListingController::class, 'edit']);
+      Route::delete('delete', [ListingController::class, 'delete']);
+    });
+
+
     Route::prefix('permission')->group(function () {
       Route::get('/', [PermissionController::class, 'index']);
       Route::get('add', [PermissionController::class, 'add']);
@@ -108,4 +121,11 @@ Route::middleware(['auth:admin'])->group(function () {
       });
 
   });
+
+});
+
+
+Route::prefix('location')->group(function () {
+  Route::post('getDistrict', [LocationController::class, 'getDistrict']);
+  Route::post('getCommune', [LocationController::class, 'getCommune']);
 });

@@ -25,4 +25,7 @@ class VnCommuneService
           return false;
         }
     }
+    public function getByDistrict($id){
+      return VnCommune::select('id','name','idCommune') -> where('idDistrict', $id)-> get();
+    }
 }

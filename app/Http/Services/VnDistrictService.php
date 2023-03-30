@@ -25,4 +25,7 @@ class VnDistrictService
           return false;
         }
     }
+    public function getByProvince($id){
+      return VnDistrict::select('id','name','idDistrict') -> where('idProvince', $id)-> get();
+    }
 }

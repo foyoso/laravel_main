@@ -24,4 +24,7 @@ class VnProvinceService
           return false;
         }
     }
+    public function getAllForSelectBox(){
+      return VnProvince::select('id','name', 'idProvince')->orderbyDesc('id')->get();
+  }
 }

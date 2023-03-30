@@ -63,3 +63,14 @@
         <!-- App js -->
         <script src="/theme-admin/js/app.js"></script>
         <script src="/theme-admin/js/custom.js"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+    @if (Session::has('error'))
+        toastr.error(" {{ Session::get('error') }} ");
+    @endif
+    @if (Session::has('success'))
+        toastr.success(" {{ Session::get('success') }} ");
+    @endif
+    </script>

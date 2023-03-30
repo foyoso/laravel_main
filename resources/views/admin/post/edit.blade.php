@@ -52,7 +52,7 @@
                                         <div class="row form-group mb-4">
                                             <div class="col-md-12">
                                                 <label class="col-form-label">Description<span class="text-danger"> (*)</span></label>
-                                                <input value="{{$data -> description}}"  type="text" name="description" id="description" value = "" class="form-control">
+                                                <input value="{{$data -> description}}"  type="text" name="description" id="description" class="form-control">
                                             </div>
                                         </div>
 
