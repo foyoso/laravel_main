@@ -17,7 +17,24 @@ class WebsiteService
     {
         return Website::orderbyDesc('updated_at')->paginate($limit)->withQueryString();
     }
-
+    public function menu($request, $web){
+        DB::beginTransaction();
+        try {
+            $type = $request->input('type');
+            if($type == 0){
+                $web->menu = $request->input('menu-data');
+            } else {
+                $web->menu_footer = $request->input('menu-data');
+            }
+            $web->save();
+            DB::commit();
+        } catch (\Exception $err) {
+            Session::flash('error', $err->getMessage());
+            DB::rollBack();
+            return false;
+        }
+        return true;
+    }
     public function create($request)
     {
         DB::beginTransaction();

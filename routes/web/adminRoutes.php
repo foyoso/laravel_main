@@ -45,6 +45,9 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::get('edit/{item}', [WebsiteController::class, 'show']);
       Route::post('edit/{item}', [WebsiteController::class, 'edit']);
       Route::delete('delete', [WebsiteController::class, 'delete']);
+
+      Route::get('menu/{item}',          [WebsiteController::class, 'menu']);
+      Route::post('saveMenu/{item}',         [WebsiteController::class, 'saveMenu']);
     });
     #File
     Route::prefix('image')->group(function () {

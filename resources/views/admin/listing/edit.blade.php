@@ -239,7 +239,7 @@
 <script type="text/javascript" src="/theme-admin/js/image/open-media-gallery-file.js"></script>
 <script src="/theme-admin/js/listing/add.js"></script>
 <script>
-var imageFolder ='listing/listing_{{$website -> id}}';
+var imageFolder ='listing/listing_{{$data -> id}}';
 var linkImageSummerNote = "/admin/image/getForAjax?folder=" + imageFolder ;
 var province = '{{$data -> province}}';
 var commune = '{{$data -> commune}}';

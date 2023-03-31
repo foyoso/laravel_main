@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Services\HttpService;
 use App\Http\Services\LayoutService;
+use App\Http\Services\PageService;
 use App\Http\Services\UserService;
 use App\Models\Website;
 
@@ -44,6 +45,23 @@ class WebsiteController extends Controller
     {
         $this->websiteService->create($request);
         return redirect()->route('websiteList');
+    }
+    public function menu(Website $item, Request $request){
+        $sType = $request -> get('sType');
+        $sType != null?$sType:0;
+        $page = new PageService();
+        return view('admin.website.menu', [
+            'title' => 'Edit Website',
+            'website' => $item,
+            'sType' => $sType,
+            'pages' => $page -> getAllForSelectBox($item -> id),
+            'menu' => $sType==0?$item -> menu:$item -> menu_footer
+         ]);
+    }
+    public function saveMenu(Website $item,  Request $request)
+    {
+        $this->websiteService->menu($request, $item);
+        return redirect('/admin/website/menu/' . $item -> id . '?sType='.$request -> input('type')) ;
     }
     public function show(Website $item)
     {

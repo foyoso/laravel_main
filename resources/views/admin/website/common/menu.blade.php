@@ -16,6 +16,7 @@
         <a href="#" class="active"><i class="mdi mdi-email-outline me-2"></i> Inbox <span class="ms-1 float-end">(18)</span></a>
         <a href="/admin/page/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Page</a>
         <a href="/admin/post/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>News</a>
+        <a href="/admin/listing/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Listing</a>
     </div>
     @endrole
 
