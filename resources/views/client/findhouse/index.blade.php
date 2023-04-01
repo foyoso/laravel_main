@@ -59,7 +59,7 @@
                         </div>
                         <div class="dd_content2">
                           <div class="pricing_acontent">
-                            <!-- <input type="text" class="amount" placeholder="$52,239"> 
+                            <!-- <input type="text" class="amount" placeholder="$52,239">
 															<input type="text" class="amount2" placeholder="$985,14">
 															<div class="slider-range"></div> -->
                             <span id="slider-range-value1"></span>
@@ -566,44 +566,48 @@
       </div>
       <div class="col-lg-12">
         <div class="feature_property_slider">
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                    <li class="list-inline-item"><a href="#">Featured</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+          @foreach ($listings as $item)
+
+
+            <div class="item">
+              <div class="feat_property">
+                <div class="thumb">
+                  <img class="img-whp" src="{{$item -> thumbnail}}" alt="{{$item -> name}}">
+                  <div class="thmb_cntnt">
+                    <ul class="tag mb0">
+                      <li class="list-inline-item"><a href="#">For Rent</a></li>
+                      <li class="list-inline-item"><a href="#">Featured</a></li>
+                    </ul>
+                    <ul class="icon mb0">
+                      <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
+                      <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
+                    </ul>
+                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                  </div>
                 </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
+                <div class="details">
+                  <div class="tc_content">
+                    <p class="text-thm">Apartment</p>
+                    <h4><a href="{{getListingLink($item)}}">{{$item -> name}}</a></h4>
+                    <p><span class="flaticon-placeholder"></span> {{$item -> address}}</p>
+                    <ul class="prop_details mb0">
+                      <li class="list-inline-item"><a href="#">Beds: 4</a></li>
+                      <li class="list-inline-item"><a href="#">Baths: 2</a></li>
+                      <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                    </ul>
+                  </div>
+                  <div class="fp_footer">
+                    <ul class="fp_meta float-left mb0">
+                      <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
+                            alt="pposter1.png"></a></li>
+                      <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                    </ul>
+                    <div class="fp_pdate float-right">4 years ago</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          @endforeach
           <div class="item">
             <div class="feat_property">
               <div class="thumb">
@@ -1224,78 +1228,39 @@
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
         <div class="main-title text-center">
-          <h2>Articles & Tips</h2>
+          <h2>Tin tức & Sự kiện</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-lg-4 col-xl-4">
-        <div class="for_blog feat_property">
-          <div class="thumb">
-            <img class="img-whp" src="/client/findhouse/images/blog/bh1.jpg" alt="bh1.jpg">
-          </div>
-          <div class="details">
-            <div class="tc_content">
-              <p class="text-thm">Business</p>
-              <h4>Skills That You Can Learn In The Real Estate Market</h4>
+      @foreach ($posts as $item)
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="for_blog feat_property">
+            <div class="thumb">
+              <img class="img-whp" src="{{$item -> thumbnail}}" alt="{{$item -> name}}">
             </div>
-            <div class="fp_footer">
-              <ul class="fp_meta float-left mb0">
-                <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                      alt="pposter1.png"></a>
-                </li>
-                <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-              </ul>
-              <a class="fp_pdate float-right" href="#">7 August 2019</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-4">
-        <div class="for_blog feat_property">
-          <div class="thumb">
-            <img class="img-whp" src="/client/findhouse/images/blog/bh2.jpg" alt="bh2.jpg">
-          </div>
-          <div class="details">
-            <div class="tc_content">
-              <p class="text-thm">Business</p>
-              <h4>Bedroom Colors You’ll Never <br class="dn-1199"> Regret</h4>
-            </div>
-            <div class="fp_footer">
-              <ul class="fp_meta float-left mb0">
-                <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                      alt="pposter1.png"></a>
-                </li>
-                <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-              </ul>
-              <a class="fp_pdate float-right" href="#">7 August 2019</a>
+            <div class="details">
+              <div class="tc_content">
+                <p class="text-thm">Business</p>
+                <h4>
+                  <a href="{{getNewLink($item)}}"> {{$item -> name}}</a>
+                </h4>
+              </div>
+              <div class="fp_footer">
+                <ul class="fp_meta float-left mb0">
+                  <li class="list-inline-item">
+                    <a href="#"><img src="/client/findhouse/images/property/pposter1.png"
+                        alt="pposter1.png"></a>
+                  </li>
+                  <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                </ul>
+                <a class="fp_pdate float-right" href="#">7 August 2019</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-4">
-        <div class="for_blog feat_property">
-          <div class="thumb">
-            <img class="img-whp" src="/client/findhouse/images/blog/bh3.jpg" alt="bh3.jpg">
-          </div>
-          <div class="details">
-            <div class="tc_content">
-              <p class="text-thm">Business</p>
-              <h4>5 Essential Steps for Buying an Investment</h4>
-            </div>
-            <div class="fp_footer">
-              <ul class="fp_meta float-left mb0">
-                <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                      alt="pposter1.png"></a>
-                </li>
-                <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-              </ul>
-              <a class="fp_pdate float-right" href="#">7 August 2019</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
