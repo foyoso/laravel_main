@@ -567,457 +567,49 @@
       <div class="col-lg-12">
         <div class="feature_property_slider">
           @foreach ($listings as $item)
-
-
-            <div class="item">
-              <div class="feat_property">
+          <div class="item">
+            <div class="feat_property">
+              <a href="{{getListingLink($item)}}" alt="link">
                 <div class="thumb">
                   <img class="img-whp" src="{{$item -> thumbnail}}" alt="{{$item -> name}}">
                   <div class="thmb_cntnt">
                     <ul class="tag mb0">
-                      <li class="list-inline-item"><a href="#">For Rent</a></li>
-                      <li class="list-inline-item"><a href="#">Featured</a></li>
+                      <li class="list-inline-item"><span>For Rent</span></li>
+                      <li class="list-inline-item"><span>Featured</span></li>
                     </ul>
-                    <ul class="icon mb0">
-                      <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                      <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                    </ul>
-                    <a class="fp_price" href="#">$13,000<small>/mo</small></a>
+                    <!-- <ul class="icon mb0">
+                      <li class="list-inline-item"><span class="flaticon-transfer-1"></span></li>
+                      <li class="list-inline-item"><span class="flaticon-heart"></span></li>
+                    </ul> -->
+                    <span class="fp_price">$13,000<small>/mo</small></span>
                   </div>
                 </div>
+              </a>
+              <a href="{{getListingLink($item)}}" alt="link">
                 <div class="details">
                   <div class="tc_content">
                     <p class="text-thm">Apartment</p>
-                    <h4><a href="{{getListingLink($item)}}">{{$item -> name}}</a></h4>
+                    <h4>{{$item -> name}}</h4>
                     <p><span class="flaticon-placeholder"></span> {{$item -> address}}</p>
                     <ul class="prop_details mb0">
-                      <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                      <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                      <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                      <li class="list-inline-item">Beds: 4</li>
+                      <li class="list-inline-item">Baths: 2</li>
+                      <li class="list-inline-item">Sq Ft: 5280</li>
                     </ul>
                   </div>
                   <div class="fp_footer">
                     <ul class="fp_meta float-left mb0">
-                      <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                            alt="pposter1.png"></a></li>
-                      <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                      <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
+                          alt="pposter1.png"></li>
+                      <li class="list-inline-item">Ali Tufan</li>
                     </ul>
                     <div class="fp_pdate float-right">4 years ago</div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
+          </div>
           @endforeach
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp2.jpg" alt="fp2.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp3.jpg" alt="fp3.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Sale</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                    <li class="list-inline-item"><a href="#">Featured</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp2.jpg" alt="fp2.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp3.jpg" alt="fp3.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Sale</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                    <li class="list-inline-item"><a href="#">Featured</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp2.jpg" alt="fp2.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp3.jpg" alt="fp3.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Sale</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                    <li class="list-inline-item"><a href="#">Featured</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp2.jpg" alt="fp2.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Rent</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="feat_property">
-              <div class="thumb">
-                <img class="img-whp" src="/client/findhouse/images/property/fp3.jpg" alt="fp3.jpg">
-                <div class="thmb_cntnt">
-                  <ul class="tag mb0">
-                    <li class="list-inline-item"><a href="#">For Sale</a></li>
-                  </ul>
-                  <ul class="icon mb0">
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                    <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                  </ul>
-                  <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                </div>
-              </div>
-              <div class="details">
-                <div class="tc_content">
-                  <p class="text-thm">Apartment</p>
-                  <h4>Renovated Apartment</h4>
-                  <p><span class="flaticon-placeholder"></span> 1421 San Pedro St, Los Angeles, CA 90015</p>
-                  <ul class="prop_details mb0">
-                    <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                    <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                    <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                  </ul>
-                </div>
-                <div class="fp_footer">
-                  <ul class="fp_meta float-left mb0">
-                    <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                          alt="pposter1.png"></a></li>
-                    <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                  </ul>
-                  <div class="fp_pdate float-right">4 years ago</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1235,31 +827,32 @@
     </div>
     <div class="row">
       @foreach ($posts as $item)
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="for_blog feat_property">
+      <div class="col-md-6 col-lg-4 col-xl-4">
+        <div class="for_blog feat_property">
+          <a href="{{getNewLink($item)}}">
             <div class="thumb">
               <img class="img-whp" src="{{$item -> thumbnail}}" alt="{{$item -> name}}">
             </div>
+          </a>
+          <a href="{{getNewLink($item)}}">
             <div class="details">
               <div class="tc_content">
                 <p class="text-thm">Business</p>
-                <h4>
-                  <a href="{{getNewLink($item)}}"> {{$item -> name}}</a>
-                </h4>
+                <h4>{{$item -> name}}</h4>
               </div>
               <div class="fp_footer">
                 <ul class="fp_meta float-left mb0">
-                  <li class="list-inline-item">
-                    <a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                        alt="pposter1.png"></a>
+                  <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
+                      alt="pposter1.png">
                   </li>
-                  <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+                  <li class="list-inline-item">Ali Tufan</li>
                 </ul>
-                <a class="fp_pdate float-right" href="#">7 August 2019</a>
+                <span class="fp_pdate float-right">7 August 2019</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
+      </div>
       @endforeach
     </div>
   </div>

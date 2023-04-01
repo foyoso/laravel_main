@@ -12,9 +12,13 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <a href="#" class="navbar_brand float-left dn-smd">
-        <img class="logo1 img-fluid" src="{{$website -> logo?$website -> logo:'/client/findhouse/images/header-logo2.png' }}" alt="{{$website -> name}}">
-        <img class="logo2 img-fluid" src="{{$website -> logo?$website -> logo:'/client/findhouse/images/header-logo2.png' }}" alt="{{$website -> name}}">
+      <a href="/" class="navbar_brand float-left dn-smd">
+        <img class="logo1 img-fluid"
+          src="{{$website -> logo?$website -> logo:'/client/findhouse/images/header-logo2.png' }}"
+          alt="{{$website -> name}}">
+        <img class="logo2 img-fluid"
+          src="{{$website -> logo?$website -> logo:'/client/findhouse/images/header-logo2.png' }}"
+          alt="{{$website -> name}}">
         <span>{{$website -> name}}</span>
       </a>
       <!-- Responsive Menu Structure-->
@@ -38,38 +42,40 @@
 @php
 
 function getMenuListingLayout($menu) {
-    foreach ($menu as $item) {
-         $class = empty($item['children']) ? "" : "header-dropdown" ;
-         echo '<li class="'.$class.'">';
-         if(empty($item['children'])){
-            if (!empty($item['blank']) && strpos($item['url'], "http") !== false) {
-               $el = 'target="' . $item['blank'] .'"';
-            } else if (empty($item['blank'])  && strpos($item['url'], "http") !== false) {
-                $el = 'target="_blank"';
-            } else {
-                $el = "";
-            }
-            echo '<a data-scroll '.$el.' href="'.$item['url'].'"><span class="title">'.$item['name'].'</span></a>';
-        }else {
-            echo '<a href="#"><span class="title">'.$item['name'].'</span></a>';
+foreach ($menu as $item) {
+$class = empty($item['children']) ? "" : "header-dropdown" ;
+echo '<li class="'.$class.'">';
+  if(empty($item['children'])){
+  if (!empty($item['blank']) && strpos($item['url'], "http") !== false) {
+  $el = 'target="' . $item['blank'] .'"';
+  } else if (empty($item['blank']) && strpos($item['url'], "http") !== false) {
+  $el = 'target="_blank"';
+  } else {
+  $el = "";
+  }
+  echo '<a data-scroll '.$el.' href="'.$item['url'].'"><span class="title">'.$item['name'].'</span></a>';
+  }else {
+  echo '<a href="#"><span class="title">'.$item['name'].'</span></a>';
 
-            echo '<ul>';
-            foreach ($item['children'] as $i) {
-                if(empty($i['children'])){
-                    if (!empty($i['blank']) && strpos($i['url'], "http") !== false) {
-                    $el = 'target="' . $i['blank'] .'"';
-                    } else if (empty($i['blank'])  && strpos($i['url'], "http") !== false) {
-                        $el = 'target="_blank"';
-                    } else {
-                        $el = "";
-                    }
-                    echo '        <li><a'.$el.' href="'.$i['url'].'">'.$i['name'].'</a></li>';
-                }
-            }
-            echo '    </ul>';
-        }
-        echo '</li>';
+  echo '<ul>';
+    foreach ($item['children'] as $i) {
+    if(empty($i['children'])){
+    if (!empty($i['blank']) && strpos($i['url'], "http") !== false) {
+    $el = 'target="' . $i['blank'] .'"';
+    } else if (empty($i['blank']) && strpos($i['url'], "http") !== false) {
+    $el = 'target="_blank"';
+    } else {
+    $el = "";
     }
+    echo ' <li>
+      <a'.$el.' href="'.$i['url'].'">'.$i['name'].'</a>
+    </li>';
+    }
+    }
+    echo ' </ul>';
+  }
+  echo '</li>';
+}
 }
 
 
