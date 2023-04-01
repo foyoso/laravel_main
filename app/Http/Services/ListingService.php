@@ -19,15 +19,21 @@ class ListingService
         return $qr -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();;
     }
 
-    public function getByUser($limit = 0, $request)
+    public function getByUser($limit = 0, $request, $userId)
     {
-        $user = json_decode($request->header('user-info'));
+
         $qr = Listing::query();
         if($request -> has('name') ){
             $qr -> where('name', 'like', '%' . $request -> input('name').'%' );
         }
-        return $qr -> where('user_id', $user -> id)->
-        orderbyDesc('updated_at')->paginate($limit)->withQueryString();;
+        if($limit > 0){
+            return $qr -> where('user_id', $userId)->
+            orderbyDesc('updated_at')->paginate($limit)->withQueryString();
+        } else {
+            return $qr -> where('user_id', $userId)->
+                orderbyDesc('updated_at')->get();
+        }
+
     }
     public function getAllForSelectBox(){
         return Listing::select('id','name')->orderbyDesc('id')->get();
@@ -70,7 +76,7 @@ class ListingService
         DB::beginTransaction();
         try {
             $listing -> name       = (string)$request->input('name');
-            $listing -> user_id       = $request->input('user_id');
+
             $listing -> slug = (string)Str::slug($request->input('name'), '-');
             $listing ->thumbnail =  $request->input('thumbnail');
 
@@ -152,14 +158,13 @@ class ListingService
             whereIn('id', explode(',', $ids))
             ->orderbyDesc('updated_at')->paginate($limit)->withQueryString();
     }
-    public function getByIdsOrderById($request)
+    public function getByIdsOrderById($ids)
     {
-        $ids = $request ->input('list');
+
         if($ids == '') return [];
         return Listing::
             whereIn('id', explode(',', $ids))
             ->orderByRaw("FIELD(id , ".$ids.")")-> get();
-        //return Property::orderbyDesc('updated_at') -> get();
     }
 
 }

@@ -57,7 +57,7 @@
         <script src="/theme-admin/libs/metismenu/metisMenu.min.js"></script>
         <script src="/theme-admin/libs/simplebar/simplebar.min.js"></script>
         <script src="/theme-admin/libs/node-waves/waves.min.js"></script>
-
+        <script src="/theme-admin/js/jquery-ui/jquery-ui.js"></script>
 
 
         <!-- App js -->

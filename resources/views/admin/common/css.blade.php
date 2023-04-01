@@ -7,4 +7,5 @@
 <!-- App Css-->
 <link href="/theme-admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 <link href="/theme-admin/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+<link href="/theme-admin/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >

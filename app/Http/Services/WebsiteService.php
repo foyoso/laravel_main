@@ -118,4 +118,21 @@ class WebsiteService
         }
         return false;
     }
+    public function saveHomeSection($request, $web): bool
+    {
+        DB::beginTransaction();
+        $list = $request -> input('list');
+        $col = $request -> input('col');
+        try {
+            $web ->  $col = $list ;
+            $web->save();
+            DB::commit();
+            Session::flash('success', 'Edit Website success');
+        } catch (\Exception $err) {
+            Session::flash('error', $err->getMessage());
+            DB::rollBack();
+            return false;
+        }
+        return true;
+    }
 }

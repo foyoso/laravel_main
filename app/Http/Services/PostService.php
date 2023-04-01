@@ -20,19 +20,20 @@ class PostService
         }
         return $qr -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();
     }
-    public function getByUser($limit = 0, $request)
+    public function getByUser($limit = 0, $request, $userId)
     {
-        $user = json_decode($request->header('user-info'));
-
         $qr = Post::query();
         if($request -> has('name') ){
             $qr -> where('name', 'like', '%' . $request -> input('name').'%' );
         }
-        return $qr -> where('user_id', $user -> id)->
-        orderbyDesc('updated_at')->paginate($limit)->withQueryString();;
+        if($limit >0){
+            return $qr -> where('user_id', $userId) ->
+            orderbyDesc('updated_at')->paginate($limit) -> withQueryString();
+        } else {
+            return $qr -> where('user_id', $userId) -> orderbyDesc('updated_at') ->get();
+        }
+
     }
-
-
     public function getAllForSelectBox(){
         return Post::select('id','name')->orderbyDesc('id')->get();
     }
@@ -127,14 +128,13 @@ class PostService
             ->orderbyDesc('updated_at')->paginate($limit)->withQueryString();
 
     }
-    public function getByIdsOrderById($request)
+    public function getByIdsOrderById($ids)
     {
-        $ids = $request ->input('list');
+
         if($ids == '') return [];
         return Post::
             whereIn('id', explode(',', $ids))
             ->orderByRaw("FIELD(id , ".$ids.")")-> get();
-        //return Property::orderbyDesc('updated_at') -> get();
     }
 
     public function createRender($index)

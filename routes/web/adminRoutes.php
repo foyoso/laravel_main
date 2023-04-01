@@ -48,6 +48,9 @@ Route::middleware(['auth:admin'])->group(function () {
 
       Route::get('menu/{item}',          [WebsiteController::class, 'menu']);
       Route::post('saveMenu/{item}',         [WebsiteController::class, 'saveMenu']);
+
+      Route::get('homeSection/{item}',          [WebsiteController::class, 'homeSection']);
+      Route::post('saveHomeSection/{item}',         [WebsiteController::class, 'saveHomeSection']);
     });
     #File
     Route::prefix('image')->group(function () {

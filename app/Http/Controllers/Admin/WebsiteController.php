@@ -12,7 +12,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Services\HttpService;
 use App\Http\Services\LayoutService;
+use App\Http\Services\ListingService;
 use App\Http\Services\PageService;
+use App\Http\Services\PostService;
 use App\Http\Services\UserService;
 use App\Models\Website;
 
@@ -93,5 +95,54 @@ class WebsiteController extends Controller
         return response()->json([
             'error' => true
         ]);
+    }
+    public function saveHomeSection(Website $item, Request $request){
+
+        $this->websiteService->saveHomeSection($request, $item);
+        return response()->json([
+            'error' => false,
+                'message' => 'Save Website success '
+        ]);
+    }
+
+
+    public function homeSection(Website $item, Request $request)
+    {
+
+        $post = new PostService();
+        $listing = new ListingService();
+
+        $newsEnable = [];
+        $listingEnable = [];
+
+
+
+
+        $newsHome=[];
+        $arrIdsNews = $item -> home_posts=='' ? [] : explode(',',  $item -> home_posts);
+        $newsEnable = $post -> getByUser(0, $request, $item -> user_id);
+        $newsHome = $post -> getByIdsOrderById($item -> home_posts);
+
+
+        $listingHome=[];
+        $arrIdsListing = $item -> home_listings=='' ? [] : explode(',', $item -> home_listings);
+        $listingEnable = $listing -> getByUser(0, $request, $item -> user_id);
+        $listingHome = $listing -> getByIdsOrderById($item -> home_listings);
+
+
+        return view('admin.website.home', [
+            'title' => 'Home page Section',
+            'website' => $item,
+
+            'listingHome' => $listingHome,
+            'newsHome' => $newsHome,
+
+            'arrIdsListing' => $arrIdsListing,
+            'arrIdsNews' => $arrIdsNews,
+
+            'newsEnable' => $newsEnable,
+            'listingEnable' => $listingEnable,
+         ]);
+
     }
 }
