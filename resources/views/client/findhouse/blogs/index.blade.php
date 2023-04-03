@@ -17,6 +17,40 @@
     <div class="row">
       <div class="col-lg-8">
         <div id="data-wrapper" class="row">
+          @foreach ($blogs as $blog)
+          <div class="col-lg-6">
+            <div class="for_blog feat_property">
+              <a href="/blog/{{ $blog->slug }}" alt="link">
+                <div class="thumb">
+                  <img class="img-whp" src="/client/findhouse/images/blog/1.jpg" alt="1.jpg">
+                  <div class="blog_tag">Construction</div>
+                </div>
+              </a>
+              <a href="/blog/{{ $blog->slug }}" alt="link">
+                <div class="details">
+                  <div class="tc_content">
+                    <h4>{{ $blog->name }}</h4>
+                    <ul class="bpg_meta">
+                      <li class="list-inline-item"><i class="flaticon-calendar"></i>
+                      </li>
+                      <li class="list-inline-item">January 16, 2020</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur text link libero tempus congue.</p>
+                  </div>
+                  <div class="fp_footer">
+                    <ul class="fp_meta float-left mb0">
+                      <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
+                          alt="pposter1.png"></li>
+                      <li class="list-inline-item">Ali Tufan</li>
+                    </ul>
+                    <span class="fp_pdate float-right text-thm">Read More <span class="flaticon-next"></span></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          @endforeach
+
         </div>
         <div class="auto-load text-center">
           <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -116,9 +150,9 @@
 <script>
 var ENDPOINT = "{{ url('/') }}";
 var page = 1;
-infinteLoadMore(page);
+$('.auto-load').hide();
 $(window).scroll(function() {
-  if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+  if ($(window).scrollTop() == $(document).height() - $(window).height()) {
     page++;
     infinteLoadMore(page);
   }

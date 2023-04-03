@@ -50,7 +50,9 @@ class BlogsController extends BaseController
         }
         return $artilces;
       }
-
-      return view($this -> layoutDir.'.blogs.index');
+      return view($this -> layoutDir.'.blogs.index', [
+        'title' => 'Blogs',
+        'blogs' => $data
+      ]);
     }
 }
