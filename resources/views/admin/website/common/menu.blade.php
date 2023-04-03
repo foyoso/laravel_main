@@ -8,6 +8,7 @@
     <div class="mail-list mt-1">
         <a href="/admin/website/edit/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Setting</a>
         <a href="/admin/website/menu/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Menu</a>
+        <a href="/admin/website/homeSection/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Home Section</a>
         <a href="/admin/contact/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Contact </a>
     </div>
     @endif
