@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\PageService;
 use App\Http\Services\PostService;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,14 @@ class BlogsController extends BaseController
             </div>';
         }
         return $artilces;
+      }
+      $page = new PageService();
+      $page = $page ->findBySlug($this -> website -> id, LINK_BLOG);
+      if($page){
+      $this -> setMetaTag($page -> description,
+                          $this -> website-> getDomain(1) . $page -> slug,
+                          $page -> og_image, $page -> keyword,
+                          $page -> title);
       }
       return view($this -> layoutDir.'.blogs.index', [
         'title' => 'Blogs',

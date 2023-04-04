@@ -37,9 +37,10 @@ class WebsiteService
     }
     public function create($request)
     {
+        $page = new PageService();
         DB::beginTransaction();
         try {
-             Website::create([
+             $web = Website::create([
                 'layout_id'     => (string)$request->input('layout_id'),
                 'name'    => (string)$request->input('name'),
                 'domain'    => (string)$request->input('domain'),
@@ -48,6 +49,7 @@ class WebsiteService
 
             DB::commit();
             Session::flash('success', 'Create Website success');
+            $page -> createDefaultPages($web -> id, $web  -> user_id);
             return true;
         } catch (\Exception $err) {
             Session::flash('error', $err->getMessage());

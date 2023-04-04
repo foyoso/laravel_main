@@ -25,7 +25,8 @@ class PageController extends Controller
 
         return view('admin.page.index', [
            'title' => 'List Page',
-           'data' =>  $this -> pageService -> getAll(ITEM_PER_PAGE, $request, $website -> id),
+           'data' =>  $this -> pageService -> getAll( $website -> id),
+           'pageDefault' =>  $this -> pageService -> getAll( $website -> id, 1),
            'website' => $website
 
         ]);

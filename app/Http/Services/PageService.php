@@ -7,14 +7,12 @@ use Illuminate\Support\Str;
 class PageService
 {
 
-    public function getAll($limit = 0, $request, $webId, $isDefaut = 0)
+    public function getAll( $webId, $isDefaut = 0)
     {
-        $userLogin = $request ->input('userLogin');
-        $request->request->remove('userLogin');
         return Page::
         where('website_id', $webId)
         -> where('page_default', $isDefaut)
-        ->orderbyDesc('updated_at')-> paginate($limit)->withQueryString();;
+        -> orderbyDesc('updated_at') -> get();
     }
     public function findBySlug($webId, $slug)
     {
@@ -64,8 +62,7 @@ class PageService
 
     public function createDefaultPages($webId, $userId){
             $this -> createDefaultPage($webId, $userId,  'Home', LINK_HOME, 1);
-            $this -> createDefaultPage($webId, $userId,  'News', LINK_NEWS, 0);
-            $this -> createDefaultPage($webId, $userId,  'Properties', LINK_PROPERTIES, 0);
+            $this -> createDefaultPage($webId, $userId,  'News', LINK_BLOG, 0);
             $this -> createDefaultPage($webId, $userId,  'Listings', LINK_LISTINGS, 0);
             $this -> createDefaultPage($webId, $userId,  'Contact', LINK_CONTACT, 0);
     }

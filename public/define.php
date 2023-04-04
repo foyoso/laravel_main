@@ -18,3 +18,9 @@ function getListingLink($item){
 function getPageLink($item){
     return $item->slug . '-' .$item -> id;
   }
+
+
+define('LINK_LISTINGS', '/listing');
+define('LINK_BLOG', '/blog');
+define('LINK_CONTACT', '/contact');
+define('LINK_HOME', '/');
