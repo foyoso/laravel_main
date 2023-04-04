@@ -81,7 +81,7 @@
                                                     </select>
                                                     <select class="form-control select-pages">
                                                         <?php foreach ($pages as $item) { ?>
-                                                            @if ($item -> page_default ==1)
+                                                            @if ($item -> page_default == 1)
                                                                 <option data-ids="" data-name="{{$item->name}}" value="{{$item->slug}}">{{$item->name}} ({{$item->slug}})</option>
                                                             @else
                                                                 <option data-ids="" data-name="{{$item->name}}" value="{{$item->slug}}-{{$item -> id}}">{{$item->name}} ({{$item->slug}}-{{$item -> id}})</option>

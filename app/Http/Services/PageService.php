@@ -19,7 +19,7 @@ class PageService
         return Page:: where([['website_id','=', $webId], ['slug', '=', $slug]])->first();
     }
     public function getAllForSelectBox($webId){
-        return Page::select('id','name', 'slug')
+        return Page::select('id','name', 'slug', 'page_default')
         ->where('website_id', $webId)
         ->orderbyDesc('id')->get();
     }
