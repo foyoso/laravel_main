@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ListingService;
 use App\Http\Services\PageService;
+use Illuminate\Http\Request;
 
 class ListingController extends BaseController
 {
-    public function index()
+    public function index(Request $request)
     {
       $page = new PageService();
       $page = $page ->findBySlug($this -> website -> id, LINK_LISTINGS);
@@ -16,8 +18,12 @@ class ListingController extends BaseController
                           $page -> og_image, $page -> keyword,
                           $page -> title);
       }
+      $listingService = new ListingService();
+      $data = $listingService -> getAll(POST_ITEM_PER_PAGE, $request);
+
       return view($this -> layoutDir.'.listing.index', [
-        'title' => 'Listing'
+        'title' => 'Listing',
+        'listings' => $data
       ]);
     }
 }
