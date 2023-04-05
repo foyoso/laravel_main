@@ -20,6 +20,8 @@ class Listing extends Model
 
         'name',
         'slug',
+        'longitude',
+        'latitude',
         'thumbnail',
         'images',
         'address',
