@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Listing extends Model
+class Listing extends ModelBase
 {
     use HasFactory, SoftDeletes;
 

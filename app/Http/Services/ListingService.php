@@ -167,4 +167,9 @@ class ListingService
             ->orderByRaw("FIELD(id , ".$ids.")")-> get();
     }
 
+    public function findBySlug($slug) {
+        $listing = new Listing();
+        return $listing->findBySlug($slug);
+    }
+
 }

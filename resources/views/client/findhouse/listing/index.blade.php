@@ -571,52 +571,51 @@
                 @foreach ($listings as $listing)
                 <li class="extrawide list-inline-item">
                   <div class="feat_property home7 style4">
-                    <div class="thumb">
-                      <div class="fp_single_item_slider">
+                    <a href="/listing/{{$listing->slug}}">
+                      <div class="thumb">
                         <div class="item">
                           <img class="img-whp" src="{{$listing->thumbnail}}" alt="{{$listing->name}}">
                         </div>
-                        <div class="item">
-                          <img class="img-whp" src="{{$listing->thumbnail}}" alt="{{$listing->name}}">
+                        <div class="thmb_cntnt style2">
+                          <ul class="tag mb0">
+                            @if ($listing->sale_or_rent == 1)
+                            <li class="list-inline-item">For Rent</li>
+                            @else
+                            <li class="list-inline-item">For Sale</li>
+                            @endif
+                          </ul>
+                        </div>
+                        <div class="thmb_cntnt style3">
+                          <!-- <ul class="icon mb0">
+                            <li class="list-inline-item"><span class="flaticon-transfer-1"></span></li>
+                            <li class="list-inline-item"><span class="flaticon-heart"></span></li>
+                          </ul> -->
+                          <span class="fp_price">$13,000<small>/mo</small></span>
                         </div>
                       </div>
-                      <div class="thmb_cntnt style2">
-                        <ul class="tag mb0">
-                          @if ($listing->sale_or_rent == 1)
-                          <li class="list-inline-item"><a href="#">For Rent</a></li>
-                          @else
-                          <li class="list-inline-item"><a href="#">For Sale</a></li>
-                          @endif
-                        </ul>
+                    </a>
+                    <a href="/listing/{{$listing->slug}}">
+                      <div class="details">
+                        <div class="tc_content">
+                          <p class="text-thm">Apartment</p>
+                          <h4>{{$listing->name}}</h4>
+                          <p><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
+                          <ul class="prop_details mb0">
+                            <li class="list-inline-item">Beds: 4</li>
+                            <li class="list-inline-item">Baths: 2</li>
+                            <li class="list-inline-item">Sq Ft: 5280</li>
+                          </ul>
+                        </div>
+                        <div class="fp_footer">
+                          <ul class="fp_meta float-left mb0">
+                            <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
+                                alt="pposter1.png"></li>
+                            <li class="list-inline-item">Ali Tufan</li>
+                          </ul>
+                          <div class="fp_pdate float-right">4 years ago</div>
+                        </div>
                       </div>
-                      <div class="thmb_cntnt style3">
-                        <ul class="icon mb0">
-                          <li class="list-inline-item"><a href="#"><span class="flaticon-transfer-1"></span></a></li>
-                          <li class="list-inline-item"><a href="#"><span class="flaticon-heart"></span></a></li>
-                        </ul>
-                        <a class="fp_price" href="#">$13,000<small>/mo</small></a>
-                      </div>
-                    </div>
-                    <div class="details">
-                      <div class="tc_content">
-                        <p class="text-thm">Apartment</p>
-                        <h4>{{$listing->name}}</h4>
-                        <p><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
-                        <ul class="prop_details mb0">
-                          <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                          <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                          <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
-                        </ul>
-                      </div>
-                      <div class="fp_footer">
-                        <ul class="fp_meta float-left mb0">
-                          <li class="list-inline-item"><a href="#"><img
-                                src="/client/findhouse/images/property/pposter1.png" alt="pposter1.png"></a></li>
-                          <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-                        </ul>
-                        <div class="fp_pdate float-right">4 years ago</div>
-                      </div>
-                    </div>
+                    </a>
                   </div>
                 </li>
                 @endforeach

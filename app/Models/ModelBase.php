@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ModelBase extends Model
 {
     public function findById($id) {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->where('id', $id)
                 ->first();
     }
@@ -49,31 +49,31 @@ class ModelBase extends Model
     }
 
     public function findAll() {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->orderBy('updated_at', 'DESC')
                 ->get();
     }
 
     public function findAllForAdminPaging($pagination) {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->orderBy('updated_at', 'DESC')
                 ->paginate($pagination);
     }
 
     public function findAllByOrderForAdminPaging($pagination) {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->orderBy('orderby', 'ASC')
                 ->paginate($pagination);
     }
 
     public function findAllOrderByField($field, $sort='DESC') {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->orderBy($field, $sort)
                 ->get();
     }
 
     public function findByLimit($limit, $offset = 0){
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
         		->where('status', 1)
                 ->offset($offset)
                 ->limit($limit)
@@ -82,7 +82,7 @@ class ModelBase extends Model
     }
 
     public function findBySlug($slug) {
-        return self::where('deleted', 0)
+        return self::where('deleted_at', null)
                 ->where('slug', $slug)
                 ->first();
     }

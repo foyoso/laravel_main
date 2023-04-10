@@ -7,8 +7,8 @@
     <div class="row">
       <div class="col-lg-7 col-xl-8">
         <div class="single_property_title mt30-767">
-          <h2>Luxury Family Home</h2>
-          <p>1421 San Pedro St, Los Angeles, CA 90015</p>
+          <h2>{{$data -> name}}</h2>
+          <p>{{$data -> address}}</p>
         </div>
       </div>
       <div class="col-lg-5 col-xl-4">

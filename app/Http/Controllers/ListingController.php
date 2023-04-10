@@ -26,4 +26,17 @@ class ListingController extends BaseController
         'listings' => $data
       ]);
     }
+
+    public function detail(string $slug)
+    {
+      $listingService = new ListingService();
+      $data = $listingService->findBySlug($slug);
+      if (!$data) {
+        return response()->view($this -> layoutDir.'.errors.404', ['error' => 'Not Found'], 404);
+      }
+      return view($this -> layoutDir.'.listing.detail', [
+        'title' => 'Detail',
+        'data' => $data
+      ]);
+    }
 }

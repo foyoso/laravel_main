@@ -158,4 +158,9 @@ class PostService
         }
     }
 
+    public function findBySlug($slug) {
+        $post = new Post();
+        return $post->findBySlug($slug);
+    }
+
 }

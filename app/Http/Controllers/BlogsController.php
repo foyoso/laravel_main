@@ -64,4 +64,17 @@ class BlogsController extends BaseController
         'blogs' => $data
       ]);
     }
+
+    public function detail(string $slug)
+    {
+      $postService = new PostService();
+      $data = $postService->findBySlug($slug);
+      if (!$data) {
+        return response()->view($this -> layoutDir.'.errors.404', ['error' => 'Not Found'], 404);
+      }
+      return view($this -> layoutDir.'.blogs.detail', [
+        'title' => 'Detail',
+        'data' => $data
+      ]);
+    }
 }
