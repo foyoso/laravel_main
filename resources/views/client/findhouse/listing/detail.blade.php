@@ -349,8 +349,7 @@
                         </button>
                       </h2>
                     </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample"
-                      style="">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body text-center">
                         <img class="img-fluid" src="/client/findhouse/images/resource/floor_plan.png"
                           alt="floor_plan.png">

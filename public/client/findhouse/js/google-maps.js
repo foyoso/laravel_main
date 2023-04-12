@@ -1619,345 +1619,345 @@
 //# sourceMappingURL=gmaps.min.js.map
 
 /* New Map CustomCode */
-("use strict");
-function gMapHome() {
-    if ($(".map-canvas").length) {
-        $(".map-canvas").each(function () {
-            // getting options from html
-            var Self = $(this);
-            var mapName = Self.attr("id");
-            var mapLat = Self.data("map-lat");
-            var mapLng = Self.data("map-lng");
-            var iconPath = Self.data("icon-path");
-            var mapZoom = Self.data("map-zoom");
-            var mapTitle = Self.data("map-title");
+// ("use strict");
+// function gMapHome() {
+//     if ($(".map-canvas").length) {
+//         $(".map-canvas").each(function () {
+//             // getting options from html
+//             var Self = $(this);
+//             var mapName = Self.attr("id");
+//             var mapLat = Self.data("map-lat");
+//             var mapLng = Self.data("map-lng");
+//             var iconPath = Self.data("icon-path");
+//             var mapZoom = Self.data("map-zoom");
+//             var mapTitle = Self.data("map-title");
 
-            var styles = [
-                {
-                    featureType: "all",
-                    elementType: "labels.text",
-                    stylers: [{ visibility: "off" }],
-                },
-                {
-                    featureType: "administrative",
-                    elementType: "labels.text.fill",
-                    stylers: [{ color: "#222222" }],
-                },
-                {
-                    featureType: "landscape",
-                    elementType: "all",
-                    stylers: [{ color: "#f2f2f2" }],
-                },
-                {
-                    featureType: "poi",
-                    elementType: "all",
-                    stylers: [{ visibility: "off" }],
-                },
-                {
-                    featureType: "road",
-                    elementType: "all",
-                    stylers: [{ saturation: -100 }, { lightness: 45 }],
-                },
-                {
-                    featureType: "road.highway",
-                    elementType: "all",
-                    stylers: [{ visibility: "simplified" }],
-                },
-                {
-                    featureType: "road.arterial",
-                    elementType: "labels.icon",
-                    stylers: [{ visibility: "off" }],
-                },
-                {
-                    featureType: "road.local",
-                    elementType: "labels.text",
-                    stylers: [{ visibility: "off" }],
-                },
-                {
-                    featureType: "transit",
-                    elementType: "all",
-                    stylers: [{ visibility: "off" }],
-                },
-                {
-                    featureType: "water",
-                    elementType: "all",
-                    stylers: [{ color: "#ffe807" }, { visibility: "on" }],
-                },
-            ];
+//             var styles = [
+//                 {
+//                     featureType: "all",
+//                     elementType: "labels.text",
+//                     stylers: [{ visibility: "off" }],
+//                 },
+//                 {
+//                     featureType: "administrative",
+//                     elementType: "labels.text.fill",
+//                     stylers: [{ color: "#222222" }],
+//                 },
+//                 {
+//                     featureType: "landscape",
+//                     elementType: "all",
+//                     stylers: [{ color: "#f2f2f2" }],
+//                 },
+//                 {
+//                     featureType: "poi",
+//                     elementType: "all",
+//                     stylers: [{ visibility: "off" }],
+//                 },
+//                 {
+//                     featureType: "road",
+//                     elementType: "all",
+//                     stylers: [{ saturation: -100 }, { lightness: 45 }],
+//                 },
+//                 {
+//                     featureType: "road.highway",
+//                     elementType: "all",
+//                     stylers: [{ visibility: "simplified" }],
+//                 },
+//                 {
+//                     featureType: "road.arterial",
+//                     elementType: "labels.icon",
+//                     stylers: [{ visibility: "off" }],
+//                 },
+//                 {
+//                     featureType: "road.local",
+//                     elementType: "labels.text",
+//                     stylers: [{ visibility: "off" }],
+//                 },
+//                 {
+//                     featureType: "transit",
+//                     elementType: "all",
+//                     stylers: [{ visibility: "off" }],
+//                 },
+//                 {
+//                     featureType: "water",
+//                     elementType: "all",
+//                     stylers: [{ color: "#ffe807" }, { visibility: "on" }],
+//                 },
+//             ];
 
-            if ($(this).hasClass("skin1")) {
-                var iconPath =
-                    "/client/findhouse/images/resource/map-marker.png";
-                var styles = [
-                    {
-                        featureType: "all",
-                        elementType: "labels.text",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "administrative",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#444444" }],
-                    },
-                    {
-                        featureType: "landscape",
-                        elementType: "all",
-                        stylers: [{ color: "#f2f2f2" }],
-                    },
-                    {
-                        featureType: "poi",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "all",
-                        stylers: [{ saturation: -100 }, { lightness: 45 }],
-                    },
-                    {
-                        featureType: "road.highway",
-                        elementType: "all",
-                        stylers: [{ visibility: "simplified" }],
-                    },
-                    {
-                        featureType: "road.arterial",
-                        elementType: "labels.icon",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "road.local",
-                        elementType: "labels.text",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "transit",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "water",
-                        elementType: "all",
-                        stylers: [{ color: "#ffe807" }, { visibility: "on" }],
-                    },
-                ];
-            }
-            if ($(this).hasClass("skin2")) {
-                var iconPath =
-                    "/client/findhouse/images/resource/map-marker.png";
-                var styles = [
-                    {
-                        featureType: "all",
-                        elementType: "labels",
-                        stylers: [{ visibility: "on" }],
-                    },
-                    {
-                        featureType: "administrative",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#222222" }],
-                    },
-                    {
-                        featureType: "landscape",
-                        elementType: "all",
-                        stylers: [{ color: "green" }],
-                    },
-                    {
-                        featureType: "poi",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "all",
-                        stylers: [{ saturation: -100 }, { lightness: 45 }],
-                    },
-                    {
-                        featureType: "road.highway",
-                        elementType: "all",
-                        stylers: [{ visibility: "simplified" }],
-                    },
-                    {
-                        featureType: "road.arterial",
-                        elementType: "labels.icon",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "transit",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "water",
-                        elementType: "all",
-                        stylers: [{ color: "blue" }, { visibility: "on" }],
-                    },
-                ];
-            }
-            if ($(this).hasClass("skin3")) {
-                var iconPath =
-                    "/client/findhouse/images/resource/map-marker.png";
-                var styles = [
-                    {
-                        featureType: "all",
-                        elementType: "labels",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "administrative",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#444444" }],
-                    },
-                    {
-                        featureType: "landscape",
-                        elementType: "all",
-                        stylers: [{ color: "#f2f2f2" }],
-                    },
-                    {
-                        featureType: "poi",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "all",
-                        stylers: [{ saturation: -100 }, { lightness: 45 }],
-                    },
-                    {
-                        featureType: "road.highway",
-                        elementType: "all",
-                        stylers: [{ visibility: "simplified" }],
-                    },
-                    {
-                        featureType: "road.arterial",
-                        elementType: "labels.icon",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "transit",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "water",
-                        elementType: "all",
-                        stylers: [{ color: "#13a0b2" }, { visibility: "on" }],
-                    },
-                ];
-            }
-            if ($(this).hasClass("skin4")) {
-                var iconPath =
-                    "/client/findhouse/images/resource/map-marker.png";
-                var styles = [
-                    {
-                        featureType: "all",
-                        elementType: "labels",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "administrative",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#444444" }],
-                    },
-                    {
-                        featureType: "landscape",
-                        elementType: "all",
-                        stylers: [{ color: "#f2f2f2" }],
-                    },
-                    {
-                        featureType: "poi",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "all",
-                        stylers: [{ saturation: -100 }, { lightness: 45 }],
-                    },
-                    {
-                        featureType: "road.highway",
-                        elementType: "all",
-                        stylers: [{ visibility: "simplified" }],
-                    },
-                    {
-                        featureType: "road.arterial",
-                        elementType: "labels.icon",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "transit",
-                        elementType: "all",
-                        stylers: [{ visibility: "off" }],
-                    },
-                    {
-                        featureType: "water",
-                        elementType: "all",
-                        stylers: [{ color: "#44e2ff" }, { visibility: "on" }],
-                    },
-                ];
-            }
+//             if ($(this).hasClass("skin1")) {
+//                 var iconPath =
+//                     "/client/findhouse/images/resource/map-marker.png";
+//                 var styles = [
+//                     {
+//                         featureType: "all",
+//                         elementType: "labels.text",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "administrative",
+//                         elementType: "labels.text.fill",
+//                         stylers: [{ color: "#444444" }],
+//                     },
+//                     {
+//                         featureType: "landscape",
+//                         elementType: "all",
+//                         stylers: [{ color: "#f2f2f2" }],
+//                     },
+//                     {
+//                         featureType: "poi",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "road",
+//                         elementType: "all",
+//                         stylers: [{ saturation: -100 }, { lightness: 45 }],
+//                     },
+//                     {
+//                         featureType: "road.highway",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "simplified" }],
+//                     },
+//                     {
+//                         featureType: "road.arterial",
+//                         elementType: "labels.icon",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "road.local",
+//                         elementType: "labels.text",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "transit",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "water",
+//                         elementType: "all",
+//                         stylers: [{ color: "#ffe807" }, { visibility: "on" }],
+//                     },
+//                 ];
+//             }
+//             if ($(this).hasClass("skin2")) {
+//                 var iconPath =
+//                     "/client/findhouse/images/resource/map-marker.png";
+//                 var styles = [
+//                     {
+//                         featureType: "all",
+//                         elementType: "labels",
+//                         stylers: [{ visibility: "on" }],
+//                     },
+//                     {
+//                         featureType: "administrative",
+//                         elementType: "labels.text.fill",
+//                         stylers: [{ color: "#222222" }],
+//                     },
+//                     {
+//                         featureType: "landscape",
+//                         elementType: "all",
+//                         stylers: [{ color: "green" }],
+//                     },
+//                     {
+//                         featureType: "poi",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "road",
+//                         elementType: "all",
+//                         stylers: [{ saturation: -100 }, { lightness: 45 }],
+//                     },
+//                     {
+//                         featureType: "road.highway",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "simplified" }],
+//                     },
+//                     {
+//                         featureType: "road.arterial",
+//                         elementType: "labels.icon",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "transit",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "water",
+//                         elementType: "all",
+//                         stylers: [{ color: "blue" }, { visibility: "on" }],
+//                     },
+//                 ];
+//             }
+//             if ($(this).hasClass("skin3")) {
+//                 var iconPath =
+//                     "/client/findhouse/images/resource/map-marker.png";
+//                 var styles = [
+//                     {
+//                         featureType: "all",
+//                         elementType: "labels",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "administrative",
+//                         elementType: "labels.text.fill",
+//                         stylers: [{ color: "#444444" }],
+//                     },
+//                     {
+//                         featureType: "landscape",
+//                         elementType: "all",
+//                         stylers: [{ color: "#f2f2f2" }],
+//                     },
+//                     {
+//                         featureType: "poi",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "road",
+//                         elementType: "all",
+//                         stylers: [{ saturation: -100 }, { lightness: 45 }],
+//                     },
+//                     {
+//                         featureType: "road.highway",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "simplified" }],
+//                     },
+//                     {
+//                         featureType: "road.arterial",
+//                         elementType: "labels.icon",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "transit",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "water",
+//                         elementType: "all",
+//                         stylers: [{ color: "#13a0b2" }, { visibility: "on" }],
+//                     },
+//                 ];
+//             }
+//             if ($(this).hasClass("skin4")) {
+//                 var iconPath =
+//                     "/client/findhouse/images/resource/map-marker.png";
+//                 var styles = [
+//                     {
+//                         featureType: "all",
+//                         elementType: "labels",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "administrative",
+//                         elementType: "labels.text.fill",
+//                         stylers: [{ color: "#444444" }],
+//                     },
+//                     {
+//                         featureType: "landscape",
+//                         elementType: "all",
+//                         stylers: [{ color: "#f2f2f2" }],
+//                     },
+//                     {
+//                         featureType: "poi",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "road",
+//                         elementType: "all",
+//                         stylers: [{ saturation: -100 }, { lightness: 45 }],
+//                     },
+//                     {
+//                         featureType: "road.highway",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "simplified" }],
+//                     },
+//                     {
+//                         featureType: "road.arterial",
+//                         elementType: "labels.icon",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "transit",
+//                         elementType: "all",
+//                         stylers: [{ visibility: "off" }],
+//                     },
+//                     {
+//                         featureType: "water",
+//                         elementType: "all",
+//                         stylers: [{ color: "#44e2ff" }, { visibility: "on" }],
+//                     },
+//                 ];
+//             }
 
-            // if zoom not defined the zoom value will be 15;
-            if (!mapZoom) {
-                var mapZoom = 12;
-            }
-            // init map
-            var map;
-            map = new GMaps({
-                div: "#" + mapName,
-                scrollwheel: false,
-                lat: mapLat,
-                lng: mapLng,
-                styles: styles,
-                zoom: mapZoom,
-            });
-            // if icon path setted then show marker
-            if (iconPath) {
-                let latlng = [
-                    {
-                        lat: 51.51028,
-                        lng: -0.084028,
-                    },
-                    {
-                        lat: 51.506647,
-                        lng: -0.113554,
-                    },
-                    {
-                        lat: 51.506647,
-                        lng: -0.113554,
-                    },
-                    {
-                        lat: 51.500877,
-                        lng: -0.074658,
-                    },
-                    {
-                        lat: 51.507748,
-                        lng: -0.056626,
-                    },
-                    {
-                        lat: 51.50654,
-                        lng: -0.138488,
-                    },
-                ];
-                latlng.map((lat, index) => {
-                    map.addMarker({
-                        icon: iconPath,
-                        lat: lat.lat,
-                        lng: lat.lng,
-                        title: `Tenby ${index}`,
-                        infoWindow: {
-                            content:
-                                '<img src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg"/> <h5>Apartment</h5> <h4>Renovated Apartment</h4> <p>1421 San Pedro St, Los Angeles, CA</p> <p><span>Beds: 4</span> <span>Baths: 2</span> <span>Sq Ft: 5280</span></p>',
-                        },
-                    });
-                });
-            }
-        });
-    }
-}
+//             // if zoom not defined the zoom value will be 15;
+//             if (!mapZoom) {
+//                 var mapZoom = 12;
+//             }
+//             // init map
+//             var map;
+//             map = new GMaps({
+//                 div: "#" + mapName,
+//                 scrollwheel: false,
+//                 lat: mapLat,
+//                 lng: mapLng,
+//                 styles: styles,
+//                 zoom: mapZoom,
+//             });
+//             // if icon path setted then show marker
+//             if (iconPath) {
+//                 let latlng = [
+//                     {
+//                         lat: 51.51028,
+//                         lng: -0.084028,
+//                     },
+//                     {
+//                         lat: 51.506647,
+//                         lng: -0.113554,
+//                     },
+//                     {
+//                         lat: 51.506647,
+//                         lng: -0.113554,
+//                     },
+//                     {
+//                         lat: 51.500877,
+//                         lng: -0.074658,
+//                     },
+//                     {
+//                         lat: 51.507748,
+//                         lng: -0.056626,
+//                     },
+//                     {
+//                         lat: 51.50654,
+//                         lng: -0.138488,
+//                     },
+//                 ];
+//                 latlng.map((lat, index) => {
+//                     map.addMarker({
+//                         icon: iconPath,
+//                         lat: lat.lat,
+//                         lng: lat.lng,
+//                         title: `Tenby ${index}`,
+//                         infoWindow: {
+//                             content:
+//                                 '<img src="/client/findhouse/images/property/fp1.jpg" alt="fp1.jpg"/> <h5>Apartment</h5> <h4>Renovated Apartment</h4> <p>1421 San Pedro St, Los Angeles, CA</p> <p><span>Beds: 4</span> <span>Baths: 2</span> <span>Sq Ft: 5280</span></p>',
+//                         },
+//                     });
+//                 });
+//             }
+//         });
+//     }
+// }
 
-// Dom Ready Function
-jQuery(document).on("ready", function () {
-    (function ($) {
-        // add your functions
-        gMapHome();
-    })(jQuery);
-});
+// // Dom Ready Function
+// jQuery(document).on("ready", function () {
+//     (function ($) {
+//         // add your functions
+//         gMapHome();
+//     })(jQuery);
+// });
