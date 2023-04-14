@@ -11,10 +11,10 @@ use App\Http\Controllers\RenderController;
 // -----------client---------------//
 Route::get('/',[IndexController::class, 'index']);
 Route::get('/contact',[ContactController::class, 'index']);
-Route::get('/listing',[ListingController::class, 'index']);
-Route::get('/listing/{slug}',[ListingController::class, 'detail']);
-Route::get('/blog',[BlogsController::class, 'index']);
-Route::get('/blog/{slug}',[BlogsController::class, 'detail']);
+Route::get('/listings',[ListingController::class, 'index']);
+Route::get('/listings/{slug}',[ListingController::class, 'detail']);
+Route::get('/blogs',[BlogsController::class, 'index']);
+Route::get('/blogs/{slug}',[BlogsController::class, 'detail']);
 Route::get('/render/province', [RenderController::class, 'index']);
 Route::get('/render/district', [RenderController::class, 'district']);
 Route::get('/render/commune', [RenderController::class, 'commune']);

@@ -17,19 +17,19 @@
     <div class="row">
       <div class="col-lg-8">
         <div id="data-wrapper" class="row">
-          @foreach ($blogs as $blog)
+          @foreach ($blogs as $item)
           <div class="col-lg-6">
             <div class="for_blog feat_property">
-              <a href="/blog/{{ $blog->slug }}" alt="link">
+              <a href="{{getNewLink($item)}}" alt="link">
                 <div class="thumb">
-                  <img class="img-whp" src="/client/findhouse/images/blog/1.jpg" alt="1.jpg">
+                  <img class="img-whp" src="{{$item -> thumbnail}}" alt="{{$item -> name}}">
                   <div class="blog_tag">Construction</div>
                 </div>
               </a>
-              <a href="/blog/{{ $blog->slug }}" alt="link">
+              <a href="{{getNewLink($item)}}" alt="link">
                 <div class="details">
                   <div class="tc_content">
-                    <h4>{{ $blog->name }}</h4>
+                    <h4>{{$item -> name}}</h4>
                     <ul class="bpg_meta">
                       <li class="list-inline-item"><i class="flaticon-calendar"></i>
                       </li>

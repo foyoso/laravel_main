@@ -8,15 +8,15 @@ define('POST_ITEM_PER_PAGE', 10);
 
 
 function getNewLink($item){
-    return '/news/'. $item->slug . '-' .$item -> id;
+    return '/blogs/'. $item->slug;
   }
 
 function getListingLink($item){
-    return '/listings/'. $item->slug . '-' .$item -> id;
+    return '/listings/'. $item->slug;
   }
 
 function getPageLink($item){
-    return $item->slug . '-' .$item -> id;
+    return $item->slug;
   }
 
 

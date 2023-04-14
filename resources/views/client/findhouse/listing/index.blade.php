@@ -63,7 +63,7 @@
                       </div>
                       <div class="dd_content2">
                         <div class="pricing_acontent">
-                          <!-- <input type="text" class="amount" placeholder="$52,239"> 
+                          <!-- <input type="text" class="amount" placeholder="$52,239">
 														<input type="text" class="amount2" placeholder="$985,14">
 														<div class="slider-range"></div> -->
                           <span id="slider-range-value1"></span>
@@ -571,7 +571,7 @@
                 @foreach ($listings as $listing)
                 <li class="extrawide list-inline-item">
                   <div class="feat_property home7 style4">
-                    <a href="/listing/{{$listing->slug}}">
+                    <a href="{{getListingLink($listing)}}">
                       <div class="thumb">
                         <div class="item">
                           <img class="img-whp" src="{{$listing->thumbnail}}" alt="{{$listing->name}}">
@@ -594,7 +594,7 @@
                         </div>
                       </div>
                     </a>
-                    <a href="/listing/{{$listing->slug}}">
+                    <a href="{{getListingLink($listing)}}">
                       <div class="details">
                         <div class="tc_content">
                           <p class="text-thm">Apartment</p>
@@ -832,7 +832,7 @@ function gMapHome() {
       if (iconPath) {
         <?php
         $latlng = [];
-        foreach ($listings as $listing) { 
+        foreach ($listings as $listing) {
           $temp = [
             'lat' => $listing->latitude,
             'lng' => $listing->longitude,
