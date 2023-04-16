@@ -50,7 +50,7 @@
                                         <th scope="row">{{$item ->id}}</th>
                                         <td>
                                             <a href="{{$item -> getDomain(1)}}"  target="_blank">{{$item ->name}} <i class="fas fa-external-link-alt"></i></a> <br>
-                                            {{$item -> getStatus()}}
+                                            {!!$item -> getLabelStatus() !!}
                                         </td>
                                         <td><img src="{{$item ->logo==''?DEFAULT_THUMBNAIL:$item ->logo}}" height="50px"/></td>
                                         <td>

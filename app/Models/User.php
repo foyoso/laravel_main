@@ -61,7 +61,10 @@ class User extends Authenticatable
         return $permissions;
     }// End Method
 
-
+    public function website()
+    {
+        return $this->hasMany(Website::class,'user_id', 'id');
+    }
     public static function roleHasPermissions($role,$permissions){
 
         $hasPermission = true;
