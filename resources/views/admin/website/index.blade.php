@@ -38,8 +38,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Folder</th>
-                                    <th>Link Demo</th>
+                                    <th>Logo</th>
+                                    <th>Info</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -48,9 +48,15 @@
                                 @foreach ($data as $item)
                                     <tr>
                                         <th scope="row">{{$item ->id}}</th>
-                                        <td>{{$item ->name}}</td>
-                                        <td>{{$item ->directory}}</td>
-                                        <td>{{$item ->link_demo}}</td>
+                                        <td>
+                                            <a href="{{$item -> getDomain(1)}}"  target="_blank">{{$item ->name}} <i class="fas fa-external-link-alt"></i></a> <br>
+                                            {{$item -> getStatus()}}
+                                        </td>
+                                        <td><img src="{{$item ->logo==''?DEFAULT_THUMBNAIL:$item ->logo}}" height="50px"/></td>
+                                        <td>
+                                            <i class="fas fa-id-card"></i> {{$item -> user-> name}}<br/>
+                                            <i class="far fa-envelope"></i> {{$item -> user-> email}}
+                                        </td>
                                         <td>
                                             <a class="text-success mr-2" href="/admin/website/edit/{{  $item->id }}"><i class="fas fa-pen"></i></a>
                                             <a class="text-danger mr-2" href="#" onclick="removeRow(this,{{  $item->id  }},'{{ '/admin/website/delete'}}')" ><i class="fas fa-trash-alt"></i></a>
