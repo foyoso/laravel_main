@@ -635,241 +635,73 @@
               Filter</span>
           </div>
         </div>
-        <div class="half_map_area">
-          <div class="home_two_map style2">
-            <div class="map-canvas skin2 half_style" id="contact-google-map" data-map-lat="51.510280"
-              data-map-lng="-0.084028" data-icon-path="/client/findhouse/images/logo/1.png"
-              data-map-title="Awesome Place" data-map-zoom="14"></div>
-          </div>
-        </div>
+        <div id="map"></div>
       </div>
     </div>
   </div>
 </section>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdcQziN6k5uqihdi3oL1jTajBLFU0FJ4w&callback=initMap">
-</script>
-<script type="text/javascript" src="/client/findhouse/js/google-maps.js"></script>
+<!-- <script type="text/javascript" src="/client/findhouse/js/google-maps.js"></script> -->
 <script>
 ("use strict");
 
-function gMapHome() {
-  if ($(".map-canvas").length) {
-    $(".map-canvas").each(function() {
-      // getting options from html
-      var Self = $(this);
-      var mapName = Self.attr("id");
-      var mapLat = Self.data("map-lat");
-      var mapLng = Self.data("map-lng");
-      var iconPath = Self.data("icon-path");
-      var mapZoom = Self.data("map-zoom");
-      var mapTitle = Self.data("map-title");
+function initMap() {
+  const myLatlng = {
+    lat: 10.837508551344785,
+    lng: 106.83894411646037
+  };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: myLatlng,
+  });
 
-      var styles = [{
-          featureType: "all",
-          elementType: "labels.text",
-          stylers: [{
-            visibility: "off"
-          }],
-        },
-        {
-          featureType: "administrative",
-          elementType: "labels.text.fill",
-          stylers: [{
-            color: "#222222"
-          }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "all",
-          stylers: [{
-            color: "#f2f2f2"
-          }],
-        },
-        {
-          featureType: "poi",
-          elementType: "all",
-          stylers: [{
-            visibility: "off"
-          }],
-        },
-        {
-          featureType: "road",
-          elementType: "all",
-          stylers: [{
-            saturation: -100
-          }, {
-            lightness: 45
-          }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "all",
-          stylers: [{
-            visibility: "simplified"
-          }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.icon",
-          stylers: [{
-            visibility: "off"
-          }],
-        },
-        {
-          featureType: "road.local",
-          elementType: "labels.text",
-          stylers: [{
-            visibility: "off"
-          }],
-        },
-        {
-          featureType: "transit",
-          elementType: "all",
-          stylers: [{
-            visibility: "off"
-          }],
-        },
-        {
-          featureType: "water",
-          elementType: "all",
-          stylers: [{
-            color: "#ffe807"
-          }, {
-            visibility: "on"
-          }],
-        },
-      ];
-      if ($(this).hasClass("skin2")) {
-        var iconPath =
-          "/client/findhouse/images/resource/map-marker.png";
-        var styles = [{
-            featureType: "all",
-            elementType: "labels",
-            stylers: [{
-              visibility: "on"
-            }],
-          },
-          {
-            featureType: "administrative",
-            elementType: "labels.text.fill",
-            stylers: [{
-              color: "#222222"
-            }],
-          },
-          {
-            featureType: "landscape",
-            elementType: "all",
-            stylers: [{
-              color: "green"
-            }],
-          },
-          {
-            featureType: "poi",
-            elementType: "all",
-            stylers: [{
-              visibility: "off"
-            }],
-          },
-          {
-            featureType: "road",
-            elementType: "all",
-            stylers: [{
-              saturation: -100
-            }, {
-              lightness: 45
-            }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "all",
-            stylers: [{
-              visibility: "simplified"
-            }],
-          },
-          {
-            featureType: "road.arterial",
-            elementType: "labels.icon",
-            stylers: [{
-              visibility: "off"
-            }],
-          },
-          {
-            featureType: "transit",
-            elementType: "all",
-            stylers: [{
-              visibility: "off"
-            }],
-          },
-          {
-            featureType: "water",
-            elementType: "all",
-            stylers: [{
-              color: "blue"
-            }, {
-              visibility: "on"
-            }],
-          },
-        ];
-      }
+  <?php
+  $latlng = [];
+  foreach ($listings as $listing) {
+    $temp = [
+      'lat' => $listing->latitude,
+      'lng' => $listing->longitude,
+      'name' => $listing->name,
+      'address' => $listing->address,
+      'thumbnail' => $listing->thumbnail,
+      'bedroom' => $listing->bedroom,
+      'bathroom' =>$listing->bathroom
+    ];
+    array_push($latlng, $temp); }
+  ?>
 
-      // if zoom not defined the zoom value will be 15;
-      if (!mapZoom) {
-        var mapZoom = 12;
-      }
-      // init map
-      var map;
-      map = new GMaps({
-        div: "#" + mapName,
-        scrollwheel: false,
-        lat: mapLat,
-        lng: mapLng,
-        styles: styles,
-        zoom: mapZoom,
-      });
-
-      // if icon path setted then show marker
-      if (iconPath) {
-        <?php
-        $latlng = [];
-        foreach ($listings as $listing) {
-          $temp = [
-            'lat' => $listing->latitude,
-            'lng' => $listing->longitude,
-            'name' => $listing->name,
-            'address' => $listing->address,
-            'thumbnail' => $listing->thumbnail,
-            'bedroom' => $listing->bedroom,
-            'bathroom' =>$listing->bathroom
-          ];
-          array_push($latlng, $temp); }
-        ?>
-
-        let latlng = <?php echo json_encode($latlng)?>;
-        latlng.map((lat, index) => {
-          map.addMarker({
-            icon: iconPath,
-            lat: lat.lat,
-            lng: lat.lng,
-            title: `Tenby ${index}`,
-            infoWindow: {
-              content: `<img src="${lat.thumbnail}" alt="${lat.name}"/> <h5>Apartment</h5> <h4>${lat.name}</h4> <p>${lat.address}</p> <p><span>Beds: ${lat.bedroom}</span> <span>Baths: ${lat.bathroom}</span></p>`,
-            },
-          });
-        });
-      }
+  const infoWindow = new google.maps.InfoWindow();
+  let latlng = <?php echo json_encode($latlng)?>;
+  latlng.map((lat, index) => {
+    console.log(lat.lat, lat.lng);
+    const marker = new google.maps.Marker({
+      position: {
+        lat: parseFloat(lat.lat),
+        lng: parseFloat(lat.lng)
+      },
+      map,
+      title: `${lat.name}`,
     });
-  }
+
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(
+        `<img src="${lat.thumbnail}" alt="${lat.name}"/> <h5>Apartment</h5> <h4>${lat.name}</h4> <p>${lat.address}</p> <p><span>Beds: ${lat.bedroom}</span> <span>Baths: ${lat.bathroom}</span></p>`
+      );
+      infoWindow.open(marker.getMap(), marker);
+    });
+  });
 }
 
-// Dom Ready Function
-jQuery(document).on("ready", function() {
-  (function($) {
-    // add your functions
-    gMapHome();
-  })(jQuery);
-});
+window.initMap = initMap;
 </script>
 
-
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdcQziN6k5uqihdi3oL1jTajBLFU0FJ4w&callback=initMap&v=weekly">
+</script>
+<style>
+#map {
+  height: 100%;
+}
+</style>
 @endsection
