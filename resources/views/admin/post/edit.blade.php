@@ -116,6 +116,20 @@
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="">Select tags</label>
+                                                    <div class="tag-content">
+                                                        <?php foreach ($tags as $item) {?>
+                                                        <span class="badge bg-secondary" data-name="{{$item -> name}}" data-id="{{$item -> id}}">{{$item -> name}}</span>
+                                                        <?php } ?>
+                                                        <input type="hidden" value="{{$data -> tags}}" name="tags" class="tags" id="tags"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </section>
                             </div>
@@ -143,10 +157,37 @@
 @section('addJs')
 <script>
 $(document).ready(function(){
-$('#vertical-menu-btn').click();
-$(".datepicker").datepicker({
-    format: "yyyy-mm-dd"
-});
+    $('#vertical-menu-btn').click();
+    $(".datepicker").datepicker({
+        format: "yyyy-mm-dd"
+    });
+
+    $(".tag-content").on("click", 'span', function() {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+            } else {
+                $(this).addClass("active");
+            }
+            var value = "";
+            $(".tag-content span.active").each(function() {
+                value = value + "," + $(this).data("id");
+            });
+
+            if (value != "") {
+                $(".tags").val(value + ",");
+            } else {
+                $(".tags").val(value);
+            }
+
+        });
+
+        var updateTagsValue = $(".tags").val();
+        if (updateTagsValue != "") {
+            var arrValue = updateTagsValue.split(",");
+            arrValue.forEach(function(id) {
+                $(".tag-content span[data-id='"+id+"']").addClass("active");
+            });
+        }
 })
 </script>
 <script src="/theme-admin/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
@@ -198,16 +239,19 @@ $('#btnSubmit').on('click', function(){
 </div>
 <style>
 #sortable li {
-margin: 3px 3px 3px 0;
-padding: 1px;
-float: left;
-width: 125px;
-height: 116px;
-font-size: 4em;
-text-align: center;
-background: transparent;
-border: none;
-list-style: none;
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    width: 125px;
+    height: 116px;
+    font-size: 4em;
+    text-align: center;
+    background: transparent;
+    border: none;
+    list-style: none;
+}
+.badge.bg-secondary.active{
+    background-color: #0f9cf3!important;
 }
 
 

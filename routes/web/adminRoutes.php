@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Admin\TagPostController;
 
 // -----------admin--- ----- --- ----//
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
@@ -79,6 +80,15 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::get('edit/{website}/{item}', [PostController::class, 'show']);
       Route::post('edit/{website}/{item}', [PostController::class, 'edit']);
       Route::delete('delete', [PostController::class, 'delete']);
+    });
+
+    #post
+    Route::prefix('tag')->group(function () {
+
+      Route::post('add', [TagPostController::class, 'store']);
+      Route::get('/{website}', [TagPostController::class, 'index']);
+      Route::post('edit/{item}', [TagPostController::class, 'edit']);
+      Route::delete('delete', [TagPostController::class, 'delete']);
     });
 
     Route::prefix('listing')->group(function () {

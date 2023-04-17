@@ -160,7 +160,7 @@ $(window).scroll(function() {
 
 function infinteLoadMore(page) {
   $.ajax({
-      url: ENDPOINT + "/blog?page=" + page,
+      url: ENDPOINT + "/blogs?page=" + page,
       datatype: "html",
       type: "get",
       beforeSend: function() {

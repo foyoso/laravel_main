@@ -48,6 +48,7 @@ class PostService
                 'slug' => (string)Str::slug($request->input('name'), '-'),
                 'description' =>  $request->input('description'),
                 'publish_at' =>  $request->input('publish_at'),
+                'tags' =>  $request->input('tags'),
 
             ]);
             DB::commit();
@@ -60,17 +61,18 @@ class PostService
         }
     }
 
-    public function edit($request, $listing)
+    public function edit($request, $post)
     {
         DB::beginTransaction();
         try {
-            $listing -> name       = (string)$request->input('name');
-            $listing -> slug = (string)Str::slug($request->input('name'), '-');
-            $listing -> thumbnail =  $request->input('thumbnail');
-            $listing -> publish_at=  $request->input('publish_at');
-            $listing -> content=  $request->input('content');
-            $listing -> description =  $request->input('description');
-            $listing->save();
+            $post -> name       = (string)$request->input('name');
+            $post -> slug = (string)Str::slug($request->input('name'), '-');
+            $post -> thumbnail =  $request->input('thumbnail');
+            $post -> publish_at=  $request->input('publish_at');
+            $post -> content=  $request->input('content');
+            $post -> description =  $request->input('description');
+            $post -> tags =  $request->input('tags');
+            $post->save();
             DB::commit();
             Session::flash('success', 'Edit Post success');
             return true;

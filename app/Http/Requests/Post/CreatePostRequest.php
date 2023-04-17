@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
-
+use Illuminate\Validation\Rule;
 class CreatePostRequest extends FormRequest
 {
     /**
@@ -28,7 +28,7 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|unique:posts',
+            'name'=>['required',Rule::unique('posts')->where('user_id', $this -> website -> user_id)->whereNull('deleted_at')],
         ];
     }
     public function messages() : array
@@ -37,9 +37,5 @@ class CreatePostRequest extends FormRequest
             'name.required' => 'Post name required',
             'name.unique' => 'Post exists'
         ];
-    }
-    protected function failedValidation(Validator $validator) : void
-    {
-        throw new HttpResponseException(response()->json(['status'=>false, 'error'=>$validator->errors()], 202));
     }
 }
