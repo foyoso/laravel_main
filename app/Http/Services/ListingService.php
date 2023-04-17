@@ -91,6 +91,8 @@ class ListingService
             $listing ->sale_or_rent= $request->input('sale_or_rent');
             $listing ->bedroom= $request->input('bedroom');
             $listing ->bathroom=$request->input('bathroom');
+            $listing ->latitude=$request->input('latitude');
+            $listing ->longitude=$request->input('longitude');
             $listing ->area = str_replace(',', '', $request->input('area'));
 
             $listing ->tags= $request->input('tags');

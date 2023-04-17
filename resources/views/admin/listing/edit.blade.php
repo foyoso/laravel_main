@@ -167,6 +167,27 @@
                                                     </ul>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-4">
+                                                <div class="my_profile_setting_input form-group">
+                                                    <div class="h400 bdrs8" id="map" style="height:500px"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="my_profile_setting_input form-group">
+                                                    <label for="googleMapLat">Latitude (for Google Maps)</label>
+                                                    <input type="text" class="form-control" id="googleMapLat" name="latitude" value="{{$data -> latitude}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="my_profile_setting_input form-group">
+                                                    <label for="googleMapLong">Longitude (for Google Maps)</label>
+                                                    <input type="text" class="form-control" id="googleMapLong" name="longitude" value="{{$data -> longitude}}" >
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </section>
                             </div>
@@ -227,6 +248,36 @@
 @endsection
 @section('addJs')
 
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 13,
+            center: { lat: {{$data ->latitude}}, lng: {{$data ->longitude}} },
+        });
+
+        marker = new google.maps.Marker({
+            map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: { lat: {{$data ->latitude}}, lng: {{$data ->longitude}} },
+        });
+        //marker.addListener("click", toggleBounce);
+        google.maps.event.addListener(marker, 'dragend', function() {
+            var curLatLng = marker.getPosition();
+            console.log(curLatLng.lat());
+            console.log(curLatLng.lng());
+            // latitudeTextBox.val(curLatLng.lat());
+            // longitudeTextBox.val(curLatLng.lng());
+            $('#googleMapLat').val(curLatLng.lat());
+            $('#googleMapLong').val(curLatLng.lng());
+        });
+
+        google.maps.event.trigger(marker, "click");
+    }
+
+
+    window.initMap = initMap;
+</script>
 <script src="/theme-admin/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <link href="/theme-admin/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
@@ -238,13 +289,17 @@
 <script type="text/javascript" src="/theme-admin/libs/summernote8/summernote-gallery-extension.js"></script>
 <script type="text/javascript" src="/theme-admin/js/image/open-media-gallery-file.js"></script>
 <script src="/theme-admin/js/listing/add.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdcQziN6k5uqihdi3oL1jTajBLFU0FJ4w&callback=initMap&v=weekly" defer type="text/javascript"></script>
+
 <script>
 var imageFolder ='listing/listing_{{$data -> id}}';
 var linkImageSummerNote = "/admin/image/getForAjax?folder=" + imageFolder ;
 var province = '{{$data -> province}}';
 var commune = '{{$data -> commune}}';
 var district = '{{$data -> district}}';
+
 $(document).ready(function() {
+
     $('#vertical-menu-btn').click();
     $(".datepicker").datepicker({
         format: "yyyy-mm-dd"

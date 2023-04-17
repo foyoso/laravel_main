@@ -999,7 +999,7 @@
                       <span id="slider-range-value1"></span>
                       <span class="mt0" id="slider-range-value2"></span>
                       <div id="slider"></div>
-                      <!-- <input type="text" class="amount" placeholder="$52,239"> 
+                      <!-- <input type="text" class="amount" placeholder="$52,239">
 												<input type="text" class="amount2" placeholder="$985,14">
 												<div class="slider-range"></div> -->
                     </div>
@@ -1335,8 +1335,36 @@
     </div>
   </div>
 </section>
+<script>
+  function initMap() {
+      const map = new google.maps.Map(document.getElementById("map-canvas"), {
+          zoom: 13,
+          center: { lat: {{$data ->latitude}}, lng: {{$data ->longitude}} },
+      });
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap">
+      marker = new google.maps.Marker({
+          map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: { lat: {{$data ->latitude}}, lng: {{$data ->longitude}} },
+      });
+      //marker.addListener("click", toggleBounce);
+      google.maps.event.addListener(marker, 'dragend', function() {
+          var curLatLng = marker.getPosition();
+          console.log(curLatLng.lat());
+          console.log(curLatLng.lng());
+          // latitudeTextBox.val(curLatLng.lat());
+          // longitudeTextBox.val(curLatLng.lng());
+          $('#googleMapLat').val(curLatLng.lat());
+          $('#googleMapLong').val(curLatLng.lng());
+      });
+
+      google.maps.event.trigger(marker, "click");
+  }
+
+
+  window.initMap = initMap;
 </script>
-<script type="text/javascript" src="/client/findhouse/js/googlemaps1.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdcQziN6k5uqihdi3oL1jTajBLFU0FJ4w&callback=initMap"></script>
+
 @endsection
