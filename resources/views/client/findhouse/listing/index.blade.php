@@ -573,15 +573,15 @@
                   <div class="feat_property home7 style4">
                     <a href="{{getListingLink($listing)}}">
                       <div class="thumb">
-                        <div class="item">
+                        <div class="item w-100">
                           <img class="img-whp" src="{{$listing->thumbnail}}" alt="{{$listing->name}}">
                         </div>
                         <div class="thmb_cntnt style2">
                           <ul class="tag mb0">
                             @if ($listing->sale_or_rent == 1)
-                              <li class="list-inline-item">For Rent</li>
+                            <li class="list-inline-item">For Rent</li>
                             @else
-                              <li class="list-inline-item">For Sale</li>
+                            <li class="list-inline-item">For Sale</li>
                             @endif
                           </ul>
                         </div>
@@ -590,7 +590,8 @@
                             <li class="list-inline-item"><span class="flaticon-transfer-1"></span></li>
                             <li class="list-inline-item"><span class="flaticon-heart"></span></li>
                           </ul> -->
-                          <span class="fp_price">${{number_format($listing->price, 0, '.', ',')}}<small>/mo</small></span>
+                          <span
+                            class="fp_price">${{number_format($listing->price, 0, '.', ',')}}<small>/mo</small></span>
                         </div>
                       </div>
                     </a>
@@ -599,19 +600,22 @@
                         <div class="tc_content">
                           <p class="text-thm">{{$listing -> listingType -> name}}</p>
                           <h4>{{$listing->name}}</h4>
-                          <p><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
+                          <p class="text-overflow"><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
                           <ul class="prop_details mb0">
                             <li class="list-inline-item">Beds: {{$listing->bedroom}}</li>
-                            <li class="list-inline-item">Baths: {{$listing->bathroom}}</li>
-                            <li class="list-inline-item">Area: {{number_format($listing->area, 0, '.', ',')}}</li>
+                            <li class="list-inline-item mr-0">Baths: {{$listing->bathroom}}</li>
+                            <li class="list-inline-item d-block">Area: {{number_format($listing->area, 0, '.', ',')}}
+                            </li>
                           </ul>
                         </div>
                         <div class="fp_footer">
                           <ul class="fp_meta float-left mb0">
-                            <li class="list-inline-item"><img src="{{$listing -> user -> avatar}}" width="40px" height="40px" alt="{{$listing -> user -> name}}"></li>
+                            <li class="list-inline-item"><img src="{{$listing -> user -> avatar}}" width="40px"
+                                height="40px" alt="{{$listing -> user -> name}}"></li>
                             <li class="list-inline-item">{{$listing -> user -> name}}</li>
                           </ul>
-                          <div class="fp_pdate float-right">{{date_format(date_create($listing -> updated_at), 'M d, Y')}}</div>
+                          <div class="fp_pdate float-right">
+                            {{date_format(date_create($listing -> updated_at), 'M d, Y')}}</div>
                         </div>
                       </div>
                     </a>
