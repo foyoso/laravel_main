@@ -3,3 +3,13 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+.for-rent {
+    background-color: #ff5a5f;
+    color: #fff;
+}
+
+.for-sale {
+    background-color: rgb(62, 76, 102);
+    color: #fff;
+}

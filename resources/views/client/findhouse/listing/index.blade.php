@@ -579,9 +579,9 @@
                         <div class="thmb_cntnt style2">
                           <ul class="tag mb0">
                             @if ($listing->sale_or_rent == 1)
-                            <li class="list-inline-item">For Rent</li>
+                            <li class="list-inline-item for-rent">For Rent</li>
                             @else
-                            <li class="list-inline-item">For Sale</li>
+                            <li class="list-inline-item for-sale">For Sale</li>
                             @endif
                           </ul>
                         </div>
@@ -599,7 +599,7 @@
                       <div class="details">
                         <div class="tc_content">
                           <p class="text-thm">{{$listing -> listingType -> name}}</p>
-                          <h4>{{$listing->name}}</h4>
+                          <h4 class="text-overflow">{{$listing->name}}</h4>
                           <p class="text-overflow"><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
                           <ul class="prop_details mb0">
                             <li class="list-inline-item">Beds: {{$listing->bedroom}}</li>
