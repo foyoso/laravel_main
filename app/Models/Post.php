@@ -29,7 +29,16 @@ class Post extends ModelBase
         'tags',
         'publish_at'
     ];
-
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function getTags(){
+        if($this -> tags !=''){
+            $tagId = substr($this -> tags, 1, -1);
+            return Tag::select('id','name', 'slug') -> whereIn('id', explode(',', $tagId)) -> orderbyDesc('updated_at')->get();
+        }
+        return [];
+    }
 
 }

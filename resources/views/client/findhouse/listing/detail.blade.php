@@ -22,7 +22,7 @@
             </ul>
           </div>
           <div class="price text-right tal-400">
-            <h2>$13,000<small>/mo</small></h2>
+            <h2>${{number_format($data->price, 0, '.', ',')}}<small>/mo</small></h2>
           </div>
         </div>
       </div>
@@ -69,35 +69,17 @@
               <div class="lsd_list">
                 <ul class="mb0">
                   <li class="list-inline-item"><a href="#">Apartment</a></li>
-                  <li class="list-inline-item"><a href="#">Beds: 4</a></li>
-                  <li class="list-inline-item"><a href="#">Baths: 2</a></li>
-                  <li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+                  <li class="list-inline-item"><a href="#">Beds: {{$data->bedroom}}</a></li>
+                  <li class="list-inline-item"><a href="#">Baths: {{$data->bathroom}}</a></li>
+                  <li class="list-inline-item"><a href="#">SqFt: {{number_format($data->area, 0, '.', ',')}}</a></li>
                 </ul>
               </div>
-              <h4 class="mb30">Description</h4>
-              <p class="mb25">Evans Tower very high demand corner junior one bedroom plus a large balcony boasting full
-                open NYC views. You need to see the views to believe them. Mint condition with new hardwood floors. Lots
-                of closets plus washer and dryer.</p>
-              <p class="gpara second_para white_goverlay mt10 mb10">Fully furnished. Elegantly appointed condominium
-                unit situated on premier location. PS6. The wide entry hall leads to a large living room with dining
-                area. This expansive 2 bedroom and 2 renovated marble bathroom apartment has great windows. Despite the
-                interior views, the apartments Southern and Eastern exposures allow for lovely natural light to fill
-                every room. The master suite is surrounded by handcrafted milkwork and features incredible walk-in
-                closet and storage space.</p>
+              <h4 class="mb30">{{$data -> name}}</h4>
+
+
               <div class="collapse" id="collapseExample">
                 <div class="card card-body">
-                  <p class="mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier
-                    location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2
-                    bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the
-                    apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The
-                    master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and
-                    storage space.</p>
-                  <p class="mt10 mb10">Fully furnished. Elegantly appointed condominium unit situated on premier
-                    location. PS6. The wide entry hall leads to a large living room with dining area. This expansive 2
-                    bedroom and 2 renovated marble bathroom apartment has great windows. Despite the interior views, the
-                    apartments Southern and Eastern exposures allow for lovely natural light to fill every room. The
-                    master suite is surrounded by handcrafted milkwork and features incredible walk-in closet and
-                    storage space.</p>
+                  {{$data -> description}}
                 </div>
               </div>
               <p class="overlay_close">

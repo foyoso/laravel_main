@@ -20,149 +20,42 @@
       <div class="col-lg-8">
         <div class="main_blog_post_content">
           <div class="mbp_thumb_post">
-            <div class="blog_sp_tag"><a href="#">Construction</a></div>
+            @php
+              $tags = $data -> getTags();
+            @endphp
+            @foreach ($tags as $t)
+
+              <div class="blog_sp_tag">
+                <a href="/tags/{{$t -> slug}}"><i class="fa fa-hashtag"></i> {{$t-> name}}</a>
+              </div>
+            @endforeach
+
             <!-- <h3 class="blog_sp_title">{{$data->name}}</h3> -->
             <ul class="blog_sp_post_meta">
-              <li class="list-inline-item"><a href="#"><img src="/client/findhouse/images/property/pposter1.png"
-                    alt="pposter1.png"></a>
+              <li class="list-inline-item"><a href="#"><img src="{{$data -> user -> avatar}}" width="40px" height="40px" alt="{{$data -> user -> name}}"></a>
               </li>
-              <li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+              <li class="list-inline-item"><a href="#">{{$data -> user -> name}}</a></li>
               <li class="list-inline-item"><span class="flaticon-calendar"></span></li>
-              <li class="list-inline-item"><a href="#">January 16, 2020</a></li>
-              <li class="list-inline-item"><span class="flaticon-view"></span></li>
-              <li class="list-inline-item"><a href="#"> 341 views</a></li>
-              <li class="list-inline-item"><span class="flaticon-chat"></span></li>
-              <li class="list-inline-item"><a href="#">15</a></li>
+              <li class="list-inline-item"><a href="#">{{date_format(date_create($data -> publish_at), 'M d, Y')}}</a></li>
+              <li class="list-inline-item d-none"><span class="flaticon-view"></span></li>
+              <li class="list-inline-item d-none"><a href="#"> 341 views</a></li>
+              <li class="list-inline-item d-none"><span class="flaticon-chat"></span></li>
+              <li class="list-inline-item d-none"><a href="#">15</a></li>
             </ul>
             <div class="thumb">
-              <img class="img-fluid" src="/client/findhouse/images/blog/bs1.jpg" alt="bs1.jpg">
+              <img class="img-fluid" src="{{$data -> thumbnail}}" alt="{{$data -> name}}">
             </div>
             <div class="details">
-              {{$data -> content}}
+              {!!$data -> content!!}
             </div>
-            <ul class="blog_post_share">
-              <li>
-                <p>Share</p>
-              </li>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-google"></i></a></li>
-              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            </ul>
+
           </div>
-          <div class="mbp_pagination_tab">
-            <div class="row">
-              <div class="col-sm-6 col-lg-6">
-                <div class="pag_prev">
-                  <a href="#"><span class="flaticon-back"></span></a>
-                  <div class="detls">
-                    <h5>Previous Post</h5>
-                    <p> Housing Markets That</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-6">
-                <div class="pag_next text-right">
-                  <a href="#"><span class="flaticon-next"></span></a>
-                  <div class="detls">
-                    <h5>Next Post</h5>
-                    <p> Most This Decade</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product_single_content mb30">
-            <div class="mbp_pagination_comments">
-              <div class="total_review">
-                <h4>896 Reviews</h4>
-                <ul class="review_star_list mb0 pl10">
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                  <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                </ul>
-                <a class="tr_outoff pl10" href="#">( 4.5 out of 5 )</a>
-                <a class="write_review float-right fn-xsd" href="#">Write a Review</a>
-              </div>
-              <div class="mbp_first media">
-                <img src="/client/findhouse/images/testimonial/1.png" class="mr-3" alt="1.png">
-                <div class="media-body">
-                  <h4 class="sub_title mt-0">Diana Cooper
-                    <span class="sspd_review">
-                      <ul class="mb0 pl15">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"></li>
-                      </ul>
-                    </span>
-                  </h4>
-                  <a class="sspd_postdate fz14" href="#">December 28, 2020</a>
-                  <p class="fz14 mt10">Beautiful home, very picturesque and close to everything in jtree! A little warm
-                    for a hot weekend, but would love to come back during the cooler seasons!</p>
-                </div>
-              </div>
-              <div class="custom_hr"></div>
-              <div class="mbp_first media">
-                <img src="/client/findhouse/images/testimonial/2.png" class="mr-3" alt="2.png">
-                <div class="media-body">
-                  <h4 class="sub_title mt-0">Ali Tufan
-                    <span class="sspd_review">
-                      <ul class="mb0 pl15">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                        <li class="list-inline-item"></li>
-                      </ul>
-                    </span>
-                  </h4>
-                  <a class="sspd_postdate fz14" href="#">December 28, 2020</a>
-                  <p class="fz14 mt10">Beautiful home, very picturesque and close to everything in jtree! A little warm
-                    for a hot weekend, but would love to come back during the cooler seasons!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bsp_reveiw_wrt">
-            <h4>Write a Review</h4>
-            <ul class="review_star">
-              <li class="list-inline-item">
-                <span class="sspd_review">
-                  <ul>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                  </ul>
-                </span>
-              </li>
-              <li class="list-inline-item pr15">
-                <p>Your Rating & Review</p>
-              </li>
-            </ul>
-            <form class="comments_form">
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputName1" aria-describedby="textHelp"
-                  placeholder="Review Title">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
-                  placeholder="Your Review"></textarea>
-              </div>
-              <button type="submit" class="btn btn-thm">Submit Review</button>
-            </form>
-          </div>
+
+
+
         </div>
         <div class="row">
-          <div class="col-lg-12 mb20">
+          <div class="col-lg-12 mb10 mt20">
             <h4>Related Posts</h4>
           </div>
           <div class="col-md-6 col-lg-6">
@@ -304,4 +197,14 @@
 </section>
 
 
+@endsection
+@section('addJs')
+<style>
+.blog_sp_tag{
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 4px;
+    width: auto;
+}
+</style>
 @endsection

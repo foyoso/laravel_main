@@ -579,9 +579,9 @@
                         <div class="thmb_cntnt style2">
                           <ul class="tag mb0">
                             @if ($listing->sale_or_rent == 1)
-                            <li class="list-inline-item">For Rent</li>
+                              <li class="list-inline-item">For Rent</li>
                             @else
-                            <li class="list-inline-item">For Sale</li>
+                              <li class="list-inline-item">For Sale</li>
                             @endif
                           </ul>
                         </div>
@@ -590,28 +590,28 @@
                             <li class="list-inline-item"><span class="flaticon-transfer-1"></span></li>
                             <li class="list-inline-item"><span class="flaticon-heart"></span></li>
                           </ul> -->
-                          <span class="fp_price">$13,000<small>/mo</small></span>
+                          <span class="fp_price">${{number_format($listing->price, 0, '.', ',')}}<small>/mo</small></span>
                         </div>
                       </div>
                     </a>
                     <a href="{{getListingLink($listing)}}">
                       <div class="details">
                         <div class="tc_content">
-                          <p class="text-thm">Apartment</p>
+                          <p class="text-thm">{{$listing -> listingType -> name}}</p>
                           <h4>{{$listing->name}}</h4>
                           <p><span class="flaticon-placeholder"></span> {{$listing->address}}</p>
                           <ul class="prop_details mb0">
                             <li class="list-inline-item">Beds: {{$listing->bedroom}}</li>
                             <li class="list-inline-item">Baths: {{$listing->bathroom}}</li>
+                            <li class="list-inline-item">Area: {{number_format($listing->area, 0, '.', ',')}}</li>
                           </ul>
                         </div>
                         <div class="fp_footer">
                           <ul class="fp_meta float-left mb0">
-                            <li class="list-inline-item"><img src="/client/findhouse/images/property/pposter1.png"
-                                alt="pposter1.png"></li>
-                            <li class="list-inline-item">Ali Tufan</li>
+                            <li class="list-inline-item"><img src="{{$listing -> user -> avatar}}" width="40px" height="40px" alt="{{$listing -> user -> name}}"></li>
+                            <li class="list-inline-item">{{$listing -> user -> name}}</li>
                           </ul>
-                          <div class="fp_pdate float-right">4 years ago</div>
+                          <div class="fp_pdate float-right">{{date_format(date_create($listing -> updated_at), 'M d, Y')}}</div>
                         </div>
                       </div>
                     </a>

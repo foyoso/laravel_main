@@ -36,12 +36,15 @@ class Listing extends ModelBase
         'area',
         'user_id',
         'website_id',
-        'tags'
+        'tags',
+        'type'
     ];
-
-
-
-
-
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function listingType()
+    {
+        return $this->belongsTo(ListingType::class, 'type', 'id');
+    }
 }
