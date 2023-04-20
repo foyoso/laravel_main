@@ -35,8 +35,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Folder</th>
-                                        <th>Link Demo</th>
+                                        <th>Url</th>
                                         <th>Action</th>
 
                                     </tr>
@@ -45,9 +44,9 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <th scope="row">{{$item ->id}}</th>
-                                            <td>{{$item ->name}}</td>
-                                            <td> </td>
-                                            <td> </td>
+                                            <td> <a href="/admin/page/edit/{{$website->id}}/{{  $item->id }}" target="_blank">{{$item ->name}} <i class="fas fa-pencil-alt"></i></a></td>
+                                             <td><a href="{{$website-> getDomain(1)}}{{$item-> slug}}" target="_blank">{{$website-> getDomain(1)}}{{$item-> slug}} <i class="fas fa-external-link-alt"></i></a> </td>
+
                                             <td>
                                                 <a class="text-success mr-2" href="/admin/page/edit/{{$website->id}}/{{  $item->id }}"><i class="fas fa-pen"></i></a>
                                                 <a class="text-danger mr-2" href="#" onclick="removeRow(this,{{  $item->id  }},'{{ '/admin/page/delete'}}')" ><i class="fas fa-trash-alt"></i></a>
@@ -74,8 +73,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Folder</th>
-                                    <th>Link Demo</th>
+                                    <th>Url</th>
+
                                     <th>Action</th>
 
                                 </tr>
@@ -85,11 +84,15 @@
                                     <tr>
                                         <th scope="row">{{$item ->id}}</th>
                                         <td>
-                                            <a href="{{$website-> getDomain(1)}}{{$item-> slug}}" target="_blank">{{$item ->name}}</a>
-
+                                            <a href="/admin/page/edit/{{$website->id}}/{{  $item->id }}" target="_blank">{{$item ->name}} <i class="fas fa-pencil-alt"></i></a>
                                         </td>
-                                        <td> </td>
-                                        <td> </td>
+                                        <td>
+                                            <a href="{{$website-> getDomain(1)}}{{$item-> slug}}"
+                                                target="_blank">
+                                                {{$website-> getDomain(1)}}{{$item-> slug}} <i class="fas fa-external-link-alt"></i>
+                                            </a>
+                                        </td>
+
                                         <td>
                                             <a class="text-success mr-2" href="/admin/page/edit/{{$website->id}}/{{  $item->id }}"><i class="fas fa-pen"></i></a>
                                         </td>

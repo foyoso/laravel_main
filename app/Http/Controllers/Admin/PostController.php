@@ -27,7 +27,7 @@ class PostController extends Controller
     {
         return view('admin.post.index', [
             'title' => 'List Post',
-            'data' =>  $this -> postService -> getByUser(ITEM_PER_PAGE, $request, $website -> user_id),
+            'data' =>  $this -> postService -> search(ITEM_PER_PAGE, $request, $website -> user_id),
             'website' => $website,
          ]);
     }

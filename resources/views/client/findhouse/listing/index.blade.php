@@ -579,9 +579,10 @@
                         <div class="thmb_cntnt style2">
                           <ul class="tag mb0">
                             @if ($listing->sale_or_rent == 1)
-                            <li class="list-inline-item for-rent">For Rent</li>
-                            @else
-                            <li class="list-inline-item for-sale">For Sale</li>
+                            <li class="list-inline-item for-rent">For Sale </li>
+                            @endif
+                            @if ($listing->sale_or_rent == 2)
+                            <li class="list-inline-item for-sale">For Rent</li>
                             @endif
                           </ul>
                         </div>

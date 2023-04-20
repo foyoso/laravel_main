@@ -28,9 +28,11 @@ class WebsiteController extends Controller
     //list
     public function index(Request $request)
     {
+        $layout = new LayoutService();
         return view('admin.website.index', [
            'title' => 'List Website',
-           'data' => $this->websiteService -> getAll(ITEM_PER_PAGE, $request)
+           'data' => $this->websiteService -> search(ITEM_PER_PAGE, $request),
+           'layout' => $layout ->getAllForSelectBox(),
         ]);
     }
     public function add()

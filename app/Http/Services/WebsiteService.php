@@ -13,6 +13,25 @@ class WebsiteService
         $result = $website -> findByDomain($domain);
         return $result;
     }
+    public function search($limit = 0, $request)
+    {
+        $qr = Website::query();
+        $limit = $request-> has('limit') && $request -> limit >0 ? $request -> limit : $limit;
+        if($request -> has('name') && $request -> name!='' ){
+            $qr -> where('name', 'like', '%' . $request -> input('name').'%' );
+        }
+        if($request -> has('layout_id') && $request -> layout_id!='' ){
+            $qr -> where('layout_id', '=', $request -> layout_id );
+        }
+        if($request -> has('domain') && $request -> domain!='' ){
+            $domain = str_replace('https://', '', $request -> input('domain'));
+            $domain = str_replace('http://', '', $domain);
+            $qr -> where('domain', 'like', '%' . $domain.'%' );
+        }
+        $data = $qr -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();
+        return $data;
+
+    }
     public function getAll($limit = 0, $request)
     {
         return Website::orderbyDesc('updated_at')->paginate($limit)->withQueryString();

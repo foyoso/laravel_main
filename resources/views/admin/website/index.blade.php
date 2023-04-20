@@ -31,14 +31,48 @@
             @include('admin.common.alert')
             <div class="card">
                 <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="tex" class="form-control" name="name" value="{{request() -> name}}" placeholder="name">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="tex" class="form-control" name="domain" value="{{request() -> domain}}" placeholder="abc.com">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control" name="layout_id">
+                                    <option value="">All layout</option>
+                                    @foreach ($layout as $item )
+                                        <option value="{{$item -> id}}" {{$item -> id ==request() ->layout_id?'selected':'' }}>{{$item -> name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control" name="limit">
+                                    <option value="10" {{request() -> limit == 10?'selected':''}}>Show 10 rows</option>
+                                    <option value="30"  {{request() -> limit == 30?'selected':''}}>Show 30 rows</option>
+                                    <option value="50" {{request() -> limit == 50?'selected':''}}>Show 50 rows</option>
+                                    <option value="60"  {{request() -> limit == 60?'selected':''}}>Show 60 rows</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-success">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
                     <h4 class="card-title">{{$title}}</h4>
                     <div class="table-responsive">
                         <table class="table mb-0">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
                                     <th>Logo</th>
+                                    <th>Name</th>
+                                    <th>User</th>
                                     <th>Info</th>
                                     <th>Action</th>
 
@@ -48,14 +82,21 @@
                                 @foreach ($data as $item)
                                     <tr>
                                         <th scope="row">{{$item ->id}}</th>
+                                        <td><img src="{{$item ->logo==''?DEFAULT_THUMBNAIL:$item ->logo}}" height="50px"/></td>
                                         <td>
                                             <a href="{{$item -> getDomain(1)}}"  target="_blank">{{$item ->name}} <i class="fas fa-external-link-alt"></i></a> <br>
                                             {!!$item -> getLabelStatus() !!}
+                                            <span class="badge bg-info">{{$item -> layout->name}}</span>
                                         </td>
-                                        <td><img src="{{$item ->logo==''?DEFAULT_THUMBNAIL:$item ->logo}}" height="50px"/></td>
+
                                         <td>
                                             <i class="fas fa-id-card"></i> {{$item -> user-> name}}<br/>
                                             <i class="far fa-envelope"></i> {{$item -> user-> email}}
+                                        </td>
+                                        <td>
+                                            <a href="{{$item -> getDomain(1)}}"  target="_blank">{{$item -> getDomain(1)}} <i class="fas fa-external-link-alt"></i></a> <br>
+                                            <strong>Start Date:</strong>{{$item -> start_date}}<br/>
+                                            <strong>End Date:</strong>{{$item -> end_date}}
                                         </td>
                                         <td>
                                             <a class="text-success mr-2" href="/admin/website/edit/{{  $item->id }}"><i class="fas fa-pen"></i></a>

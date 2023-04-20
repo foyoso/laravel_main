@@ -20,6 +20,15 @@ class PostService
         }
         return $qr -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();
     }
+    public function search($limit = 0, $request, $userId)
+    {
+        $qr = Post::query();
+        $limit = $request-> has('limit') && $request -> limit >0 ? $request -> limit : $limit;
+        if($request -> has('name') ){
+            $qr -> where('name', 'like', '%' . $request -> input('name').'%' );
+        }
+        return $qr -> where('user_id', $userId) -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();
+    }
     public function getByUser($limit = 0, $request, $userId)
     {
         $qr = Post::query();

@@ -18,6 +18,18 @@ class ListingService
         }
         return $qr -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();;
     }
+    public function search($limit = 0, $request, $userId)
+    {
+        $qr = Listing::query();
+        $limit = $request-> has('limit') && $request -> limit >0 ? $request -> limit : $limit;
+        if($request -> has('name') ){
+            $qr -> where('name', 'like', '%' . $request -> input('name').'%' );
+        }
+        if($request -> has('sale_or_rent') && $request ->sale_or_rent >0 ){
+            $qr -> where('sale_or_rent', '=',  $request ->sale_or_rent);
+        }
+        return $qr -> where('user_id', $userId) -> orderbyDesc('updated_at')->paginate($limit)->withQueryString();
+    }
 
     public function getByUser($limit = 0, $request, $userId)
     {

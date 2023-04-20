@@ -28,7 +28,7 @@ class ListingController extends Controller
     {
         return view('admin.listing.index', [
             'title' => 'List Listing',
-            'data' =>  $this -> listingService -> getAll(ITEM_PER_PAGE, $request),
+            'data' =>  $this -> listingService -> search(ITEM_PER_PAGE, $request, $website->user_id ),
             'website' => $website
 
          ]);
