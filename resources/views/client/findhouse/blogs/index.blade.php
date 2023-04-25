@@ -7,8 +7,8 @@
       <div class="col-xl-6">
         <div class="breadcrumb_content style2">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active text-thm" aria-current="page">Simple Listing – Grid View</li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active text-thm" aria-current="page">Blogs</li>
           </ol>
           <h2 class="breadcrumb_title">Blog</h2>
         </div>
@@ -69,84 +69,38 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="sidebar_search_widget">
-          <div class="blog_search_widget">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span
-                    class="flaticon-magnifying-glass"></span></button>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="terms_condition_widget">
-          <h4 class="title">Categories Property</h4>
+          <h4 class="title">Categories blog</h4>
           <div class="widget_list">
             <ul class="list_details">
-              <li><a href="#"><i class="fa fa-caret-right mr10"></i>Apartment <span class="float-right">6
-                    properties</span></a></li>
-              <li><a href="#"><i class="fa fa-caret-right mr10"></i>Condo <span class="float-right">12
-                    properties</span></a></li>
-              <li><a href="#"><i class="fa fa-caret-right mr10"></i>Family House <span class="float-right">8
-                    properties</span></a></li>
-              <li><a href="#"><i class="fa fa-caret-right mr10"></i>Modern Villa <span class="float-right">26
-                    properties</span></a></li>
-              <li><a href="#"><i class="fa fa-caret-right mr10"></i>Town House <span class="float-right">89
-                    properties</span></a></li>
+              @foreach ($tags as $item )
+                <li>
+                    <a href="#">
+                        <i class="fa fa-caret-right mr10"></i>{{$item -> name}}
+                        <span class="float-right">{{$item -> countPost()}} blogs</span>
+                     </a>
+                </li>
+              @endforeach
+
             </ul>
           </div>
         </div>
         <div class="sidebar_feature_listing">
-          <h4 class="title">Featured Listings</h4>
-          <div class="media">
-            <img class="align-self-start mr-3" src="/client/findhouse/images/blog/fls1.jpg" alt="fls1.jpg">
-            <div class="media-body">
-              <h5 class="mt-0 post_title">Nice Room With View</h5>
-              <a href="#">$13,000/<small>/mo</small></a>
-              <ul class="mb0">
-                <li class="list-inline-item">Beds: 4</li>
-                <li class="list-inline-item">Baths: 2</li>
-                <li class="list-inline-item">Sq Ft: 5280</li>
-              </ul>
+          <h4 class="title">Latest post</h4>
+          @foreach ($latestBlogs as $item)
+            <div class="media">
+                <img class="align-self-start mr-3" src="{{$item -> thumbnail}}" alt="{{$item -> name}}" width="90px" height="80px">
+                <div class="media-body">
+                <h5 class="mt-0 post_title">{{$item -> name}}</h5>
+                <a href="{{getNewLink($item)}}">Read more</a>
+                <ul class="mb0">
+                    <li class="list-inline-item"><i class="flaticon-calendar"></i> {{date_format(date_create($item -> publish_at), 'M d, Y')}}</li>
+                </ul>
+                </div>
             </div>
-          </div>
-          <div class="media">
-            <img class="align-self-start mr-3" src="/client/findhouse/images/blog/fls2.jpg" alt="fls2.jpg">
-            <div class="media-body">
-              <h5 class="mt-0 post_title">Villa called Archangel</h5>
-              <a href="#">$13,000<small>/mo</small></a>
-              <ul class="mb0">
-                <li class="list-inline-item">Beds: 4</li>
-                <li class="list-inline-item">Baths: 2</li>
-                <li class="list-inline-item">Sq Ft: 5280</li>
-              </ul>
-            </div>
-          </div>
-          <div class="media">
-            <img class="align-self-start mr-3" src="/client/findhouse/images/blog/fls3.jpg" alt="fls3.jpg">
-            <div class="media-body">
-              <h5 class="mt-0 post_title">Sunset Studio</h5>
-              <a href="#">$13,000<small>/mo</small></a>
-              <ul class="mb0">
-                <li class="list-inline-item">Beds: 4</li>
-                <li class="list-inline-item">Baths: 2</li>
-                <li class="list-inline-item">Sq Ft: 5280</li>
-              </ul>
-            </div>
-          </div>
+          @endforeach
         </div>
-        <div class="blog_tag_widget">
-          <h4 class="title">Tags</h4>
-          <ul class="tag_list">
-            <li class="list-inline-item"><a href="#">Apartment</a></li>
-            <li class="list-inline-item"><a href="#">Real Estate</a></li>
-            <li class="list-inline-item"><a href="#">Estate</a></li>
-            <li class="list-inline-item"><a href="#">Luxury</a></li>
-            <li class="list-inline-item"><a href="#">Real</a></li>
-          </ul>
-        </div>
+
       </div>
     </div>
   </div>

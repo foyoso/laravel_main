@@ -539,7 +539,7 @@
             <div class="grid_list_search_result">
               <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="left_area tac-xsd">
-                  <p>9 Search results</p>
+                  <p>{{$listings -> total()}} Search results</p>
                 </div>
               </div>
               <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 pl0 pr0">

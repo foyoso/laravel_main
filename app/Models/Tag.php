@@ -25,7 +25,9 @@ class Tag extends Model
 
     ];
 
-
+    public function countPost(){
+        return Post::where('tags', 'like', '%,'.$this -> id.',%')->count();
+    }
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\PageService;
 use App\Http\Services\PostService;
+use App\Http\Services\TagService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,6 +14,8 @@ class BlogsController extends BaseController
     {
         $postService = new PostService();
         $data = $postService -> getAll(POST_ITEM_PER_PAGE, $request);
+        $tag = new TagService();
+        $tag = $tag -> getByUser($this -> website -> user_id, $request);
         if ($request->ajax()) {
             return  view($this -> layoutDir.'.blogs.ajax')->with('data', $data)->render();
         }
@@ -21,12 +24,14 @@ class BlogsController extends BaseController
         if($page){
         $this -> setMetaTag($page -> description,
                             $this -> website-> getDomain(1) . $page -> slug,
-                            $page -> og_image, $page -> keyword,
+                            $page -> og_image,
+                            $page -> keyword,
                             $page -> title);
         }
         return view($this -> layoutDir.'.blogs.index', [
-
-            'blogs' => $data
+            'tags' => $tag,
+            'blogs' => $data,
+            'latestBlogs' => $postService -> getByIdsOrderById($this -> website -> home_posts),
         ]);
     }
 

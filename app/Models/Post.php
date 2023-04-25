@@ -40,5 +40,4 @@ class Post extends ModelBase
         }
         return [];
     }
-
 }
