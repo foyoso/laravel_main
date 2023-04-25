@@ -41,6 +41,7 @@ class Website extends ModelBase
         'instagram',
         'linkedin',
         'zalo',
+        'website_type_id',
     ];
     public function user()
     {
@@ -49,6 +50,10 @@ class Website extends ModelBase
     public function layout()
     {
         return $this->belongsTo(Layout::class,'layout_id');
+    }
+    public function webType()
+    {
+        return $this->belongsTo(WebsiteType::class,'website_type_id');
     }
 
     public function findByDomain($domain)

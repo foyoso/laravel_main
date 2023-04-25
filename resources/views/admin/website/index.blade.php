@@ -91,7 +91,8 @@
 
                                         <td>
                                             <i class="fas fa-id-card"></i> {{$item -> user-> name}}<br/>
-                                            <i class="far fa-envelope"></i> {{$item -> user-> email}}
+                                            <i class="far fa-envelope"></i> {{$item -> user-> email}}<br/>
+                                            <span class="badge bg-warning">{{$item -> webType ->name}}</span>
                                         </td>
                                         <td>
                                             <a href="{{$item -> getDomain(1)}}"  target="_blank">{{$item -> getDomain(1)}} <i class="fas fa-external-link-alt"></i></a> <br>

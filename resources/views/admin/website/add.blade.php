@@ -45,6 +45,14 @@
                                 </select>
                             </div>
                             <div class="col-sm-12">
+                                <label class="col-form-label">Type <span class="text-danger">(*)</span></label>
+                                <select name="website_type_id" class="form-control">
+                                    @foreach ($types as $item )
+                                        <option value="{{$item -> id}}">{{$item -> name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-sm-12">
                                 <label class="col-form-label">Layout <span class="text-danger">(*)</span></label>
                                 <select name="layout_id" class="form-control">
                                     @foreach ($layout as $item )

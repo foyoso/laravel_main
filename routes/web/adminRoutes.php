@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\TagPostController;
+use App\Http\Controllers\Admin\WebsiteTypeController;
 
 // -----------admin--- ----- --- ----//
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
@@ -99,6 +100,15 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::post('edit/{item}', [ListingTypeController::class, 'edit']);
       Route::delete('delete', [ListingTypeController::class, 'delete']);
     });
+
+       #listing type
+       Route::prefix('websiteType')->group(function () {
+
+        Route::post('add', [WebsiteTypeController::class, 'store']);
+        Route::get('/', [WebsiteTypeController::class, 'index']);
+        Route::post('edit/{item}', [WebsiteTypeController::class, 'edit']);
+        Route::delete('delete', [WebsiteTypeController::class, 'delete']);
+      });
 
     Route::prefix('listing')->group(function () {
       Route::get('add/{website}', [ListingController::class, 'add']);

@@ -16,6 +16,7 @@ use App\Http\Services\ListingService;
 use App\Http\Services\PageService;
 use App\Http\Services\PostService;
 use App\Http\Services\UserService;
+use App\Http\Services\WebsiteTypeService;
 use App\Models\Website;
 
 class WebsiteController extends Controller
@@ -39,10 +40,12 @@ class WebsiteController extends Controller
     {
         $layout = new LayoutService();
         $user = new UserService();
+        $type = new WebsiteTypeService();
         return view('admin.website.add', [
            'title' => 'Add Website',
            'layout' => $layout ->getAllForSelectBox(),
-           'user' => $user ->getAllForSelectBox()
+           'user' => $user ->getAllForSelectBox(),
+           'types' => $type -> getAllForSelectBox()
         ]);
     }
     public function store(CreateRequest $request)
@@ -69,6 +72,7 @@ class WebsiteController extends Controller
     }
     public function show(Website $item)
     {
+        $type = new WebsiteTypeService();
         $layout = new LayoutService();
         $user = new UserService();
         return view('admin.website.edit', [
@@ -76,7 +80,8 @@ class WebsiteController extends Controller
            'data' => $item,
            'website' => $item,
            'layout' => $layout ->getAllForSelectBox(),
-           'user' => $user ->getAllForSelectBox()
+           'user' => $user ->getAllForSelectBox(),
+           'types' => $type -> getAllForSelectBox()
         ]);
     }
     public function edit(Website $item, EditRequest $request)

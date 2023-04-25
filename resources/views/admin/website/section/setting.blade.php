@@ -17,6 +17,14 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-sm-12">
+                <label class="col-form-label">Type <span class="text-danger">(*)</span></label>
+                <select name="website_type_id" class="form-control">
+                    @foreach ($types as $item )
+                        <option value="{{$item -> id}}" {{$data-> website_type_id == $item -> id ?'selected':''}}>{{$item -> name}}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
 
         <div class="row form-group">

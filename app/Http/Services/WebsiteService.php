@@ -63,7 +63,8 @@ class WebsiteService
                 'layout_id'     => (string)$request->input('layout_id'),
                 'name'    => (string)$request->input('name'),
                 'domain'    => (string)$request->input('domain'),
-                'user_id'    => (string)$request->input('user_id')
+                'user_id'    => (string)$request->input('user_id'),
+                'website_type_id'    =>  $request->input('website_type_id'),
             ]);
 
             DB::commit();
@@ -113,6 +114,7 @@ class WebsiteService
             $website->instagram = (string)$request->input('instagram');
             $website->linkedin = (string)$request->input('linkedin');
             $website->zalo = (string)$request->input('zalo');
+            $website-> website_type_id    =  $request->input('website_type_id');
 
             $website->user_id = (string)$request->input('user_id');
             $website->save();
