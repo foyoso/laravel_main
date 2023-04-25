@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\LayoutController;
 use App\Http\Controllers\Admin\WebsiteController;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\ListingController;
+use App\Http\Controllers\Admin\ListingTypeController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -89,6 +90,14 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::get('/{website}', [TagPostController::class, 'index']);
       Route::post('edit/{item}', [TagPostController::class, 'edit']);
       Route::delete('delete', [TagPostController::class, 'delete']);
+    });
+     #listing type
+     Route::prefix('listingType')->group(function () {
+
+      Route::post('add', [ListingTypeController::class, 'store']);
+      Route::get('/', [ListingTypeController::class, 'index']);
+      Route::post('edit/{item}', [ListingTypeController::class, 'edit']);
+      Route::delete('delete', [ListingTypeController::class, 'delete']);
     });
 
     Route::prefix('listing')->group(function () {

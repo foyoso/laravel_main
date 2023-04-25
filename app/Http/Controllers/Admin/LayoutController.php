@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Utils\WebConst;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Layout\CreateLayoutRequest;
 use App\Http\Requests\Layout\EditLayoutRequest;
@@ -10,7 +10,6 @@ use App\Http\Services\LayoutService;
 use App\Models\Layout;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use App\Http\Services\HttpService;
 class LayoutController extends Controller
 {
     protected $layoutService;

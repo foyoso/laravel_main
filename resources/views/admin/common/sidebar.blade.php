@@ -41,6 +41,12 @@
                         <span>All Website</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/admin/layout" class=" waves-effect">
+                        <i class="ri-calendar-2-line"></i>
+                        <span>All Layout</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
