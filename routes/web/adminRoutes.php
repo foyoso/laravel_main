@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -118,6 +119,12 @@ Route::middleware(['auth:admin'])->group(function () {
       Route::get('edit/{website}/{item}', [ListingController::class, 'show']);
       Route::post('edit/{website}/{item}', [ListingController::class, 'edit']);
       Route::delete('delete', [ListingController::class, 'delete']);
+    });
+
+    Route::prefix('contact')->group(function () {
+
+      Route::get('/{website}', [ContactController::class, 'index']);
+      Route::delete('delete', [ContactController::class, 'delete']);
     });
 
 

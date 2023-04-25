@@ -10,7 +10,10 @@ use App\Http\Controllers\PageController;
 
 // -----------client---------------//
 Route::get('/',[IndexController::class, 'index']);
+
 Route::get('/contact',[ContactController::class, 'index']);
+Route::post('/contact/save', [ContactController::class, 'save']);
+
 Route::get('/listings',[ListingController::class, 'index']);
 Route::get('/listings/{slug}',[ListingController::class, 'detail']);
 Route::get('/blogs',[BlogsController::class, 'index']);

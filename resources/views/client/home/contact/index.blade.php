@@ -39,23 +39,21 @@
 <!-- contact-area -->
 <div class="contact-area">
     <div class="container">
-        <form action="#" class="contact__form">
+        <form action="#" class="contact__form" id="contact-form">
+            <input type="hidden" name="csrf-token" id="csrf-token" value="{{ csrf_token() }}">
             <div class="row">
-                <div class="col-md-6">
-                    <input type="text" placeholder="Enter your name*">
+                <div class="col-md-4">
+                    <input type="text" id="name" name="name" placeholder="Enter your name*">
                 </div>
-                <div class="col-md-6">
-                    <input type="email" placeholder="Enter your mail*">
+                <div class="col-md-4">
+                    <input type="email" id="email" name="email" placeholder="Enter your mail*">
                 </div>
-                <div class="col-md-6">
-                    <input type="text" placeholder="Enter your subject*">
-                </div>
-                <div class="col-md-6">
-                    <input type="text" placeholder="Your Budget*">
+                <div class="col-md-4">
+                    <input type="tel" id="phone" name="phone"  placeholder="Enter your phone*">
                 </div>
             </div>
             <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
-            <button type="submit" class="btn">send massage</button>
+            <button type="button" id="btn-submit" class="btn">send massage</button>
         </form>
     </div>
 </div>
@@ -72,6 +70,27 @@
 
 
 @include('client.home.common.contact-question')
+@endsection
+@section('addJs')
+    <script src="/client/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/client/home/assets/js/page.contact.js"></script>
+    <div class="modal" tabindex="-1" id="notification" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Notification</h5>
+            <button type="button" class="close btn-close-md" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <img class="md-image" src="/client/home/assets/img/loading.gif"/>   Sending...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-close-md"  data-bs-dismiss="modal">Close</button>
 
-
+            </div>
+        </div>
+        </div>
+    </div>
 @endsection

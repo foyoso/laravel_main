@@ -41,6 +41,7 @@
   @include('client.home.common.footer')
 
   @include('client.home.common.js')
+  @yield('addJs')
 </body>
 
 </html>
