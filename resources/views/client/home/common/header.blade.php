@@ -13,11 +13,18 @@
               </div>
               <div class="navbar__wrap main__menu d-none d-xl-flex">
                 <ul class="navigation">
-                  <li class="active"><a href="/">Home</a></li>
+
+                  {{-- <li class="active"><a href="/">Home</a></li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/services">Services</a></li>
-                  <li><a href="/blogs">Our Blog</a>
-                  </li>
+                  <li><a href="/blogs">Our Blog</a> </li> --}}
+
+                  <?php
+                  $menu = json_decode($website -> menu, true);
+                      if( $menu != "" ) {
+                          getMenuListingLayout($menu);
+                      }
+                  ?>
                 </ul>
               </div>
               <div class="header__btn d-none d-md-block">
@@ -57,3 +64,41 @@
   </div>
 </header>
 <!-- header-area-end -->
+@php
+function getMenuListingLayout($menu) {
+  foreach ($menu as $item) {
+  $class = empty($item['children']) ? "" : "header-dropdown" ;
+  echo '<li class="'.$class.'">';
+    if(empty($item['children'])){
+    if (!empty($item['blank']) && strpos($item['url'], "http") !== false) {
+    $el = 'target="' . $item['blank'] .'"';
+    } else if (empty($item['blank']) && strpos($item['url'], "http") !== false) {
+    $el = 'target="_blank"';
+    } else {
+    $el = "";
+    }
+    echo '<a data-scroll '.$el.' href="'.$item['url'].'"><span class="title">'.$item['name'].'</span></a>';
+    }else {
+    echo '<a href="#"><span class="title">'.$item['name'].'</span></a>';
+
+    echo '<ul>';
+      foreach ($item['children'] as $i) {
+      if(empty($i['children'])){
+      if (!empty($i['blank']) && strpos($i['url'], "http") !== false) {
+      $el = 'target="' . $i['blank'] .'"';
+      } else if (empty($i['blank']) && strpos($i['url'], "http") !== false) {
+      $el = 'target="_blank"';
+      } else {
+      $el = "";
+      }
+      echo ' <li>
+        <a'.$el.' href="'.$i['url'].'">'.$i['name'].'</a>
+      </li>';
+      }
+      }
+      echo ' </ul>';
+    }
+    echo '</li>';
+  }
+  }
+  @endphp

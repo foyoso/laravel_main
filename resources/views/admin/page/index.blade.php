@@ -44,7 +44,7 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <th scope="row">{{$item ->id}}</th>
-                                            <td> <a href="/admin/page/edit/{{$website->id}}/{{  $item->id }}" target="_blank">{{$item ->name}} <i class="fas fa-pencil-alt"></i></a></td>
+                                            <td> <a href="/admin/page/edit/{{$website->id}}/{{  $item->id }}">{{$item ->name}} <i class="fas fa-pencil-alt"></i></a></td>
                                              <td><a href="{{$website-> getDomain(1)}}{{$item-> slug}}" target="_blank">{{$website-> getDomain(1)}}{{$item-> slug}} <i class="fas fa-external-link-alt"></i></a> </td>
 
                                             <td>
