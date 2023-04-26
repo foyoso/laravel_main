@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\TagPortfolioController;
 use App\Http\Controllers\Admin\TagPostController;
 use App\Http\Controllers\Admin\WebsiteTypeController;
 
@@ -87,11 +89,28 @@ Route::middleware(['auth:admin'])->group(function () {
 
     #post
     Route::prefix('tag')->group(function () {
-
       Route::post('add', [TagPostController::class, 'store']);
       Route::get('/{website}', [TagPostController::class, 'index']);
       Route::post('edit/{item}', [TagPostController::class, 'edit']);
       Route::delete('delete', [TagPostController::class, 'delete']);
+    });
+
+    #post
+    Route::prefix('portfolio')->group(function () {
+      Route::get('add/{website}', [PortfolioController::class, 'add']);
+      Route::post('add/{website}', [PortfolioController::class, 'store']);
+      Route::get('/{website}', [PortfolioController::class, 'index'])->name('portfolioList');
+
+      Route::get('edit/{website}/{item}', [PortfolioController::class, 'show']);
+      Route::post('edit/{website}/{item}', [PortfolioController::class, 'edit']);
+      Route::delete('delete', [PortfolioController::class, 'delete']);
+    });
+    //tag portfolio
+    Route::prefix('tagPortfolio')->group(function () {
+      Route::post('add', [TagPortfolioController::class, 'store']);
+      Route::get('/{website}', [TagPortfolioController::class, 'index']);
+      Route::post('edit/{item}', [TagPortfolioController::class, 'edit']);
+      Route::delete('delete', [TagPortfolioController::class, 'delete']);
     });
      #listing type
      Route::prefix('listingType')->group(function () {

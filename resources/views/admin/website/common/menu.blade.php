@@ -19,6 +19,8 @@
         <a href="/admin/post/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Blogs</a>
         <a href="/admin/tag/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Tag blogs</a>
         <a href="/admin/listing/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Listing</a>
+        <a href="/admin/portfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Portfolio</a>
+        <a href="/admin/tagPortfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Tag Portfolio</a>
     </div>
 
 
