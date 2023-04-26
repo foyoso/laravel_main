@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="/client/home/assets/css/default.css">
 <link rel="stylesheet" href="/client/home/assets/css/style.css">
 <link rel="stylesheet" href="/client/home/assets/css/responsive.css">
+<link rel="stylesheet" href="/client/home/assets/css/custom.css">

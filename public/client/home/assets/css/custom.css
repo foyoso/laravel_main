@@ -1,0 +1,17 @@
+.formfield {
+    margin-bottom: 30px;
+}
+
+.has-error input {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+    width: 100%;
+    text-align: left;
+}
+
+.contact__form input {
+    margin-bottom: 0;
+}

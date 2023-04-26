@@ -30,40 +30,41 @@
   </div>
 </section>
 <!-- breadcrumb-area-end -->
-       <!-- contact-map -->
-       <div id="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96811.54759587669!2d-74.01263924803828!3d40.6880494567041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bae694479a3%3A0xb9949385da52e69e!2sBarclays%20Center!5e0!3m2!1sen!2sbd!4v1636195194646!5m2!1sen!2sbd"
-            allowfullscreen loading="lazy"></iframe>
-        </div>
-    <!-- contact-map-end -->
+<!-- contact-map -->
+<div id="contact-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15893.612720163508!2d106.82793966880048!3d10.834238181379837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317521a29c137cc1%3A0x8aab4c5d3304b446!2sVinhomes%20Grand%20Park%20Qu%E1%BA%ADn%209!5e0!3m2!1sen!2s!4v1682522838621!5m2!1sen!2s"
+    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- contact-map-end -->
 <!-- contact-area -->
 <div class="contact-area">
-    <div class="container">
-        <form action="#" class="contact__form" id="contact-form">
-            <input type="hidden" name="csrf-token" id="csrf-token" value="{{ csrf_token() }}">
-            <div class="row">
-                <div class="col-md-4">
-                    <input type="text" id="name" name="name" placeholder="Enter your name*">
-                </div>
-                <div class="col-md-4">
-                    <input type="email" id="email" name="email" placeholder="Enter your mail*">
-                </div>
-                <div class="col-md-4">
-                    <input type="tel" id="phone" name="phone"  placeholder="Enter your phone*">
-                </div>
-            </div>
-            <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
-            <button type="button" id="btn-submit" class="btn">send massage</button>
-        </form>
-    </div>
+  <div class="container">
+    <form action="#" class="contact__form" id="contact-form">
+      <input type="hidden" name="csrf-token" id="csrf-token" value="{{ csrf_token() }}">
+      <div class="row">
+        <div class="col-md-4 formfield">
+          <input type="text" id="name" name="name" placeholder="Enter your name*">
+        </div>
+        <div class="col-md-4 formfield">
+          <input type="email" id="email" name="email" placeholder="Enter your mail*">
+        </div>
+        <div class="col-md-4 formfield">
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone*">
+        </div>
+      </div>
+      <textarea name="message" id="message" placeholder="Enter your massage"></textarea>
+      <button type="button" id="btn-submit" class="btn">send massage</button>
+    </form>
+  </div>
 </div>
 <!-- contact-area-end -->
 
 <!-- contact-info-area -->
 <section class="contact-info-area">
-    <div class="container">
-        {!!$page -> html_content!!}
-    </div>
+  <div class="container">
+    {!!$page -> html_content!!}
+  </div>
 </section>
 <!-- contact-info-area-end -->
 
@@ -72,25 +73,24 @@
 @include('client.home.common.contact-question')
 @endsection
 @section('addJs')
-    <script src="/client/vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="/client/home/assets/js/page.contact.js"></script>
-    <div class="modal" tabindex="-1" id="notification" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title">Notification</h5>
-            <button type="button" class="close btn-close-md" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <img class="md-image" src="/client/home/assets/img/loading.gif"/>   Sending...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary btn-close-md"  data-bs-dismiss="modal">Close</button>
+<script src="/client/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="/client/home/assets/js/page.contact.js"></script>
 
-            </div>
-        </div>
-        </div>
+<div class="modal fade" id="notification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Notification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="md-image" src="/client/home/assets/img/loading.gif" /> Sending...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close-md" data-bs-dismiss="modal"
+          aria-label="Close">Close</button>
+      </div>
     </div>
+  </div>
+</div>
 @endsection
