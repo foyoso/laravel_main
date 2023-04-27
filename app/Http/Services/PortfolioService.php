@@ -170,7 +170,7 @@ class PortfolioService
     }
 
     public function findBySlug($slug) {
-        $post = new Post();
+        $post = new Portfolio();
         return $post->findBySlug($slug);
     }
 
