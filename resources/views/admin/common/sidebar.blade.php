@@ -53,6 +53,12 @@
                         <span>Website type</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/admin/listingType" class=" waves-effect">
+                        <i class="ri-calendar-2-line"></i>
+                        <span>Listing type</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

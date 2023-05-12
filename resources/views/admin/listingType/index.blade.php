@@ -35,7 +35,7 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
                                         <div class="input-group mb-md">
-                                            <input id="name" placeholder="Add Tags" type="text" class="form-control" name="name" value=""/>
+                                            <input id="name" placeholder="Add type" type="text" class="form-control" name="name" value=""/>
                                             <span class="input-group-btn">
                                             <button type="submit" id="btn-submit" class="btn btn-primary">Add</button>
                                             <input type="hidden" id="tags-id" name="id" value=""/>
