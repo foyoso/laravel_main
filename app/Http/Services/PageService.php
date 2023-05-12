@@ -59,12 +59,27 @@ class PageService
             return false;
         }
     }
-
-    public function createDefaultPages($webId, $userId){
+    // WEB_REAL_ESTATE
+    public function createDefaultPages3($webId, $userId){
             $this -> createDefaultPage($webId, $userId,  'Home', LINK_HOME, 1);
             $this -> createDefaultPage($webId, $userId,  'News', LINK_BLOG, 0);
             $this -> createDefaultPage($webId, $userId,  'Listings', LINK_LISTINGS, 0);
             $this -> createDefaultPage($webId, $userId,  'Contact', LINK_CONTACT, 0);
+    }
+
+     // WEB_ECOMMERCE
+     public function createDefaultPages2($webId, $userId){
+        $this -> createDefaultPage($webId, $userId,  'Home', LINK_HOME, 1);
+        $this -> createDefaultPage($webId, $userId,  'News', LINK_BLOG, 0);
+        $this -> createDefaultPage($webId, $userId,  'Products', LINK_PRODUCT, 0);
+        $this -> createDefaultPage($webId, $userId,  'Contact', LINK_CONTACT, 0);
+    }
+     // WEB_BUSINESS
+     public function createDefaultPages1($webId, $userId){
+        $this -> createDefaultPage($webId, $userId,  'Home', LINK_HOME, 1);
+        $this -> createDefaultPage($webId, $userId,  'News', LINK_BLOG, 0);
+        $this -> createDefaultPage($webId, $userId,  'Portfolios', LINK_PORTFOLIO, 0);
+        $this -> createDefaultPage($webId, $userId,  'Contact', LINK_CONTACT, 0);
     }
     public function createDefaultPage($webId, $userId, $name, $slug, $is_home_page)
     {

@@ -29,7 +29,7 @@
                         </div>
                         <div class="card-body">
                             @include('admin.common.alert')
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="form-group searchstyle">
                                     <form action="/admin/website/menu/{{$website ->id}}" id="menu_type" method="GET" >
                                         <div class="col-md-2 col-lg-2">
@@ -55,12 +55,12 @@
                                         </header>
                                         <div class="card-body">
 
-                                            <div class="form-group">
+                                            <div class="form-group mb-3">
                                                 <div class="col-md-12">
                                                     <input class="form-control name-ct" name="name-ct" placeholder="Name" />
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mb-3">
                                                 <div class="col-md-12">
                                                     <select class="form-control page-type">
                                                         <option value="1">Pages</option>
@@ -69,7 +69,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mb-3">
                                                 <div class="col-md-12">
                                                     <select class="form-control hide" id="link">
                                                         <option value="#">Empty link(#)</option>
@@ -92,14 +92,14 @@
                                                     <div class="tag-content"></div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mb-3">
                                                 <div class="col-md-12">
                                                     <select class="form-control page-ids">
 
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mb-3">
                                                 <div class="col col-md-2 col-md-offset-5">
 
                                                 </div>

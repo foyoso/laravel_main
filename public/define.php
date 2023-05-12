@@ -6,6 +6,11 @@ define('FOLDER_PREFIX', 'uploads');
 define('POST_ITEM_PER_PAGE', 10);
 
 
+define('WEB_BUSINESS', 2);
+define('WEB_ECOMMERCE', 3);
+define('WEB_REAL_ESTATE', 1);
+
+
 
 function getNewLink($item){
     return '/blogs/'. $item->slug;
@@ -39,7 +44,9 @@ function get_client_ip() {
 
 
 
-define('LINK_LISTINGS', '/listing');
-define('LINK_BLOG', '/blog');
+define('LINK_LISTINGS', '/listings');
+define('LINK_BLOG', '/blogs');
+define('LINK_PRODUCT', '/products');
+define('LINK_PORTFOLIO', '/portfolios');
 define('LINK_CONTACT', '/contact');
 define('LINK_HOME', '/');

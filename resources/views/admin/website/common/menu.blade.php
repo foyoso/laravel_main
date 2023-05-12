@@ -18,9 +18,20 @@
         <a href="/admin/page/{{$website -> id}}"><i class="mdi mdi-star-outline me-2"></i>Page</a>
         <a href="/admin/post/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Blogs</a>
         <a href="/admin/tag/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Tag blogs</a>
-        <a href="/admin/listing/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Listing</a>
-        <a href="/admin/portfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Portfolio</a>
-        <a href="/admin/tagPortfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Tag Portfolio</a>
+
+        @if ($website -> website_type_id == WEB_REAL_ESTATE)
+            <a href="/admin/listing/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Listing</a>
+        @endif
+        @if ($website -> website_type_id == WEB_BUSINESS)
+            <a href="/admin/portfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Portfolio</a>
+            <a href="/admin/tagPortfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Tag Portfolio</a>
+        @endif
+
+        @if ($website -> website_type_id == WEB_ECOMMERCE)
+            <a href="/admin/portfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Products</a>
+            <a href="/admin/tagPortfolio/{{$website -> id}}"><i class="mdi mdi-diamond-stone me-2"></i>Product category</a>
+        @endif
+
     </div>
 
 

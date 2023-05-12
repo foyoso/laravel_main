@@ -69,7 +69,15 @@ class WebsiteService
 
             DB::commit();
             Session::flash('success', 'Create Website success');
-            $page -> createDefaultPages($web -> id, $web  -> user_id);
+            if($web -> website_type_id == WEB_REAL_ESTATE){
+                $page -> createDefaultPages3($web -> id, $web  -> user_id);
+            } else if($web -> website_type_id == WEB_ECOMMERCE) {
+                $page -> createDefaultPages2($web -> id, $web  -> user_id);
+            } else if($web -> website_type_id == WEB_BUSINESS) {
+                $page -> createDefaultPages1($web -> id, $web  -> user_id);
+            }
+
+
             return true;
         } catch (\Exception $err) {
             Session::flash('error', $err->getMessage());
