@@ -13,7 +13,7 @@ class BaseController extends Controller
     public function __construct()
     {
         // get domain
-        $this ->domain = parse_url(request()->root())['host'];
+        $this ->domain =  parse_url(request()->root())['host'];
         // get website
         $websiteService  = new WebsiteService();
         $this -> website = $websiteService -> findByDomain($this ->domain);
